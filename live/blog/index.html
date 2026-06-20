@@ -3,129 +3,43 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<title>Blog: My 31 Cents — RAMAREA</title>
-
+<title>Blog — RAMAREA</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet"/>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{
-  --purple-deep:#1a0a2e;--purple-mid:#2d1254;--purple-light:#4a1f8c;
-  --gold:#c9a84c;--gold-light:#e8c96a;--white:#f5f0ea;--text-muted:#b8a9c9;
-}
+:root{--purple-deep:#1a0a2e;--purple-mid:#2d1254;--purple-light:#4a1f8c;--gold:#c9a84c;--gold-light:#e8c96a;--white:#f5f0ea;--text-muted:#b8a9c9}
 html{scroll-behavior:smooth}
 body{font-family:'Inter',sans-serif;background:var(--purple-deep);color:var(--white);min-height:100vh}
-
-/* NAV */
-nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;
-  justify-content:space-between;padding:1.25rem 3rem;
-  background:rgba(26,10,46,0.92);backdrop-filter:blur(12px);
-  border-bottom:1px solid rgba(201,168,76,0.15)}
-.nav-logo{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:700;
-  color:var(--gold);letter-spacing:.12em;text-decoration:none}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1.25rem 3rem;background:rgba(26,10,46,0.92);backdrop-filter:blur(12px);border-bottom:1px solid rgba(201,168,76,0.15)}
+.nav-logo{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:700;color:var(--gold);letter-spacing:.12em;text-decoration:none}
 .nav-links{display:flex;align-items:center;gap:2.5rem;list-style:none}
-.nav-links a{font-size:.78rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase;
-  color:var(--white);text-decoration:none;opacity:.8;transition:opacity .2s,color .2s}
+.nav-links a{font-size:.78rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--white);text-decoration:none;opacity:.8;transition:opacity .2s,color .2s}
 .nav-links a:hover{opacity:1;color:var(--gold-light)}
-.nav-cta{color:var(--purple-deep)!important;background:var(--gold);
-  padding:.55rem 1.4rem;border-radius:2px;opacity:1!important;transition:background .2s!important}
+.nav-cta{color:var(--purple-deep)!important;background:var(--gold);padding:.55rem 1.4rem;border-radius:2px;opacity:1!important}
 .nav-cta:hover{background:var(--gold-light)!important}
-
-/* PAGE HERO */
-.page-hero{padding:9rem 3rem 5rem;background:linear-gradient(135deg,var(--purple-mid) 0%,var(--purple-deep) 100%);
-  border-bottom:1px solid rgba(201,168,76,0.12)}
+.page-hero{padding:9rem 3rem 5rem;background:linear-gradient(135deg,var(--purple-mid) 0%,var(--purple-deep) 100%);border-bottom:1px solid rgba(201,168,76,0.12)}
 .page-eyebrow{font-size:.65rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem}
-.page-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2.5rem,6vw,5rem);
-  font-weight:700;line-height:1;color:var(--white);margin-bottom:1.25rem}
+.page-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2.5rem,6vw,5rem);font-weight:700;line-height:1;color:var(--white);margin-bottom:1.25rem}
 .page-subtitle{font-size:1.05rem;font-weight:300;line-height:1.7;color:var(--text-muted);max-width:580px}
-.page-subtitle em{color:var(--gold-light);font-style:italic}
-
-/* CONTENT */
 .content{max-width:1100px;margin:0 auto;padding:5rem 3rem}
-.content-narrow{max-width:720px;margin:0 auto;padding:5rem 3rem}
-.section-label{font-size:.65rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem}
-.gold-rule{width:48px;height:1px;background:var(--gold);opacity:.5;margin-bottom:2rem}
-h2.section-heading{font-family:'Cormorant Garamond',serif;font-size:clamp(1.8rem,3vw,2.5rem);
-  font-weight:600;color:var(--white);margin-bottom:1.5rem}
-h3.sub-heading{font-family:'Cormorant Garamond',serif;font-size:1.5rem;
-  font-weight:600;color:var(--gold);margin:2.5rem 0 .75rem}
-p.body-text{font-size:.95rem;line-height:1.85;color:var(--text-muted);font-weight:300;margin-bottom:1.25rem}
-.body-text a{color:var(--gold);text-decoration:none}
-.body-text a:hover{text-decoration:underline}
-
-/* CARDS GRID */
-.cards-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.5rem;margin:2.5rem 0}
-.card{display:block;border:1px solid rgba(201,168,76,.18);border-radius:4px;
-  padding:2rem;text-decoration:none;background:rgba(201,168,76,.03);
-  transition:border-color .25s,transform .25s}
-.card:hover{border-color:var(--gold);transform:translateY(-3px)}
-.card-label{font-size:.6rem;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);margin-bottom:.6rem}
-.card-title{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:600;
-  color:var(--white);margin-bottom:.6rem}
-.card-desc{font-size:.82rem;line-height:1.6;color:var(--text-muted);font-weight:300}
-
-/* PILLAR CARDS */
-.pillars-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1.25rem;margin:2.5rem 0}
-.pillar{border:1px solid rgba(201,168,76,.2);border-radius:4px;padding:2rem;
-  background:rgba(201,168,76,.03);transition:border-color .25s}
-.pillar:hover{border-color:var(--gold)}
-.pillar-title{font-family:'Cormorant Garamond',serif;font-size:1.3rem;
-  font-weight:700;color:var(--gold);margin-bottom:.75rem}
-.pillar ul{padding-left:1.2rem;color:var(--text-muted);font-size:.85rem;line-height:1.75;font-weight:300}
-
-/* IMAGE PLACEHOLDER */
-.img-placeholder{background:rgba(201,168,76,.06);border:1px dashed rgba(201,168,76,.3);
-  border-radius:4px;display:flex;flex-direction:column;align-items:center;justify-content:center;
-  padding:3rem 1.5rem;text-align:center;color:var(--text-muted);font-size:.8rem;gap:.5rem;margin:1.5rem 0}
-.img-placeholder span{font-size:1.5rem;opacity:.4}
-
-/* PHOTO GRID */
-.photo-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:1rem;margin:2rem 0}
-.photo-item .img-placeholder{margin:0;aspect-ratio:4/3}
-.photo-caption{font-size:.75rem;color:var(--text-muted);margin-top:.5rem;text-align:center}
-
-/* BACK LINK */
-.back-link{display:inline-flex;align-items:center;gap:.6rem;font-size:.72rem;
-  letter-spacing:.2em;text-transform:uppercase;color:var(--gold);text-decoration:none;
-  border:1px solid rgba(201,168,76,.3);padding:.65rem 1.25rem;border-radius:2px;
-  margin-top:3rem;transition:border-color .2s,background .2s}
-.back-link:hover{border-color:var(--gold);background:rgba(201,168,76,.08)}
-
-/* QUOTE BLOCK */
-.quote-block{border-left:2px solid var(--gold);padding:1.5rem 2rem;margin:2.5rem 0;
-  background:rgba(201,168,76,.04)}
-.quote-block p{font-family:'Cormorant Garamond',serif;font-size:1.25rem;
-  font-style:italic;color:var(--white);line-height:1.6;margin-bottom:.5rem}
-.quote-block cite{font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
-
-/* BTN */
-.btn-primary{display:inline-block;font-size:.72rem;font-weight:500;letter-spacing:.2em;
-  text-transform:uppercase;color:var(--purple-deep);background:var(--gold);
-  padding:.85rem 2rem;border-radius:2px;text-decoration:none;transition:background .2s}
-.btn-primary:hover{background:var(--gold-light)}
-
-/* FOOTER */
-footer{background:#0f0620;border-top:1px solid rgba(201,168,76,.1);padding:3rem;
-  display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1.5rem}
-.footer-brand{font-family:'Cormorant Garamond',serif;font-size:1.2rem;
-  font-weight:700;color:var(--gold);letter-spacing:.1em}
+.blog-list{list-style:none;margin:0;padding:0}
+.blog-item{border-bottom:1px solid rgba(201,168,76,.1);padding:1.75rem 0}
+.blog-item:first-child{border-top:1px solid rgba(201,168,76,.1)}
+.blog-item a{display:block;text-decoration:none;group:true}
+.blog-date{font-size:.65rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:.4rem}
+.blog-title{font-family:'Cormorant Garamond',serif;font-size:1.45rem;font-weight:600;color:var(--white);margin-bottom:.4rem;transition:color .2s}
+.blog-item a:hover .blog-title{color:var(--gold-light)}
+.blog-desc{font-size:.82rem;line-height:1.6;color:var(--text-muted);font-weight:300}
+footer{background:#0f0620;border-top:1px solid rgba(201,168,76,.1);padding:3rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1.5rem}
+.footer-brand{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:700;color:var(--gold);letter-spacing:.1em}
 .footer-nav{display:flex;gap:2rem;list-style:none}
-.footer-nav a{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;
-  color:var(--text-muted);text-decoration:none;transition:color .2s}
+.footer-nav a{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--text-muted);text-decoration:none;transition:color .2s}
 .footer-nav a:hover{color:var(--gold)}
 .footer-copy{font-size:.7rem;color:var(--text-muted);opacity:.6}
-
-/* RESPONSIVE */
-@media(max-width:768px){
-  nav{padding:1rem 1.5rem}.nav-links{gap:1.25rem}.nav-cta{display:none}
-  .page-hero,.content,.content-narrow{padding-left:1.5rem;padding-right:1.5rem}
-  footer{flex-direction:column;align-items:flex-start;padding:2rem 1.5rem}
-  .cards-grid{grid-template-columns:1fr}
-}
+@media(max-width:768px){nav{padding:1rem 1.5rem}.nav-links{gap:1.25rem}.nav-cta{display:none}.page-hero,.content{padding-left:1.5rem;padding-right:1.5rem}}
 </style>
-
 </head>
 <body>
-
 <nav>
   <a href="../../index.html" class="nav-logo">RAMAREA</a>
   <ul class="nav-links">
@@ -135,27 +49,505 @@ footer{background:#0f0620;border-top:1px solid rgba(201,168,76,.1);padding:3rem;
     <li><a href="../../live/community/" class="nav-cta">Connect</a></li>
   </ul>
 </nav>
-
 <div class="page-hero">
-  <p class="page-eyebrow">Live &rarr; Blog</p>
-  <h1 class="page-title">Blog:<br>My 31 Cents</h1>
-  <p class="page-subtitle">As far as I can remember, I have always loved to write and journal. Writing is one way I ensure I engage with the world and remain an active participant in its conversations.</p>
+  <p class="page-eyebrow">Live</p>
+  <h1 class="page-title">The Blog</h1>
+  <p class="page-subtitle">A non-exhaustive, raw, and honest account of the life I have lived — <em>70 entries and counting</em>.</p>
 </div>
 <div class="content">
-  <div class="quote-block">
-    <p>Disclaimer: The opinions and positions expressed in any of the blog articles are guaranteed only as of that date. Views may evolve.</p>
-  </div>
-  <p class="body-text">Blog posts coming soon — replace this section with links to your articles as you migrate them.</p>
-  <div class="cards-grid">
-    <div class="card">
-      <p class="card-label">Article</p>
-      <h3 class="card-title">Blog Post Title</h3>
-      <p class="card-desc">Add your blog posts here by duplicating this card and linking to each article.</p>
-    </div>
-  </div>
-  <a href="../../live/" class="back-link">&larr; Return to Live</a>
+  <ul class="blog-list">
+<li class="blog-item">
+  <a href="the-tragedy-of-botho-in-botswana/">
+    <p class='blog-date'>1 August 2024</p>
+    <p class="blog-title">The Tragedy of Botho in Botswana</p>
+    <p class="blog-desc">On Ubuntu, justice, and the tragedy of using Botho as a tool of oppression.</p>
+  </a>
+</li>
+<li class="blog-item">
+  <a href="on-storytelling-and-how-we-live-our-lives/">
+    
+    <p class="blog-title">Random Musings: On Storytelling and How We Live Our Lives</p>
+    <p class="blog-desc">A reflection on narrative, memory, and the stories we tell ourselves.</p>
+  </a>
+</li>
+<li class="blog-item">
+  <a href="musings-on-redemption/">
+    
+    <p class="blog-title">Musings On Redemption</p>
+    <p class="blog-desc">What it means to seek and grant forgiveness — to ourselves and others.</p>
+  </a>
+</li>
+<li class="blog-item">
+  <a href="oppression-through-erasure-of-identity/">
+    
+    <p class="blog-title">Oppression Through Erasure of Identity</p>
+    <p class="blog-desc">On how identity erasure operates as a tool of systemic oppression.</p>
+  </a>
+</li>
+<li class="blog-item">
+  <a href="beyond-white-supremacist-capitalistic-patriarchy/">
+    
+    <p class="blog-title">Beyond White Supremacist Capitalistic Patriarchy</p>
+    <p class="blog-desc">Envisioning systems of liberation beyond the structures that bind us.</p>
+  </a>
+</li>
+<li class="blog-item">
+  <a href="retiring-the-persona-of-tumisang-ramarea/">
+    
+    <p class="blog-title">Retiring the Persona of Tumisang Ramarea</p>
+    <p class="blog-desc">A meditation on shedding constructed identity and living authentically.</p>
+  </a>
+</li>
+<li class="blog-item">
+  <a href="on-building-borderless-nations/">
+    
+    <p class="blog-title">On Building Borderless Nations</p>
+    <p class="blog-desc">Nations built on values and shared humanity — not geography.</p>
+  </a>
+</li>
+<li class="blog-item">
+  <a href="fought-the-good-fight-finished-the-race-kept-the-faith/">
+    
+    <p class="blog-title">"Fought the Good Fight, Finished the Race, Kept the Faith"</p>
+    <p class="blog-desc">A tribute to resilience and conviction through hard seasons.</p>
+  </a>
+</li>
+<li class="blog-item">
+  <a href="28-lessons-for-28/">
+    
+    <p class="blog-title">28 Lessons for 28</p>
+    <p class="blog-desc">Twenty-eight things learned, earned, and still being learned at 28.</p>
+  </a>
+</li>
+<li class="blog-item">
+  <a href="two-worlds-uninhabited-water-and-fire/">
+    
+    <p class="blog-title">"Two Worlds Uninhabited, Water and Fire"</p>
+    <p class="blog-desc">A poem in two voices — two elements that cannot coexist yet need each other.</p>
+  </a>
+</li>
+<li class="blog-item">
+  <a href="on-wanting-to-change-the-world/">
+    
+    <p class="blog-title">On Wanting To Change The World</p>
+    <p class="blog-desc">What it really means to carry that ambition — and what it costs.</p>
+  </a>
+</li>
+<li class="blog-item">
+  <a href="reflections-on-autumn-2021/">
+    
+    <p class="blog-title">Reflections on Autumn 2021</p>
+    <p class="blog-desc">A seasonal reflection on growth, loss, and what remains.</p>
+  </a>
+</li>
+<li class="blog-item">
+  <a href="grieving-injustice/">
+    
+    <p class="blog-title">Grieving Injustice</p>
+    <p class="blog-desc">On the emotional weight of witnessing injustice without resolution.</p>
+  </a>
+</li>
+<li class="blog-item">
+  <a href="the-last-flight-to-washington-dc-a-brief-reflection-on-luck/">
+    
+    <p class="blog-title">The Last Flight to Washington DC: A Brief Reflection on Luck!</p>
+    <p class="blog-desc">A near-miss story that became a meditation on fortune and timing.</p>
+  </a>
+</li>
+<li class="blog-item">
+  <a href="reflections-on-summer-2021/">
+    
+    <p class="blog-title">Reflections on Summer 2021</p>
+    <p class="blog-desc">The summer after the degree — freedom, transition, and new horizons.</p>
+  </a>
+</li>
+<li class="blog-item">
+  <a href="who-was-i-who-am-i-who-will-i-be/">
+    
+    <p class="blog-title">Who Was I? Who Am I? Who Will I Be?</p>
+    <p class="blog-desc">Three questions that form the core of every self-examination.</p>
+  </a>
+</li>
+<li class="blog-item">
+  <a href="my-cup-runneth-over/">
+    
+    <p class="blog-title">My Cup Runneth Over</p>
+    <p class="blog-desc">A gratitude post — on abundance and the generosity of life.</p>
+  </a>
+</li>
+<li class="blog-item">
+  <a href="reflections-on-q2-of-2021/">
+    
+    <p class="blog-title">Reflections on Q2 of 2021</p>
+    <p class="blog-desc">Mid-year stock-taking: what happened, what's happening, and what's next.</p>
+  </a>
+</li>
+<li class="blog-item">
+  <a href="a-great-thank-you/">
+    
+    <p class="blog-title">A Great Thank You!</p>
+    <p class="blog-desc">An expression of gratitude to the community that carried me through.</p>
+  </a>
+</li>
+<li class="blog-item">
+  <a href="reflections-on-q1-of-2021/">
+    
+    <p class="blog-title">Reflections on Q1 of 2021</p>
+    <p class="blog-desc">Starting a new year with intention and honest self-assessment.</p>
+  </a>
+</li>
+<li class="blog-item">
+  <a href="fibre-internet-pricing-problem/">
+    
+    <p class="blog-title">Fibre Internet Pricing Problem</p>
+    <p class="blog-desc">An analysis of fibre pricing and its implications for digital access in Africa.</p>
+  </a>
+</li>
+<li class="blog-item">
+  <a href="the-great-meal/">
+    
+    <p class="blog-title">The Great Meal</p>
+    <p class="blog-desc">Food as love — a story of cooking, sharing, and community.</p>
+  </a>
+</li>
+<li class="blog-item">
+  <a href="phane-pricing-problem/">
+    
+    <p class="blog-title">Phane Pricing Problem</p>
+    <p class="blog-desc">On the economics of phane (mopane worms) and local market dynamics.</p>
+  </a>
+</li>
+<li class="blog-item">
+  <a href="beginnings-endings-and-the-journey/">
+    
+    <p class="blog-title">Beginnings, Endings, and the Journey</p>
+    <p class="blog-desc">On transitions — the grief of endings and the promise of beginnings.</p>
+  </a>
+</li>
+<li class="blog-item">
+  <a href="on-unlearning-toxic-masculinity-living-truthfully/">
+    
+    <p class="blog-title">On Unlearning Toxic Masculinity: Living Truthfully</p>
+    <p class="blog-desc">Part 2: What it looks like to actually live outside the script.</p>
+  </a>
+</li>
+<li class="blog-item">
+  <a href="new-place-impressions-mountain-view/">
+    
+    <p class="blog-title">Initial Impressions of the New Place 2.0</p>
+    <p class="blog-desc">First impressions of Mountain View — a new chapter begins.</p>
+  </a>
+</li>
+<li class="blog-item">
+  <a href="reflections-from-october-2020/">
+    
+    <p class="blog-title">Reflections From October 2020</p>
+    <p class="blog-desc">Processing the world in a month of uncertainty and change.</p>
+  </a>
+</li>
+<li class="blog-item">
+  <a href="reflections-from-september-2020/">
+    
+    <p class="blog-title">Reflections From September 2020</p>
+    <p class="blog-desc">On a strange September — pandemic, politics, and personal growth.</p>
+  </a>
+</li>
+<li class="blog-item">
+  <a href="new-place-impressions-palo-alto/">
+    
+    <p class="blog-title">Initial Impressions of the New Place</p>
+    <p class="blog-desc">Arriving in Palo Alto — first thoughts on a new home.</p>
+  </a>
+</li>
+<li class="blog-item">
+  <a href="reflections-from-august-2020/">
+    
+    <p class="blog-title">Reflections From August 2020</p>
+    <p class="blog-desc">Navigating a pandemic summer with intention and care.</p>
+  </a>
+</li>
+<li class="blog-item">
+  <a href="on-unlearning-toxic-masculinity-gaining-awareness/">
+    
+    <p class="blog-title">On Unlearning Toxic Masculinity: Gaining Awareness</p>
+    <p class="blog-desc">Part 1: How I first became aware of the patterns I needed to break.</p>
+  </a>
+</li>
+<li class="blog-item">
+  <a href="personal-key-takeaways-from-my-covid-19-project/">
+    
+    <p class="blog-title">Personal Key Takeaways From My Covid-19 Project</p>
+    <p class="blog-desc">Lessons from modeling COVID-19 spread in Botswana during the pandemic.</p>
+  </a>
+</li>
+<li class="blog-item">
+  <a href="reflections-from-july-2020/">
+    
+    <p class="blog-title">Reflections From July 2020</p>
+    <p class="blog-desc">Mid-pandemic reflections on what matters and what remains.</p>
+  </a>
+</li>
+<li class="blog-item">
+  <a href="reflections-from-june-2020/">
+    
+    <p class="blog-title">Reflections From June 2020</p>
+    <p class="blog-desc">A pivotal month — protests, awakening, and recommitment.</p>
+  </a>
+</li>
+<li class="blog-item">
+  <a href="some-thoughts-on-pricing/">
+    
+    <p class="blog-title">Some Thoughts on Pricing</p>
+    <p class="blog-desc">How pricing shapes access — and why it matters for equity.</p>
+  </a>
+</li>
+<li class="blog-item">
+  <a href="food-is-joy/">
+    
+    <p class="blog-title">Food Is Joy</p>
+    <p class="blog-desc">An ode to food — the universal language of love and culture.</p>
+  </a>
+</li>
+<li class="blog-item">
+  <a href="my-vision-for-catalyzing-impact/">
+    
+    <p class="blog-title">My Vision for Catalyzing Impact</p>
+    <p class="blog-desc">The philosophy behind a life dedicated to meaningful change.</p>
+  </a>
+</li>
+<li class="blog-item">
+  <a href="on-the-public-vs-the-private-in-sharing/">
+    
+    <p class="blog-title">On the Public vs. the Private in Sharing</p>
+    <p class="blog-desc">Where the personal ends and the public begins — a meditation.</p>
+  </a>
+</li>
+<li class="blog-item">
+  <a href="quarantine-reflections/">
+    
+    <p class="blog-title">Quarantine Reflections</p>
+    <p class="blog-desc">Thoughts from inside lockdown — on solitude, community, and time.</p>
+  </a>
+</li>
+<li class="blog-item">
+  <a href="and-there-was-light/">
+    
+    <p class="blog-title">And There Was Light!</p>
+    <p class="blog-desc">A post about emergence and hope after a period of darkness.</p>
+  </a>
+</li>
+<li class="blog-item">
+  <a href="my-friendship-philosophy/">
+    
+    <p class="blog-title">My Friendship Philosophy</p>
+    <p class="blog-desc">On what I look for, give, and protect in friendship.</p>
+  </a>
+</li>
+<li class="blog-item">
+  <a href="a-dinner-date/">
+    
+    <p class="blog-title">A Dinner Date</p>
+    <p class="blog-desc">A beautiful evening — good food, better company.</p>
+  </a>
+</li>
+<li class="blog-item">
+  <a href="love-and-resistance/">
+    
+    <p class="blog-title">Love and Resistance</p>
+    <p class="blog-desc">How love is itself an act of resistance in an unjust world.</p>
+  </a>
+</li>
+<li class="blog-item">
+  <a href="the-man-and-his-dreams/">
+    
+    <p class="blog-title">The Man and His Dreams</p>
+    <p class="blog-desc">A piece about ambition, vision, and what drives a life.</p>
+  </a>
+</li>
+<li class="blog-item">
+  <a href="every-finish-line-is-the-beginning-of-a-new-race/">
+    
+    <p class="blog-title">"Every Finish Line Is The Beginning Of A New Race"</p>
+    <p class="blog-desc">On completing one chapter and the momentum that carries into the next.</p>
+  </a>
+</li>
+<li class="blog-item">
+  <a href="thankful/">
+    
+    <p class="blog-title">Thankful!</p>
+    <p class="blog-desc">A simple, honest expression of gratitude for life as it is.</p>
+  </a>
+</li>
+<li class="blog-item">
+  <a href="modified-coles-law/">
+    
+    <p class="blog-title">Modified Cole's Law</p>
+    <p class="blog-desc">A playful yet earnest riff on coleslaw and life's contrasts.</p>
+  </a>
+</li>
+<li class="blog-item">
+  <a href="the-dawn-of-a-new-day/">
+    
+    <p class="blog-title">The Dawn Of A New Day</p>
+    <p class="blog-desc">On new beginnings — the quiet optimism of sunrise.</p>
+  </a>
+</li>
+<li class="blog-item">
+  <a href="single-and-not-available-what-i-seek-in-romantic-interactions/">
+    
+    <p class="blog-title">Single And Not Available: What I Seek in Romantic Interactions</p>
+    <p class="blog-desc">Honest, vulnerable thoughts on romance, readiness, and intention.</p>
+  </a>
+</li>
+<li class="blog-item">
+  <a href="the-evolution-of-my-ambition/">
+    
+    <p class="blog-title">The Evolution of My Ambition</p>
+    <p class="blog-desc">How what I want from life has changed — and what has stayed the same.</p>
+  </a>
+</li>
+<li class="blog-item">
+  <a href="spoilt-milk-nerdy-housekeeping/">
+    
+    <p class="blog-title">Spoilt Milk: Nerdy Housekeeping</p>
+    <p class="blog-desc">Domestic observations with an analytical twist.</p>
+  </a>
+</li>
+<li class="blog-item">
+  <a href="the-zebra-has-earned-its-stripes/">
+    
+    <p class="blog-title">The Zebra Has Earned Its Stripes</p>
+    <p class="blog-desc">On identity, pride, and owning the fullness of who you are.</p>
+  </a>
+</li>
+<li class="blog-item">
+  <a href="the-inspiration/">
+    
+    <p class="blog-title">The Inspiration</p>
+    <p class="blog-desc">On the sources of creative and personal motivation.</p>
+  </a>
+</li>
+<li class="blog-item">
+  <a href="when-masisi-came-to-visit/">
+    
+    <p class="blog-title">When Masisi Came To Visit</p>
+    <p class="blog-desc">On the occasion of President Masisi visiting — reflections on leadership.</p>
+  </a>
+</li>
+<li class="blog-item">
+  <a href="montsamaisa-bosigo-friends-appreciation/">
+    
+    <p class="blog-title">Montsamaisa Bosigo: Friends Appreciation</p>
+    <p class="blog-desc">A tribute to the friends who guided me through the night.</p>
+  </a>
+</li>
+<li class="blog-item">
+  <a href="on-impermanence/">
+    
+    <p class="blog-title">On Impermanence</p>
+    <p class="blog-desc">Buddhist and African wisdom on the transience of all things.</p>
+  </a>
+</li>
+<li class="blog-item">
+  <a href="am-i-an-entrepreneur/">
+    
+    <p class="blog-title">Am I an Entrepreneur?</p>
+    <p class="blog-desc">Grappling honestly with the identity and its responsibilities.</p>
+  </a>
+</li>
+<li class="blog-item">
+  <a href="some-reviews-from-some-friends/">
+    
+    <p class="blog-title">Some Reviews From Some Friends</p>
+    <p class="blog-desc">What the people who know me best say about me — unfiltered.</p>
+  </a>
+</li>
+<li class="blog-item">
+  <a href="where-to-from-here/">
+    
+    <p class="blog-title">Where To From Here?</p>
+    <p class="blog-desc">A post of transition — taking stock and looking ahead.</p>
+  </a>
+</li>
+<li class="blog-item">
+  <a href="coming-together/">
+    
+    <p class="blog-title">Coming Together</p>
+    <p class="blog-desc">On community, coalition, and the power of shared purpose.</p>
+  </a>
+</li>
+<li class="blog-item">
+  <a href="my-many-girlfriends-a-gratitude-post/">
+    
+    <p class="blog-title">My Many Girlfriends — A Gratitude Post</p>
+    <p class="blog-desc">A love letter to the women friends who shaped my life.</p>
+  </a>
+</li>
+<li class="blog-item">
+  <a href="2019-beginnings-and-endings/">
+    
+    <p class="blog-title">2019: Beginnings and Endings</p>
+    <p class="blog-desc">Year in review — one of the fullest years of my life.</p>
+  </a>
+</li>
+<li class="blog-item">
+  <a href="some-highlights-from-a-stressful-time/">
+    
+    <p class="blog-title">Some Highlights From a Stressful Time</p>
+    <p class="blog-desc">Finding light inside a particularly demanding season.</p>
+  </a>
+</li>
+<li class="blog-item">
+  <a href="looking-forward-to-2018-19/">
+    
+    <p class="blog-title">Looking Forward to 2018-19</p>
+    <p class="blog-desc">Setting intentions for a new academic year with hope.</p>
+  </a>
+</li>
+<li class="blog-item">
+  <a href="around-the-world-in-14-days/">
+    
+    <p class="blog-title">Around the World in 14 Days</p>
+    <p class="blog-desc">An adventure across countries — a whirlwind of connections and cultures.</p>
+  </a>
+</li>
+<li class="blog-item">
+  <a href="my-mother-my-angel/">
+    
+    <p class="blog-title">My Mother, My Angel</p>
+    <p class="blog-desc">A tribute to the woman who made everything possible.</p>
+  </a>
+</li>
+<li class="blog-item">
+  <a href="summer-living-the-path-to-independence/">
+    
+    <p class="blog-title">Summer Living — The Path to Independence</p>
+    <p class="blog-desc">On learning to live on one's own — the freedom and the terror of it.</p>
+  </a>
+</li>
+<li class="blog-item">
+  <a href="love-and-i/">
+    
+    <p class="blog-title">Love and I</p>
+    <p class="blog-desc">My complicated, beautiful, ongoing relationship with the idea of love.</p>
+  </a>
+</li>
+<li class="blog-item">
+  <a href="who-said-i-cannot-dance/">
+    
+    <p class="blog-title">Who Said I Cannot Dance?</p>
+    <p class="blog-desc">On joy, movement, and refusing to be defined by anyone else's limits.</p>
+  </a>
+</li>
+<li class="blog-item">
+  <a href="24-back-to-my-roots/">
+    
+    <p class="blog-title">24: Back To My Roots</p>
+    <p class="blog-desc">A birthday meditation on home, identity, and what grounds me.</p>
+  </a>
+</li>
+  </ul>
 </div>
-
 <footer>
   <span class="footer-brand">RAMAREA</span>
   <ul class="footer-nav">
