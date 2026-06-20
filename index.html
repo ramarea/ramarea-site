@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>RAMAREA</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --purple-deep:   #1a0a2e;
+      --purple-mid:    #2d1254;
+      --purple-light:  #4a1f8c;
+      --gold:          #c9a84c;
+      --gold-light:    #e8c96a;
+      --white:         #f5f0ea;
+      --text-muted:    #b8a9c9;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--purple-deep);
+      color: var(--white);
+      min-height: 100vh;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.25rem 3rem;
+      background: rgba(26, 10, 46, 0.9);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(201, 168, 76, 0.15);
+    }
+
+    .nav-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--gold);
+      letter-spacing: 0.12em;
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 2.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--white);
+      text-decoration: none;
+      opacity: 0.8;
+      transition: opacity 0.2s, color 0.2s;
+    }
+
+    .nav-links a:hover { opacity: 1; color: var(--gold-light); }
+
+    .nav-cta {
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--purple-deep) !important;
+      background: var(--gold);
+      padding: 0.55rem 1.4rem;
+      border-radius: 2px;
+      opacity: 1 !important;
+      transition: background 0.2s !important;
+    }
+
+    .nav-cta:hover { background: var(--gold-light) !important; }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 0 3rem;
+      position: relative;
+      overflow: hidden;
+      background: radial-gradient(ellipse at 70% 50%, var(--purple-light) 0%, var(--purple-mid) 40%, var(--purple-deep) 100%);
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23c9a84c' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+
+    .hero-inner {
+      position: relative;
+      max-width: 700px;
+    }
+
+    .hero-eyebrow {
+      font-size: 0.7rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(4rem, 10vw, 8rem);
+      font-weight: 700;
+      line-height: 0.9;
+      letter-spacing: -0.02em;
+      color: var(--white);
+      margin-bottom: 2rem;
+    }
+
+    .hero-name span { color: var(--gold); }
+
+    .hero-tagline {
+      font-size: clamp(1rem, 2vw, 1.25rem);
+      font-weight: 300;
+      line-height: 1.65;
+      color: var(--text-muted);
+      max-width: 520px;
+      margin-bottom: 3rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--purple-deep);
+      background: var(--gold);
+      padding: 1rem 2.25rem;
+      border-radius: 2px;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.15s;
+    }
+
+    .btn-primary:hover { background: var(--gold-light); transform: translateY(-1px); }
+
+    .btn-ghost {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      border: 1px solid rgba(201, 168, 76, 0.4);
+      padding: 1rem 2.25rem;
+      border-radius: 2px;
+      text-decoration: none;
+      transition: border-color 0.2s, background 0.2s;
+    }
+
+    .btn-ghost:hover {
+      border-color: var(--gold);
+      background: rgba(201, 168, 76, 0.08);
+    }
+
+    .hero-scroll {
+      position: absolute;
+      bottom: 2.5rem;
+      left: 3rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 0.65rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+
+    .hero-scroll-line {
+      width: 40px;
+      height: 1px;
+      background: var(--gold);
+      opacity: 0.5;
+    }
+
+    /* ── BIO ── */
+    .bio {
+      padding: 7rem 3rem;
+      background: var(--purple-deep);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+
+    .bio-label {
+      font-size: 0.65rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.5rem;
+    }
+
+    .bio-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.3rem, 2.5vw, 1.65rem);
+      font-weight: 400;
+      line-height: 1.7;
+      color: var(--white);
+    }
+
+    .bio-text em {
+      font-style: italic;
+      color: var(--gold-light);
+    }
+
+    .bio-detail {
+      font-size: 0.95rem;
+      line-height: 1.8;
+      color: var(--text-muted);
+      font-weight: 300;
+    }
+
+    .bio-detail p + p { margin-top: 1.25rem; }
+
+    /* ── PILLARS ── */
+    .pillars {
+      padding: 7rem 3rem;
+      background: linear-gradient(180deg, var(--purple-deep) 0%, var(--purple-mid) 100%);
+    }
+
+    .pillars-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+
+    .section-label {
+      font-size: 0.65rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1rem;
+    }
+
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 600;
+      color: var(--white);
+    }
+
+    .pillars-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    .pillar-card {
+      position: relative;
+      aspect-ratio: 3/4;
+      border: 1px solid rgba(201, 168, 76, 0.2);
+      border-radius: 4px;
+      overflow: hidden;
+      text-decoration: none;
+      display: block;
+      transition: border-color 0.3s, transform 0.3s;
+      background: rgba(201, 168, 76, 0.04);
+    }
+
+    .pillar-card:hover {
+      border-color: var(--gold);
+      transform: translateY(-4px);
+    }
+
+    .pillar-bg {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 7rem;
+      font-weight: 700;
+      color: rgba(201, 168, 76, 0.06);
+      letter-spacing: -0.05em;
+      user-select: none;
+    }
+
+    .pillar-content {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 2rem;
+      background: linear-gradient(to top, rgba(26, 10, 46, 0.95) 0%, transparent 60%);
+    }
+
+    .pillar-number {
+      font-size: 0.6rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.75rem;
+    }
+
+    .pillar-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--gold);
+      line-height: 1;
+      margin-bottom: 0.75rem;
+    }
+
+    .pillar-desc {
+      font-size: 0.8rem;
+      line-height: 1.6;
+      color: var(--text-muted);
+      font-weight: 300;
+    }
+
+    /* ── QUOTE ── */
+    .quote-section {
+      padding: 7rem 3rem;
+      background: var(--purple-mid);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .quote-section::before {
+      content: '\201C';
+      position: absolute;
+      top: -2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 20rem;
+      color: rgba(201, 168, 76, 0.06);
+      line-height: 1;
+      pointer-events: none;
+    }
+
+    .quote-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.5rem, 3vw, 2.25rem);
+      font-weight: 400;
+      font-style: italic;
+      line-height: 1.5;
+      color: var(--white);
+      max-width: 680px;
+      margin: 0 auto 1.5rem;
+      position: relative;
+    }
+
+    .quote-attr {
+      font-size: 0.7rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    /* ── CONNECT ── */
+    .connect {
+      padding: 7rem 3rem;
+      background: var(--purple-deep);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+
+    .connect-text h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 600;
+      line-height: 1.2;
+      color: var(--white);
+      margin-bottom: 1.25rem;
+    }
+
+    .connect-text p {
+      font-size: 0.95rem;
+      line-height: 1.8;
+      color: var(--text-muted);
+      font-weight: 300;
+      margin-bottom: 2rem;
+    }
+
+    .connect-socials {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .social-link {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      text-decoration: none;
+      padding: 1rem 1.25rem;
+      border: 1px solid rgba(201, 168, 76, 0.1);
+      border-radius: 3px;
+      transition: border-color 0.2s, color 0.2s;
+    }
+
+    .social-link:hover { border-color: var(--gold); color: var(--gold); }
+
+    .social-link-icon { font-size: 1rem; opacity: 0.7; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #0f0620;
+      border-top: 1px solid rgba(201, 168, 76, 0.1);
+      padding: 3rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+
+    .footer-brand {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--gold);
+      letter-spacing: 0.1em;
+    }
+
+    .footer-nav {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .footer-nav a {
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-nav a:hover { color: var(--gold); }
+
+    .footer-copy {
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      opacity: 0.6;
+    }
+
+    /* ── DIVIDER ── */
+    .gold-rule {
+      width: 48px;
+      height: 1px;
+      background: var(--gold);
+      opacity: 0.5;
+      margin-bottom: 2rem;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      nav { padding: 1rem 1.5rem; }
+      .nav-links { gap: 1.5rem; }
+      .nav-cta { display: none; }
+
+      .hero { padding: 0 1.5rem; }
+      .hero-scroll { left: 1.5rem; }
+
+      .bio, .connect {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+        padding: 5rem 1.5rem;
+      }
+
+      .pillars { padding: 5rem 1.5rem; }
+      .pillars-grid { grid-template-columns: 1fr; gap: 1rem; }
+      .pillar-card { aspect-ratio: 16/9; }
+      .pillar-bg { font-size: 4rem; }
+
+      .quote-section { padding: 5rem 1.5rem; }
+
+      footer {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 2rem 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="/home" class="nav-logo">RAMAREA</a>
+    <ul class="nav-links">
+      <li><a href="/live">Live</a></li>
+      <li><a href="/play">Play</a></li>
+      <li><a href="/work">Work</a></li>
+      <li><a href="/live/community" class="nav-cta">Connect</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-inner">
+      <p class="hero-eyebrow">Tumisang Ikefuna-Ramarea</p>
+      <h1 class="hero-name">RAM<span>A</span>REA</h1>
+      <p class="hero-tagline">
+        Building technology, ideas, and pathways that widen what is possible —
+        for those the world does not expect much from.
+      </p>
+      <div class="hero-actions">
+        <a href="/work" class="btn-primary">Explore My Work</a>
+        <a href="/live/mythical-man" class="btn-ghost">Read My Story</a>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <span class="hero-scroll-line"></span>
+      Scroll to explore
+    </div>
+  </section>
+
+  <!-- BIO -->
+  <section class="bio">
+    <div>
+      <p class="bio-label">Origin Story</p>
+      <div class="gold-rule"></div>
+      <p class="bio-text">
+        I grew up in a small village in Botswana,<br/>
+        never quite certain how far<br/>
+        <em>a life like mine could reach.</em>
+      </p>
+    </div>
+    <div>
+      <div class="bio-detail">
+        <p>
+          Today, I work at the intersection of artificial intelligence, economic opportunity,
+          and human dignity — exploring how technology can expand who gets to dream, create, and lead.
+        </p>
+        <p>
+          This space is both a record of my journey and an invitation to imagine your own.
+          If you come from a place the world does not expect much from, it can be hard to believe your ideas belong here.
+        </p>
+        <p>
+          They do.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PILLARS -->
+  <section class="pillars">
+    <div class="pillars-header">
+      <p class="section-label">Explore</p>
+      <h2 class="section-title">Three Ways In</h2>
+    </div>
+    <div class="pillars-grid">
+
+      <a href="/live" class="pillar-card">
+        <div class="pillar-bg">LIVE</div>
+        <div class="pillar-content">
+          <p class="pillar-number">01</p>
+          <h3 class="pillar-title">LIVE</h3>
+          <p class="pillar-desc">My values, travels, community, and the stories that shaped me.</p>
+        </div>
+      </a>
+
+      <a href="/play" class="pillar-card">
+        <div class="pillar-bg">PLAY</div>
+        <div class="pillar-content">
+          <p class="pillar-number">02</p>
+          <h3 class="pillar-title">PLAY</h3>
+          <p class="pillar-desc">Creative writing, visual art, and artistic performance.</p>
+        </div>
+      </a>
+
+      <a href="/work" class="pillar-card">
+        <div class="pillar-bg">WORK</div>
+        <div class="pillar-content">
+          <p class="pillar-number">03</p>
+          <h3 class="pillar-title">WORK</h3>
+          <p class="pillar-desc">Education, entrepreneurship, portfolio, and social responsibility.</p>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- QUOTE -->
+  <section class="quote-section">
+    <p class="quote-text">
+      "O my soul, do not aspire to immortal life but exhaust the limits of the possible."
+    </p>
+    <p class="quote-attr">— Pindar</p>
+  </section>
+
+  <!-- CONNECT -->
+  <section class="connect">
+    <div class="connect-text">
+      <p class="bio-label">Get In Touch</p>
+      <div class="gold-rule"></div>
+      <h2>Let's build something meaningful together.</h2>
+      <p>
+        Whether you're working on ideas at the edge of what's possible, or just want to say hello —
+        I'm reachable across platforms.
+      </p>
+      <a href="/live/community" class="btn-primary">Meet My Community</a>
+    </div>
+    <div class="connect-socials">
+      <a href="https://www.linkedin.com/in/ramarea/" class="social-link" target="_blank" rel="noopener">
+        <span class="social-link-icon">in</span>
+        LinkedIn
+      </a>
+      <a href="https://twitter.com/ramareabw" class="social-link" target="_blank" rel="noopener">
+        <span class="social-link-icon">𝕏</span>
+        Twitter / X
+      </a>
+      <a href="https://www.youtube.com/@ramareabw" class="social-link" target="_blank" rel="noopener">
+        <span class="social-link-icon">▶</span>
+        YouTube
+      </a>
+      <a href="https://www.facebook.com/ramareabw" class="social-link" target="_blank" rel="noopener">
+        <span class="social-link-icon">f</span>
+        Facebook
+      </a>
+      <a href="https://www.tiktok.com/@ramareabw" class="social-link" target="_blank" rel="noopener">
+        <span class="social-link-icon">♪</span>
+        TikTok
+      </a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <span class="footer-brand">RAMAREA</span>
+    <ul class="footer-nav">
+      <li><a href="/live">Live</a></li>
+      <li><a href="/play">Play</a></li>
+      <li><a href="/work">Work</a></li>
+    </ul>
+    <span class="footer-copy">© 2026 Tumisang Ikefuna-Ramarea</span>
+  </footer>
+
+</body>
+</html>
