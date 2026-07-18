@@ -2,499 +2,129 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"/>
-<meta name="description" content="Over 70 blog posts covering love, culture, identity, travel, friendship, and the human condition — raw and honest."/>
+<meta name="description" content="Over 70 blog posts covering love, culture, identity, travel, friendship, and the human condition &mdash; raw and honest."/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<title>Blog — RAMAREA</title>
+<title>Blog &mdash; RAMAREA</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet"/>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{--purple-deep:#1a0a2e;--purple-mid:#2d1254;--purple-light:#4a1f8c;--gold:#c9a84c;--gold-light:#e8c96a;--white:#f5f0ea;--text-muted:#b8a9c9}
 html{scroll-behavior:smooth}
 body{font-family:'Inter',sans-serif;background:var(--purple-deep);color:var(--white);min-height:100vh}
-nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1.25rem 3rem;background:rgba(26,10,46,0.92);backdrop-filter:blur(12px);border-bottom:1px solid rgba(201,168,76,0.15)}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1.25rem clamp(2rem,8%,5rem);background:rgba(26,10,46,0.92);backdrop-filter:blur(12px);border-bottom:1px solid rgba(201,168,76,0.15)}
 .nav-logo{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:700;color:var(--gold);letter-spacing:.12em;text-decoration:none}
 .nav-links{display:flex;align-items:center;gap:2.5rem;list-style:none}
 .nav-links a{font-size:.78rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--white);text-decoration:none;opacity:.8;transition:opacity .2s,color .2s}
 .nav-links a:hover{opacity:1;color:var(--gold-light)}
 .nav-cta{color:var(--purple-deep)!important;background:var(--gold);padding:.55rem 1.4rem;border-radius:2px;opacity:1!important}
 .nav-cta:hover{background:var(--gold-light)!important}
-.page-hero{padding:9rem 3rem 5rem;background:linear-gradient(135deg,var(--purple-mid) 0%,var(--purple-deep) 100%);border-bottom:1px solid rgba(201,168,76,0.12)}
+.page-hero{padding:9rem clamp(2rem,8%,5rem) 5rem;background:linear-gradient(135deg,var(--purple-mid) 0%,var(--purple-deep) 100%);border-bottom:1px solid rgba(201,168,76,0.12)}
 .page-eyebrow{font-size:.65rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem}
 .page-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2.5rem,6vw,5rem);font-weight:700;line-height:1;color:var(--white);margin-bottom:1.25rem}
 .page-subtitle{font-size:1.05rem;font-weight:300;line-height:1.7;color:var(--text-muted);max-width:580px}
-.content{max-width:1100px;margin:0 auto;padding:5rem 3rem}
-.blog-list{list-style:none;margin:0;padding:0}
-.blog-item{border-bottom:1px solid rgba(201,168,76,.1);padding:1.75rem 0}
-.blog-item:first-child{border-top:1px solid rgba(201,168,76,.1)}
-.blog-item a{display:block;text-decoration:none;group:true}
-.blog-date{font-size:.65rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:.4rem}
-.blog-title{font-family:'Cormorant Garamond',serif;font-size:1.45rem;font-weight:600;color:var(--white);margin-bottom:.4rem;transition:color .2s}
-.blog-item a:hover .blog-title{color:var(--gold-light)}
-.blog-desc{font-size:.82rem;line-height:1.6;color:var(--text-muted);font-weight:300}
-footer{background:#0f0620;border-top:1px solid rgba(201,168,76,.1);padding:3rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1.5rem}
+.page-subtitle em{color:var(--gold-light);font-style:italic}
+.content{max-width:1200px;margin:0 auto;padding:5rem clamp(1.5rem,4%,3rem)}
+.blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.75rem}
+.blog-card{display:flex;flex-direction:column;text-decoration:none;border:1px solid rgba(201,168,76,.15);border-radius:4px;overflow:hidden;background:rgba(45,18,84,.25);transition:border-color .25s,transform .25s,box-shadow .25s}
+.blog-card:hover{border-color:rgba(201,168,76,.55);transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,0,.35)}
+.card-img{aspect-ratio:3/2;background:linear-gradient(135deg,var(--purple-mid) 0%,var(--purple-light) 60%,var(--purple-deep) 100%);background-size:cover;background-position:center;position:relative}
+.card-img::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,transparent 50%,rgba(26,10,46,.6) 100%)}
+.card-body{padding:1.25rem 1.5rem 1.5rem;display:flex;flex-direction:column;flex:1}
+.card-date{font-size:.6rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:.6rem}
+.card-title{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:600;color:var(--white);line-height:1.3;margin-bottom:.6rem;transition:color .2s}
+.blog-card:hover .card-title{color:var(--gold-light)}
+.card-desc{font-size:.8rem;line-height:1.65;color:var(--text-muted);font-weight:300;margin-top:auto}
+footer{background:#0f0620;border-top:1px solid rgba(201,168,76,.1);padding:3rem clamp(2rem,8%,5rem);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1.5rem}
 .footer-brand{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:700;color:var(--gold);letter-spacing:.1em}
 .footer-nav{display:flex;gap:2rem;list-style:none}
 .footer-nav a{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--text-muted);text-decoration:none;transition:color .2s}
 .footer-nav a:hover{color:var(--gold)}
 .footer-copy{font-size:.7rem;color:var(--text-muted);opacity:.6}
-@media(max-width:768px){nav{padding:1rem 1.5rem}.nav-links{gap:1.25rem}.nav-cta{display:none}.page-hero,.content{padding-left:1.5rem;padding-right:1.5rem}}
+@media(max-width:1024px){.blog-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:640px){
+  nav{padding:1rem 1.5rem}.nav-links{gap:1.25rem}.nav-cta{display:none}
+  .page-hero,.content{padding-left:1.5rem;padding-right:1.5rem}
+  .blog-grid{grid-template-columns:1fr;gap:1.25rem}
+  footer{flex-direction:column;align-items:flex-start;padding:2rem 1.5rem}
+}
 </style>
 <link rel="canonical" href="https://ramarea.com/live/blog/"/>
 <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://ramarea.com"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Live",
-      "item": "https://ramarea.com/live/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "Blog",
-      "item": "https://ramarea.com/live/blog/"
-    }
-  ]
-}
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://ramarea.com"},{"@type":"ListItem","position":2,"name":"Live","item":"https://ramarea.com/live/"},{"@type":"ListItem","position":3,"name":"Blog","item":"https://ramarea.com/live/blog/"}]}
 </script>
 <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "ItemList",
-  "name": "Blog Posts",
-  "url": "https://ramarea.com/live/blog/",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "2019: Beginnings and Endings",
-      "url": "https://ramarea.com/live/blog/2019-beginnings-and-endings/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "24: Back To My Roots",
-      "url": "https://ramarea.com/live/blog/24-back-to-my-roots/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "28 Lessons for 28",
-      "url": "https://ramarea.com/live/blog/28-lessons-for-28/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 4,
-      "name": "A Dinner Date",
-      "url": "https://ramarea.com/live/blog/a-dinner-date/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 5,
-      "name": "A Great Thank You!",
-      "url": "https://ramarea.com/live/blog/a-great-thank-you/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 6,
-      "name": "Am I an Entrepreneur?",
-      "url": "https://ramarea.com/live/blog/am-i-an-entrepreneur/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 7,
-      "name": "And There Was Light!",
-      "url": "https://ramarea.com/live/blog/and-there-was-light/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 8,
-      "name": "Around the World in 14 Days",
-      "url": "https://ramarea.com/live/blog/around-the-world-in-14-days/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 9,
-      "name": "Beginnings, Endings, and the Journey",
-      "url": "https://ramarea.com/live/blog/beginnings-endings-and-the-journey/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 10,
-      "name": "Beyond White Supremacist Capitalistic Patriarchy",
-      "url": "https://ramarea.com/live/blog/beyond-white-supremacist-capitalistic-patriarchy/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 11,
-      "name": "Coming Together",
-      "url": "https://ramarea.com/live/blog/coming-together/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 12,
-      "name": "\"Every Finish Line Is The Beginning Of A New Race\"",
-      "url": "https://ramarea.com/live/blog/every-finish-line-is-the-beginning-of-a-new-race/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 13,
-      "name": "Fibre Internet Pricing Problem",
-      "url": "https://ramarea.com/live/blog/fibre-internet-pricing-problem/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 14,
-      "name": "Food Is Joy",
-      "url": "https://ramarea.com/live/blog/food-is-joy/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 15,
-      "name": "\"Fought the Good Fight, Finished the Race, Kept the Faith\"",
-      "url": "https://ramarea.com/live/blog/fought-the-good-fight-finished-the-race-kept-the-faith/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 16,
-      "name": "Grieving Injustice",
-      "url": "https://ramarea.com/live/blog/grieving-injustice/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 17,
-      "name": "Looking Forward to 2018-19",
-      "url": "https://ramarea.com/live/blog/looking-forward-to-2018-19/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 18,
-      "name": "Love and I",
-      "url": "https://ramarea.com/live/blog/love-and-i/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 19,
-      "name": "Love and Resistance",
-      "url": "https://ramarea.com/live/blog/love-and-resistance/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 20,
-      "name": "Modified Cole's Law",
-      "url": "https://ramarea.com/live/blog/modified-coles-law/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 21,
-      "name": "Montsamaisa Bosigo: Friends Appreciation",
-      "url": "https://ramarea.com/live/blog/montsamaisa-bosigo-friends-appreciation/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 22,
-      "name": "Musings On Redemption",
-      "url": "https://ramarea.com/live/blog/musings-on-redemption/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 23,
-      "name": "My Cup Runneth Over",
-      "url": "https://ramarea.com/live/blog/my-cup-runneth-over/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 24,
-      "name": "My Friendship Philosophy",
-      "url": "https://ramarea.com/live/blog/my-friendship-philosophy/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 25,
-      "name": "My Many Girlfriends - A Gratitude Post",
-      "url": "https://ramarea.com/live/blog/my-many-girlfriends-a-gratitude-post/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 26,
-      "name": "My Mother, My Angel",
-      "url": "https://ramarea.com/live/blog/my-mother-my-angel/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 27,
-      "name": "My Vision for Catalyzing Impact",
-      "url": "https://ramarea.com/live/blog/my-vision-for-catalyzing-impact/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 28,
-      "name": "Initial Impressions of the New Place 2.0",
-      "url": "https://ramarea.com/live/blog/new-place-impressions-mountain-view/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 29,
-      "name": "Initial Impressions of the New Place",
-      "url": "https://ramarea.com/live/blog/new-place-impressions-palo-alto/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 30,
-      "name": "On Building Borderless Nations",
-      "url": "https://ramarea.com/live/blog/on-building-borderless-nations/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 31,
-      "name": "On Impermanence",
-      "url": "https://ramarea.com/live/blog/on-impermanence/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 32,
-      "name": "Random Musings: On Storytelling and How We Live Our Lives",
-      "url": "https://ramarea.com/live/blog/on-storytelling-and-how-we-live-our-lives/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 33,
-      "name": "On the Public vs. the Private in Sharing",
-      "url": "https://ramarea.com/live/blog/on-the-public-vs-the-private-in-sharing/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 34,
-      "name": "On Unlearning Toxic Masculinity: Gaining Awareness",
-      "url": "https://ramarea.com/live/blog/on-unlearning-toxic-masculinity-gaining-awareness/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 35,
-      "name": "On Unlearning Toxic Masculinity: Living Truthfully",
-      "url": "https://ramarea.com/live/blog/on-unlearning-toxic-masculinity-living-truthfully/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 36,
-      "name": "On Wanting To Change The World",
-      "url": "https://ramarea.com/live/blog/on-wanting-to-change-the-world/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 37,
-      "name": "Oppression Through Erasure of Identity",
-      "url": "https://ramarea.com/live/blog/oppression-through-erasure-of-identity/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 38,
-      "name": "Personal Key Takeaways From My Covid-19 Project",
-      "url": "https://ramarea.com/live/blog/personal-key-takeaways-from-my-covid-19-project/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 39,
-      "name": "Phane Pricing Problem",
-      "url": "https://ramarea.com/live/blog/phane-pricing-problem/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 40,
-      "name": "Quarantine Reflections",
-      "url": "https://ramarea.com/live/blog/quarantine-reflections/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 41,
-      "name": "Reflections From August 2020",
-      "url": "https://ramarea.com/live/blog/reflections-from-august-2020/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 42,
-      "name": "Reflections From July 2020",
-      "url": "https://ramarea.com/live/blog/reflections-from-july-2020/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 43,
-      "name": "Reflections From June 2020",
-      "url": "https://ramarea.com/live/blog/reflections-from-june-2020/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 44,
-      "name": "Reflections From October 2020",
-      "url": "https://ramarea.com/live/blog/reflections-from-october-2020/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 45,
-      "name": "Reflections From September 2020",
-      "url": "https://ramarea.com/live/blog/reflections-from-september-2020/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 46,
-      "name": "Reflections on Autumn 2021",
-      "url": "https://ramarea.com/live/blog/reflections-on-autumn-2021/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 47,
-      "name": "Reflections on Q1 of 2021",
-      "url": "https://ramarea.com/live/blog/reflections-on-q1-of-2021/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 48,
-      "name": "Reflections on Q2 of 2021",
-      "url": "https://ramarea.com/live/blog/reflections-on-q2-of-2021/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 49,
-      "name": "Reflections on Summer 2021",
-      "url": "https://ramarea.com/live/blog/reflections-on-summer-2021/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 50,
-      "name": "Retiring the Persona of Tumisang Ramarea",
-      "url": "https://ramarea.com/live/blog/retiring-the-persona-of-tumisang-ramarea/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 51,
-      "name": "Single And Not Available: What I Seek in Romantic Interactions",
-      "url": "https://ramarea.com/live/blog/single-and-not-available-what-i-seek-in-romantic-interactions/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 52,
-      "name": "Some Highlights From a Stressful Time",
-      "url": "https://ramarea.com/live/blog/some-highlights-from-a-stressful-time/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 53,
-      "name": "Some Reviews From Some Friends",
-      "url": "https://ramarea.com/live/blog/some-reviews-from-some-friends/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 54,
-      "name": "Some Thoughts on Pricing",
-      "url": "https://ramarea.com/live/blog/some-thoughts-on-pricing/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 55,
-      "name": "Spoilt Milk: Nerdy Housekeeping",
-      "url": "https://ramarea.com/live/blog/spoilt-milk-nerdy-housekeeping/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 56,
-      "name": "Summer Living - The Path to Independence",
-      "url": "https://ramarea.com/live/blog/summer-living-the-path-to-independence/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 57,
-      "name": "Thankful!",
-      "url": "https://ramarea.com/live/blog/thankful/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 58,
-      "name": "The Dawn Of A New Day",
-      "url": "https://ramarea.com/live/blog/the-dawn-of-a-new-day/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 59,
-      "name": "The Evolution of My Ambition",
-      "url": "https://ramarea.com/live/blog/the-evolution-of-my-ambition/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 60,
-      "name": "The Great Meal",
-      "url": "https://ramarea.com/live/blog/the-great-meal/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 61,
-      "name": "The Inspiration",
-      "url": "https://ramarea.com/live/blog/the-inspiration/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 62,
-      "name": "The Last Flight to Washington DC: A Brief Reflection on Luck!",
-      "url": "https://ramarea.com/live/blog/the-last-flight-to-washington-dc-a-brief-reflection-on-luck/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 63,
-      "name": "The Man and His Dreams",
-      "url": "https://ramarea.com/live/blog/the-man-and-his-dreams/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 64,
-      "name": "The Tragedy of Botho in Botswana",
-      "url": "https://ramarea.com/live/blog/the-tragedy-of-botho-in-botswana/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 65,
-      "name": "The Zebra Has Earned Its Stripes",
-      "url": "https://ramarea.com/live/blog/the-zebra-has-earned-its-stripes/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 66,
-      "name": "\"Two Worlds Uninhabited, Water and Fire\"",
-      "url": "https://ramarea.com/live/blog/two-worlds-uninhabited-water-and-fire/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 67,
-      "name": "When Masisi Came To Visit",
-      "url": "https://ramarea.com/live/blog/when-masisi-came-to-visit/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 68,
-      "name": "Where To From Here?",
-      "url": "https://ramarea.com/live/blog/where-to-from-here/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 69,
-      "name": "Who Said I Cannot Dance?",
-      "url": "https://ramarea.com/live/blog/who-said-i-cannot-dance/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 70,
-      "name": "Who Was I? Who Am I? Who Will I Be?",
-      "url": "https://ramarea.com/live/blog/who-was-i-who-am-i-who-will-i-be/"
-    }
-  ]
-}
+{"@context":"https://schema.org","@type":"ItemList","name":"Blog Posts","url":"https://ramarea.com/live/blog/","itemListElement":[
+    {"@type":"ListItem","position":1,"name":"The Tragedy of Botho in Botswana","url":"https://ramarea.com/live/blog/the-tragedy-of-botho-in-botswana/"},
+    {"@type":"ListItem","position":2,"name":"Random Musings: On Storytelling and How We Live Our Lives","url":"https://ramarea.com/live/blog/on-storytelling-and-how-we-live-our-lives/"},
+    {"@type":"ListItem","position":3,"name":"Musings On Redemption","url":"https://ramarea.com/live/blog/musings-on-redemption/"},
+    {"@type":"ListItem","position":4,"name":"Oppression Through Erasure of Identity","url":"https://ramarea.com/live/blog/oppression-through-erasure-of-identity/"},
+    {"@type":"ListItem","position":5,"name":"Beyond White Supremacist Capitalistic Patriarchy","url":"https://ramarea.com/live/blog/beyond-white-supremacist-capitalistic-patriarchy/"},
+    {"@type":"ListItem","position":6,"name":"Retiring the Persona of Tumisang Ramarea","url":"https://ramarea.com/live/blog/retiring-the-persona-of-tumisang-ramarea/"},
+    {"@type":"ListItem","position":7,"name":"On Building Borderless Nations","url":"https://ramarea.com/live/blog/on-building-borderless-nations/"},
+    {"@type":"ListItem","position":8,"name":"“Fought the Good Fight, Finished the Race, Kept the Faith”","url":"https://ramarea.com/live/blog/fought-the-good-fight-finished-the-race-kept-the-faith/"},
+    {"@type":"ListItem","position":9,"name":"28 Lessons for 28","url":"https://ramarea.com/live/blog/28-lessons-for-28/"},
+    {"@type":"ListItem","position":10,"name":"“Two Worlds Uninhabited, Water and Fire”","url":"https://ramarea.com/live/blog/two-worlds-uninhabited-water-and-fire/"},
+    {"@type":"ListItem","position":11,"name":"On Wanting To Change The World","url":"https://ramarea.com/live/blog/on-wanting-to-change-the-world/"},
+    {"@type":"ListItem","position":12,"name":"Reflections on Autumn 2021","url":"https://ramarea.com/live/blog/reflections-on-autumn-2021/"},
+    {"@type":"ListItem","position":13,"name":"Grieving Injustice","url":"https://ramarea.com/live/blog/grieving-injustice/"},
+    {"@type":"ListItem","position":14,"name":"The Last Flight to Washington DC: A Brief Reflection on Luck!","url":"https://ramarea.com/live/blog/the-last-flight-to-washington-dc-a-brief-reflection-on-luck/"},
+    {"@type":"ListItem","position":15,"name":"Reflections on Summer 2021","url":"https://ramarea.com/live/blog/reflections-on-summer-2021/"},
+    {"@type":"ListItem","position":16,"name":"Who Was I? Who Am I? Who Will I Be?","url":"https://ramarea.com/live/blog/who-was-i-who-am-i-who-will-i-be/"},
+    {"@type":"ListItem","position":17,"name":"My Cup Runneth Over","url":"https://ramarea.com/live/blog/my-cup-runneth-over/"},
+    {"@type":"ListItem","position":18,"name":"Reflections on Q2 of 2021","url":"https://ramarea.com/live/blog/reflections-on-q2-of-2021/"},
+    {"@type":"ListItem","position":19,"name":"A Great Thank You!","url":"https://ramarea.com/live/blog/a-great-thank-you/"},
+    {"@type":"ListItem","position":20,"name":"Reflections on Q1 of 2021","url":"https://ramarea.com/live/blog/reflections-on-q1-of-2021/"},
+    {"@type":"ListItem","position":21,"name":"Fibre Internet Pricing Problem","url":"https://ramarea.com/live/blog/fibre-internet-pricing-problem/"},
+    {"@type":"ListItem","position":22,"name":"The Great Meal","url":"https://ramarea.com/live/blog/the-great-meal/"},
+    {"@type":"ListItem","position":23,"name":"Phane Pricing Problem","url":"https://ramarea.com/live/blog/phane-pricing-problem/"},
+    {"@type":"ListItem","position":24,"name":"Beginnings, Endings, and the Journey","url":"https://ramarea.com/live/blog/beginnings-endings-and-the-journey/"},
+    {"@type":"ListItem","position":25,"name":"On Unlearning Toxic Masculinity: Living Truthfully","url":"https://ramarea.com/live/blog/on-unlearning-toxic-masculinity-living-truthfully/"},
+    {"@type":"ListItem","position":26,"name":"Initial Impressions of the New Place 2.0","url":"https://ramarea.com/live/blog/new-place-impressions-mountain-view/"},
+    {"@type":"ListItem","position":27,"name":"Reflections From October 2020","url":"https://ramarea.com/live/blog/reflections-from-october-2020/"},
+    {"@type":"ListItem","position":28,"name":"Reflections From September 2020","url":"https://ramarea.com/live/blog/reflections-from-september-2020/"},
+    {"@type":"ListItem","position":29,"name":"Initial Impressions of the New Place","url":"https://ramarea.com/live/blog/new-place-impressions-palo-alto/"},
+    {"@type":"ListItem","position":30,"name":"Reflections From August 2020","url":"https://ramarea.com/live/blog/reflections-from-august-2020/"},
+    {"@type":"ListItem","position":31,"name":"On Unlearning Toxic Masculinity: Gaining Awareness","url":"https://ramarea.com/live/blog/on-unlearning-toxic-masculinity-gaining-awareness/"},
+    {"@type":"ListItem","position":32,"name":"Personal Key Takeaways From My Covid-19 Project","url":"https://ramarea.com/live/blog/personal-key-takeaways-from-my-covid-19-project/"},
+    {"@type":"ListItem","position":33,"name":"Reflections From July 2020","url":"https://ramarea.com/live/blog/reflections-from-july-2020/"},
+    {"@type":"ListItem","position":34,"name":"Reflections From June 2020","url":"https://ramarea.com/live/blog/reflections-from-june-2020/"},
+    {"@type":"ListItem","position":35,"name":"Some Thoughts on Pricing","url":"https://ramarea.com/live/blog/some-thoughts-on-pricing/"},
+    {"@type":"ListItem","position":36,"name":"Food Is Joy","url":"https://ramarea.com/live/blog/food-is-joy/"},
+    {"@type":"ListItem","position":37,"name":"My Vision for Catalyzing Impact","url":"https://ramarea.com/live/blog/my-vision-for-catalyzing-impact/"},
+    {"@type":"ListItem","position":38,"name":"On the Public vs. the Private in Sharing","url":"https://ramarea.com/live/blog/on-the-public-vs-the-private-in-sharing/"},
+    {"@type":"ListItem","position":39,"name":"Quarantine Reflections","url":"https://ramarea.com/live/blog/quarantine-reflections/"},
+    {"@type":"ListItem","position":40,"name":"And There Was Light!","url":"https://ramarea.com/live/blog/and-there-was-light/"},
+    {"@type":"ListItem","position":41,"name":"My Friendship Philosophy","url":"https://ramarea.com/live/blog/my-friendship-philosophy/"},
+    {"@type":"ListItem","position":42,"name":"A Dinner Date","url":"https://ramarea.com/live/blog/a-dinner-date/"},
+    {"@type":"ListItem","position":43,"name":"Love and Resistance","url":"https://ramarea.com/live/blog/love-and-resistance/"},
+    {"@type":"ListItem","position":44,"name":"The Man and His Dreams","url":"https://ramarea.com/live/blog/the-man-and-his-dreams/"},
+    {"@type":"ListItem","position":45,"name":"“Every Finish Line Is The Beginning Of A New Race”","url":"https://ramarea.com/live/blog/every-finish-line-is-the-beginning-of-a-new-race/"},
+    {"@type":"ListItem","position":46,"name":"Thankful!","url":"https://ramarea.com/live/blog/thankful/"},
+    {"@type":"ListItem","position":47,"name":"Modified Cole’s Law","url":"https://ramarea.com/live/blog/modified-coles-law/"},
+    {"@type":"ListItem","position":48,"name":"The Dawn Of A New Day","url":"https://ramarea.com/live/blog/the-dawn-of-a-new-day/"},
+    {"@type":"ListItem","position":49,"name":"Single And Not Available: What I Seek in Romantic Interactions","url":"https://ramarea.com/live/blog/single-and-not-available-what-i-seek-in-romantic-interactions/"},
+    {"@type":"ListItem","position":50,"name":"The Evolution of My Ambition","url":"https://ramarea.com/live/blog/the-evolution-of-my-ambition/"},
+    {"@type":"ListItem","position":51,"name":"Spoilt Milk: Nerdy Housekeeping","url":"https://ramarea.com/live/blog/spoilt-milk-nerdy-housekeeping/"},
+    {"@type":"ListItem","position":52,"name":"The Zebra Has Earned Its Stripes","url":"https://ramarea.com/live/blog/the-zebra-has-earned-its-stripes/"},
+    {"@type":"ListItem","position":53,"name":"The Inspiration","url":"https://ramarea.com/live/blog/the-inspiration/"},
+    {"@type":"ListItem","position":54,"name":"When Masisi Came To Visit","url":"https://ramarea.com/live/blog/when-masisi-came-to-visit/"},
+    {"@type":"ListItem","position":55,"name":"Montsamaisa Bosigo: Friends Appreciation","url":"https://ramarea.com/live/blog/montsamaisa-bosigo-friends-appreciation/"},
+    {"@type":"ListItem","position":56,"name":"On Impermanence","url":"https://ramarea.com/live/blog/on-impermanence/"},
+    {"@type":"ListItem","position":57,"name":"Am I an Entrepreneur?","url":"https://ramarea.com/live/blog/am-i-an-entrepreneur/"},
+    {"@type":"ListItem","position":58,"name":"Some Reviews From Some Friends","url":"https://ramarea.com/live/blog/some-reviews-from-some-friends/"},
+    {"@type":"ListItem","position":59,"name":"Where To From Here?","url":"https://ramarea.com/live/blog/where-to-from-here/"},
+    {"@type":"ListItem","position":60,"name":"Coming Together","url":"https://ramarea.com/live/blog/coming-together/"},
+    {"@type":"ListItem","position":61,"name":"My Many Girlfriends — A Gratitude Post","url":"https://ramarea.com/live/blog/my-many-girlfriends-a-gratitude-post/"},
+    {"@type":"ListItem","position":62,"name":"2019: Beginnings and Endings","url":"https://ramarea.com/live/blog/2019-beginnings-and-endings/"},
+    {"@type":"ListItem","position":63,"name":"Some Highlights From a Stressful Time","url":"https://ramarea.com/live/blog/some-highlights-from-a-stressful-time/"},
+    {"@type":"ListItem","position":64,"name":"Looking Forward to 2018-19","url":"https://ramarea.com/live/blog/looking-forward-to-2018-19/"},
+    {"@type":"ListItem","position":65,"name":"Around the World in 14 Days","url":"https://ramarea.com/live/blog/around-the-world-in-14-days/"},
+    {"@type":"ListItem","position":66,"name":"My Mother, My Angel","url":"https://ramarea.com/live/blog/my-mother-my-angel/"},
+    {"@type":"ListItem","position":67,"name":"Summer Living — The Path to Independence","url":"https://ramarea.com/live/blog/summer-living-the-path-to-independence/"},
+    {"@type":"ListItem","position":68,"name":"Love and I","url":"https://ramarea.com/live/blog/love-and-i/"},
+    {"@type":"ListItem","position":69,"name":"Who Said I Cannot Dance?","url":"https://ramarea.com/live/blog/who-said-i-cannot-dance/"},
+    {"@type":"ListItem","position":70,"name":"24: Back To My Roots","url":"https://ramarea.com/live/blog/24-back-to-my-roots/"}
+]}
 </script>
 </head>
 <body>
@@ -507,505 +137,578 @@ footer{background:#0f0620;border-top:1px solid rgba(201,168,76,.1);padding:3rem;
     <li><a href="../" class="nav-cta">Connect</a></li>
   </ul>
 </nav>
+
 <div class="page-hero">
   <p class="page-eyebrow">Live</p>
   <h1 class="page-title">The Blog</h1>
-  <p class="page-subtitle">A non-exhaustive, raw, and honest account of the life I have lived — <em>70 entries and counting</em>.</p>
+  <p class="page-subtitle">A non-exhaustive, raw, and honest account of the life I have lived &mdash; <em>70 entries and counting</em>.</p>
 </div>
+
 <div class="content">
-  <ul class="blog-list">
-<li class="blog-item">
-  <a href="the-tragedy-of-botho-in-botswana/">
-    <p class='blog-date'>1 August 2024</p>
-    <p class="blog-title">The Tragedy of Botho in Botswana</p>
-    <p class="blog-desc">On Ubuntu, justice, and the tragedy of using Botho as a tool of oppression.</p>
-  </a>
-</li>
-<li class="blog-item">
-  <a href="on-storytelling-and-how-we-live-our-lives/">
-    
-    <p class="blog-title">Random Musings: On Storytelling and How We Live Our Lives</p>
-    <p class="blog-desc">A reflection on narrative, memory, and the stories we tell ourselves.</p>
-  </a>
-</li>
-<li class="blog-item">
-  <a href="musings-on-redemption/">
-    
-    <p class="blog-title">Musings On Redemption</p>
-    <p class="blog-desc">What it means to seek and grant forgiveness — to ourselves and others.</p>
-  </a>
-</li>
-<li class="blog-item">
-  <a href="oppression-through-erasure-of-identity/">
-    
-    <p class="blog-title">Oppression Through Erasure of Identity</p>
-    <p class="blog-desc">On how identity erasure operates as a tool of systemic oppression.</p>
-  </a>
-</li>
-<li class="blog-item">
-  <a href="beyond-white-supremacist-capitalistic-patriarchy/">
-    
-    <p class="blog-title">Beyond White Supremacist Capitalistic Patriarchy</p>
-    <p class="blog-desc">Envisioning systems of liberation beyond the structures that bind us.</p>
-  </a>
-</li>
-<li class="blog-item">
-  <a href="retiring-the-persona-of-tumisang-ramarea/">
-    
-    <p class="blog-title">Retiring the Persona of Tumisang Ramarea</p>
-    <p class="blog-desc">A meditation on shedding constructed identity and living authentically.</p>
-  </a>
-</li>
-<li class="blog-item">
-  <a href="on-building-borderless-nations/">
-    
-    <p class="blog-title">On Building Borderless Nations</p>
-    <p class="blog-desc">Nations built on values and shared humanity — not geography.</p>
-  </a>
-</li>
-<li class="blog-item">
-  <a href="fought-the-good-fight-finished-the-race-kept-the-faith/">
-    
-    <p class="blog-title">"Fought the Good Fight, Finished the Race, Kept the Faith"</p>
-    <p class="blog-desc">A tribute to resilience and conviction through hard seasons.</p>
-  </a>
-</li>
-<li class="blog-item">
-  <a href="28-lessons-for-28/">
-    
-    <p class="blog-title">28 Lessons for 28</p>
-    <p class="blog-desc">Twenty-eight things learned, earned, and still being learned at 28.</p>
-  </a>
-</li>
-<li class="blog-item">
-  <a href="two-worlds-uninhabited-water-and-fire/">
-    
-    <p class="blog-title">"Two Worlds Uninhabited, Water and Fire"</p>
-    <p class="blog-desc">A poem in two voices — two elements that cannot coexist yet need each other.</p>
-  </a>
-</li>
-<li class="blog-item">
-  <a href="on-wanting-to-change-the-world/">
-    
-    <p class="blog-title">On Wanting To Change The World</p>
-    <p class="blog-desc">What it really means to carry that ambition — and what it costs.</p>
-  </a>
-</li>
-<li class="blog-item">
-  <a href="reflections-on-autumn-2021/">
-    
-    <p class="blog-title">Reflections on Autumn 2021</p>
-    <p class="blog-desc">A seasonal reflection on growth, loss, and what remains.</p>
-  </a>
-</li>
-<li class="blog-item">
-  <a href="grieving-injustice/">
-    
-    <p class="blog-title">Grieving Injustice</p>
-    <p class="blog-desc">On the emotional weight of witnessing injustice without resolution.</p>
-  </a>
-</li>
-<li class="blog-item">
-  <a href="the-last-flight-to-washington-dc-a-brief-reflection-on-luck/">
-    
-    <p class="blog-title">The Last Flight to Washington DC: A Brief Reflection on Luck!</p>
-    <p class="blog-desc">A near-miss story that became a meditation on fortune and timing.</p>
-  </a>
-</li>
-<li class="blog-item">
-  <a href="reflections-on-summer-2021/">
-    
-    <p class="blog-title">Reflections on Summer 2021</p>
-    <p class="blog-desc">The summer after the degree — freedom, transition, and new horizons.</p>
-  </a>
-</li>
-<li class="blog-item">
-  <a href="who-was-i-who-am-i-who-will-i-be/">
-    
-    <p class="blog-title">Who Was I? Who Am I? Who Will I Be?</p>
-    <p class="blog-desc">Three questions that form the core of every self-examination.</p>
-  </a>
-</li>
-<li class="blog-item">
-  <a href="my-cup-runneth-over/">
-    
-    <p class="blog-title">My Cup Runneth Over</p>
-    <p class="blog-desc">A gratitude post — on abundance and the generosity of life.</p>
-  </a>
-</li>
-<li class="blog-item">
-  <a href="reflections-on-q2-of-2021/">
-    
-    <p class="blog-title">Reflections on Q2 of 2021</p>
-    <p class="blog-desc">Mid-year stock-taking: what happened, what's happening, and what's next.</p>
-  </a>
-</li>
-<li class="blog-item">
-  <a href="a-great-thank-you/">
-    
-    <p class="blog-title">A Great Thank You!</p>
-    <p class="blog-desc">An expression of gratitude to the community that carried me through.</p>
-  </a>
-</li>
-<li class="blog-item">
-  <a href="reflections-on-q1-of-2021/">
-    
-    <p class="blog-title">Reflections on Q1 of 2021</p>
-    <p class="blog-desc">Starting a new year with intention and honest self-assessment.</p>
-  </a>
-</li>
-<li class="blog-item">
-  <a href="fibre-internet-pricing-problem/">
-    
-    <p class="blog-title">Fibre Internet Pricing Problem</p>
-    <p class="blog-desc">An analysis of fibre pricing and its implications for digital access in Africa.</p>
-  </a>
-</li>
-<li class="blog-item">
-  <a href="the-great-meal/">
-    
-    <p class="blog-title">The Great Meal</p>
-    <p class="blog-desc">Food as love — a story of cooking, sharing, and community.</p>
-  </a>
-</li>
-<li class="blog-item">
-  <a href="phane-pricing-problem/">
-    
-    <p class="blog-title">Phane Pricing Problem</p>
-    <p class="blog-desc">On the economics of phane (mopane worms) and local market dynamics.</p>
-  </a>
-</li>
-<li class="blog-item">
-  <a href="beginnings-endings-and-the-journey/">
-    
-    <p class="blog-title">Beginnings, Endings, and the Journey</p>
-    <p class="blog-desc">On transitions — the grief of endings and the promise of beginnings.</p>
-  </a>
-</li>
-<li class="blog-item">
-  <a href="on-unlearning-toxic-masculinity-living-truthfully/">
-    
-    <p class="blog-title">On Unlearning Toxic Masculinity: Living Truthfully</p>
-    <p class="blog-desc">Part 2: What it looks like to actually live outside the script.</p>
-  </a>
-</li>
-<li class="blog-item">
-  <a href="new-place-impressions-mountain-view/">
-    
-    <p class="blog-title">Initial Impressions of the New Place 2.0</p>
-    <p class="blog-desc">First impressions of Mountain View — a new chapter begins.</p>
-  </a>
-</li>
-<li class="blog-item">
-  <a href="reflections-from-october-2020/">
-    
-    <p class="blog-title">Reflections From October 2020</p>
-    <p class="blog-desc">Processing the world in a month of uncertainty and change.</p>
-  </a>
-</li>
-<li class="blog-item">
-  <a href="reflections-from-september-2020/">
-    
-    <p class="blog-title">Reflections From September 2020</p>
-    <p class="blog-desc">On a strange September — pandemic, politics, and personal growth.</p>
-  </a>
-</li>
-<li class="blog-item">
-  <a href="new-place-impressions-palo-alto/">
-    
-    <p class="blog-title">Initial Impressions of the New Place</p>
-    <p class="blog-desc">Arriving in Palo Alto — first thoughts on a new home.</p>
-  </a>
-</li>
-<li class="blog-item">
-  <a href="reflections-from-august-2020/">
-    
-    <p class="blog-title">Reflections From August 2020</p>
-    <p class="blog-desc">Navigating a pandemic summer with intention and care.</p>
-  </a>
-</li>
-<li class="blog-item">
-  <a href="on-unlearning-toxic-masculinity-gaining-awareness/">
-    
-    <p class="blog-title">On Unlearning Toxic Masculinity: Gaining Awareness</p>
-    <p class="blog-desc">Part 1: How I first became aware of the patterns I needed to break.</p>
-  </a>
-</li>
-<li class="blog-item">
-  <a href="personal-key-takeaways-from-my-covid-19-project/">
-    
-    <p class="blog-title">Personal Key Takeaways From My Covid-19 Project</p>
-    <p class="blog-desc">Lessons from modeling COVID-19 spread in Botswana during the pandemic.</p>
-  </a>
-</li>
-<li class="blog-item">
-  <a href="reflections-from-july-2020/">
-    
-    <p class="blog-title">Reflections From July 2020</p>
-    <p class="blog-desc">Mid-pandemic reflections on what matters and what remains.</p>
-  </a>
-</li>
-<li class="blog-item">
-  <a href="reflections-from-june-2020/">
-    
-    <p class="blog-title">Reflections From June 2020</p>
-    <p class="blog-desc">A pivotal month — protests, awakening, and recommitment.</p>
-  </a>
-</li>
-<li class="blog-item">
-  <a href="some-thoughts-on-pricing/">
-    
-    <p class="blog-title">Some Thoughts on Pricing</p>
-    <p class="blog-desc">How pricing shapes access — and why it matters for equity.</p>
-  </a>
-</li>
-<li class="blog-item">
-  <a href="food-is-joy/">
-    
-    <p class="blog-title">Food Is Joy</p>
-    <p class="blog-desc">An ode to food — the universal language of love and culture.</p>
-  </a>
-</li>
-<li class="blog-item">
-  <a href="my-vision-for-catalyzing-impact/">
-    
-    <p class="blog-title">My Vision for Catalyzing Impact</p>
-    <p class="blog-desc">The philosophy behind a life dedicated to meaningful change.</p>
-  </a>
-</li>
-<li class="blog-item">
-  <a href="on-the-public-vs-the-private-in-sharing/">
-    
-    <p class="blog-title">On the Public vs. the Private in Sharing</p>
-    <p class="blog-desc">Where the personal ends and the public begins — a meditation.</p>
-  </a>
-</li>
-<li class="blog-item">
-  <a href="quarantine-reflections/">
-    
-    <p class="blog-title">Quarantine Reflections</p>
-    <p class="blog-desc">Thoughts from inside lockdown — on solitude, community, and time.</p>
-  </a>
-</li>
-<li class="blog-item">
-  <a href="and-there-was-light/">
-    
-    <p class="blog-title">And There Was Light!</p>
-    <p class="blog-desc">A post about emergence and hope after a period of darkness.</p>
-  </a>
-</li>
-<li class="blog-item">
-  <a href="my-friendship-philosophy/">
-    
-    <p class="blog-title">My Friendship Philosophy</p>
-    <p class="blog-desc">On what I look for, give, and protect in friendship.</p>
-  </a>
-</li>
-<li class="blog-item">
-  <a href="a-dinner-date/">
-    
-    <p class="blog-title">A Dinner Date</p>
-    <p class="blog-desc">A beautiful evening — good food, better company.</p>
-  </a>
-</li>
-<li class="blog-item">
-  <a href="love-and-resistance/">
-    
-    <p class="blog-title">Love and Resistance</p>
-    <p class="blog-desc">How love is itself an act of resistance in an unjust world.</p>
-  </a>
-</li>
-<li class="blog-item">
-  <a href="the-man-and-his-dreams/">
-    
-    <p class="blog-title">The Man and His Dreams</p>
-    <p class="blog-desc">A piece about ambition, vision, and what drives a life.</p>
-  </a>
-</li>
-<li class="blog-item">
-  <a href="every-finish-line-is-the-beginning-of-a-new-race/">
-    
-    <p class="blog-title">"Every Finish Line Is The Beginning Of A New Race"</p>
-    <p class="blog-desc">On completing one chapter and the momentum that carries into the next.</p>
-  </a>
-</li>
-<li class="blog-item">
-  <a href="thankful/">
-    
-    <p class="blog-title">Thankful!</p>
-    <p class="blog-desc">A simple, honest expression of gratitude for life as it is.</p>
-  </a>
-</li>
-<li class="blog-item">
-  <a href="modified-coles-law/">
-    
-    <p class="blog-title">Modified Cole's Law</p>
-    <p class="blog-desc">A playful yet earnest riff on coleslaw and life's contrasts.</p>
-  </a>
-</li>
-<li class="blog-item">
-  <a href="the-dawn-of-a-new-day/">
-    
-    <p class="blog-title">The Dawn Of A New Day</p>
-    <p class="blog-desc">On new beginnings — the quiet optimism of sunrise.</p>
-  </a>
-</li>
-<li class="blog-item">
-  <a href="single-and-not-available-what-i-seek-in-romantic-interactions/">
-    
-    <p class="blog-title">Single And Not Available: What I Seek in Romantic Interactions</p>
-    <p class="blog-desc">Honest, vulnerable thoughts on romance, readiness, and intention.</p>
-  </a>
-</li>
-<li class="blog-item">
-  <a href="the-evolution-of-my-ambition/">
-    
-    <p class="blog-title">The Evolution of My Ambition</p>
-    <p class="blog-desc">How what I want from life has changed — and what has stayed the same.</p>
-  </a>
-</li>
-<li class="blog-item">
-  <a href="spoilt-milk-nerdy-housekeeping/">
-    
-    <p class="blog-title">Spoilt Milk: Nerdy Housekeeping</p>
-    <p class="blog-desc">Domestic observations with an analytical twist.</p>
-  </a>
-</li>
-<li class="blog-item">
-  <a href="the-zebra-has-earned-its-stripes/">
-    
-    <p class="blog-title">The Zebra Has Earned Its Stripes</p>
-    <p class="blog-desc">On identity, pride, and owning the fullness of who you are.</p>
-  </a>
-</li>
-<li class="blog-item">
-  <a href="the-inspiration/">
-    
-    <p class="blog-title">The Inspiration</p>
-    <p class="blog-desc">On the sources of creative and personal motivation.</p>
-  </a>
-</li>
-<li class="blog-item">
-  <a href="when-masisi-came-to-visit/">
-    
-    <p class="blog-title">When Masisi Came To Visit</p>
-    <p class="blog-desc">On the occasion of President Masisi visiting — reflections on leadership.</p>
-  </a>
-</li>
-<li class="blog-item">
-  <a href="montsamaisa-bosigo-friends-appreciation/">
-    
-    <p class="blog-title">Montsamaisa Bosigo: Friends Appreciation</p>
-    <p class="blog-desc">A tribute to the friends who guided me through the night.</p>
-  </a>
-</li>
-<li class="blog-item">
-  <a href="on-impermanence/">
-    
-    <p class="blog-title">On Impermanence</p>
-    <p class="blog-desc">Buddhist and African wisdom on the transience of all things.</p>
-  </a>
-</li>
-<li class="blog-item">
-  <a href="am-i-an-entrepreneur/">
-    
-    <p class="blog-title">Am I an Entrepreneur?</p>
-    <p class="blog-desc">Grappling honestly with the identity and its responsibilities.</p>
-  </a>
-</li>
-<li class="blog-item">
-  <a href="some-reviews-from-some-friends/">
-    
-    <p class="blog-title">Some Reviews From Some Friends</p>
-    <p class="blog-desc">What the people who know me best say about me — unfiltered.</p>
-  </a>
-</li>
-<li class="blog-item">
-  <a href="where-to-from-here/">
-    
-    <p class="blog-title">Where To From Here?</p>
-    <p class="blog-desc">A post of transition — taking stock and looking ahead.</p>
-  </a>
-</li>
-<li class="blog-item">
-  <a href="coming-together/">
-    
-    <p class="blog-title">Coming Together</p>
-    <p class="blog-desc">On community, coalition, and the power of shared purpose.</p>
-  </a>
-</li>
-<li class="blog-item">
-  <a href="my-many-girlfriends-a-gratitude-post/">
-    
-    <p class="blog-title">My Many Girlfriends — A Gratitude Post</p>
-    <p class="blog-desc">A love letter to the women friends who shaped my life.</p>
-  </a>
-</li>
-<li class="blog-item">
-  <a href="2019-beginnings-and-endings/">
-    
-    <p class="blog-title">2019: Beginnings and Endings</p>
-    <p class="blog-desc">Year in review — one of the fullest years of my life.</p>
-  </a>
-</li>
-<li class="blog-item">
-  <a href="some-highlights-from-a-stressful-time/">
-    
-    <p class="blog-title">Some Highlights From a Stressful Time</p>
-    <p class="blog-desc">Finding light inside a particularly demanding season.</p>
-  </a>
-</li>
-<li class="blog-item">
-  <a href="looking-forward-to-2018-19/">
-    
-    <p class="blog-title">Looking Forward to 2018-19</p>
-    <p class="blog-desc">Setting intentions for a new academic year with hope.</p>
-  </a>
-</li>
-<li class="blog-item">
-  <a href="around-the-world-in-14-days/">
-    
-    <p class="blog-title">Around the World in 14 Days</p>
-    <p class="blog-desc">An adventure across countries — a whirlwind of connections and cultures.</p>
-  </a>
-</li>
-<li class="blog-item">
-  <a href="my-mother-my-angel/">
-    
-    <p class="blog-title">My Mother, My Angel</p>
-    <p class="blog-desc">A tribute to the woman who made everything possible.</p>
-  </a>
-</li>
-<li class="blog-item">
-  <a href="summer-living-the-path-to-independence/">
-    
-    <p class="blog-title">Summer Living — The Path to Independence</p>
-    <p class="blog-desc">On learning to live on one's own — the freedom and the terror of it.</p>
-  </a>
-</li>
-<li class="blog-item">
-  <a href="love-and-i/">
-    
-    <p class="blog-title">Love and I</p>
-    <p class="blog-desc">My complicated, beautiful, ongoing relationship with the idea of love.</p>
-  </a>
-</li>
-<li class="blog-item">
-  <a href="who-said-i-cannot-dance/">
-    
-    <p class="blog-title">Who Said I Cannot Dance?</p>
-    <p class="blog-desc">On joy, movement, and refusing to be defined by anyone else's limits.</p>
-  </a>
-</li>
-<li class="blog-item">
-  <a href="24-back-to-my-roots/">
-    
-    <p class="blog-title">24: Back To My Roots</p>
-    <p class="blog-desc">A birthday meditation on home, identity, and what grounds me.</p>
-  </a>
-</li>
-  </ul>
+  <div class="blog-grid">
+<a href="the-tragedy-of-botho-in-botswana/" class="blog-card">
+  <div class="card-img" style="background-image:url('../../assets/images/the-tragedy-of-botho-in-botswana.jpg')" role="img" aria-label="The Tragedy of Botho in Botswana"></div>
+  <div class="card-body">
+    <p class="card-date">1 August 2024</p>
+    <h2 class="card-title">The Tragedy of Botho in Botswana</h2>
+    <p class="card-desc">On Ubuntu, justice, and the tragedy of using Botho as a tool of oppression.</p>
+  </div>
+</a>
+<a href="on-storytelling-and-how-we-live-our-lives/" class="blog-card">
+  <div class="card-img" style="background-image:url('../../assets/images/on-storytelling-and-how-we-live-our-lives.jpg')" role="img" aria-label="Random Musings: On Storytelling and How We Live Our Lives"></div>
+  <div class="card-body">
+    <p class="card-date">June 2, 2024</p>
+    <h2 class="card-title">Random Musings: On Storytelling and How We Live Our Lives</h2>
+    <p class="card-desc">A reflection on narrative, memory, and the stories we tell ourselves.</p>
+  </div>
+</a>
+<a href="musings-on-redemption/" class="blog-card">
+  <div class="card-img" style="background-image:url('../../assets/images/musings-on-redemption.jpg')" role="img" aria-label="Musings On Redemption"></div>
+  <div class="card-body">
+    <p class="card-date">February 10, 2024</p>
+    <h2 class="card-title">Musings On Redemption</h2>
+    <p class="card-desc">What it means to seek and grant forgiveness — to ourselves and others.</p>
+  </div>
+</a>
+<a href="oppression-through-erasure-of-identity/" class="blog-card">
+  <div class="card-img" style="background-image:url('../../assets/images/oppression-through-erasure-of-identity.jpg')" role="img" aria-label="Oppression Through Erasure of Identity"></div>
+  <div class="card-body">
+    <p class="card-date">December 20, 2023</p>
+    <h2 class="card-title">Oppression Through Erasure of Identity</h2>
+    <p class="card-desc">On how identity erasure operates as a tool of systemic oppression.</p>
+  </div>
+</a>
+<a href="beyond-white-supremacist-capitalistic-patriarchy/" class="blog-card">
+  <div class="card-img" style="background-image:url('../../assets/images/beyond-white-supremacist-capitalistic-patriarchy.jpg')" role="img" aria-label="Beyond White Supremacist Capitalistic Patriarchy"></div>
+  <div class="card-body">
+    <p class="card-date">October 11, 2023</p>
+    <h2 class="card-title">Beyond White Supremacist Capitalistic Patriarchy</h2>
+    <p class="card-desc">Envisioning systems of liberation beyond the structures that bind us.</p>
+  </div>
+</a>
+<a href="retiring-the-persona-of-tumisang-ramarea/" class="blog-card">
+  <div class="card-img" style="background-image:url('../../assets/images/retiring-the-persona-of-tumisang-ramarea.jpg')" role="img" aria-label="Retiring the Persona of Tumisang Ramarea"></div>
+  <div class="card-body">
+    <p class="card-date">January 19, 2023</p>
+    <h2 class="card-title">Retiring the Persona of Tumisang Ramarea</h2>
+    <p class="card-desc">A meditation on shedding constructed identity and living authentically.</p>
+  </div>
+</a>
+<a href="on-building-borderless-nations/" class="blog-card">
+  <div class="card-img" style="background-image:url('../../assets/images/on-building-borderless-nations.png')" role="img" aria-label="On Building Borderless Nations"></div>
+  <div class="card-body">
+    <p class="card-date">October 27, 2022</p>
+    <h2 class="card-title">On Building Borderless Nations</h2>
+    <p class="card-desc">Nations built on values and shared humanity — not geography.</p>
+  </div>
+</a>
+<a href="fought-the-good-fight-finished-the-race-kept-the-faith/" class="blog-card">
+  <div class="card-img" style="background-image:url('../../assets/images/fought-the-good-fight-finished-the-race-kept-the-faith.png')" role="img" aria-label="“Fought the Good Fight, Finished the Race, Kept the Faith”"></div>
+  <div class="card-body">
+    <p class="card-date">September 18, 2022</p>
+    <h2 class="card-title">“Fought the Good Fight, Finished the Race, Kept the Faith”</h2>
+    <p class="card-desc">A tribute to resilience and conviction through hard seasons.</p>
+  </div>
+</a>
+<a href="28-lessons-for-28/" class="blog-card">
+  <div class="card-img" style="background-image:url('../../assets/images/28-lessons-for-28.png')" role="img" aria-label="28 Lessons for 28"></div>
+  <div class="card-body">
+    <p class="card-date">May 9, 2022</p>
+    <h2 class="card-title">28 Lessons for 28</h2>
+    <p class="card-desc">Twenty-eight things learned, earned, and still being learned at 28.</p>
+  </div>
+</a>
+<a href="two-worlds-uninhabited-water-and-fire/" class="blog-card">
+  <div class="card-img" style="background-image:url('../../assets/images/two-worlds-uninhabited-water-and-fire.png')" role="img" aria-label="“Two Worlds Uninhabited, Water and Fire”"></div>
+  <div class="card-body">
+    <p class="card-date">April 30, 2022</p>
+    <h2 class="card-title">“Two Worlds Uninhabited, Water and Fire”</h2>
+    <p class="card-desc">A poem in two voices — two elements that cannot coexist yet need each other.</p>
+  </div>
+</a>
+<a href="on-wanting-to-change-the-world/" class="blog-card">
+  <div class="card-img" style="background-image:url('../../assets/images/on-wanting-to-change-the-world.png')" role="img" aria-label="On Wanting To Change The World"></div>
+  <div class="card-body">
+    <p class="card-date">March 23, 2022</p>
+    <h2 class="card-title">On Wanting To Change The World</h2>
+    <p class="card-desc">What it really means to carry that ambition — and what it costs.</p>
+  </div>
+</a>
+<a href="reflections-on-autumn-2021/" class="blog-card">
+  <div class="card-img" style="background-image:url('../../assets/images/reflections-on-autumn-2021.png')" role="img" aria-label="Reflections on Autumn 2021"></div>
+  <div class="card-body">
+    <p class="card-date">January 25, 2022</p>
+    <h2 class="card-title">Reflections on Autumn 2021</h2>
+    <p class="card-desc">A seasonal reflection on growth, loss, and what remains.</p>
+  </div>
+</a>
+<a href="grieving-injustice/" class="blog-card">
+  <div class="card-img" style="background-image:url('../../assets/images/grieving-injustice.png')" role="img" aria-label="Grieving Injustice"></div>
+  <div class="card-body">
+    <p class="card-date">January 17, 2022</p>
+    <h2 class="card-title">Grieving Injustice</h2>
+    <p class="card-desc">On the emotional weight of witnessing injustice without resolution.</p>
+  </div>
+</a>
+<a href="the-last-flight-to-washington-dc-a-brief-reflection-on-luck/" class="blog-card">
+  <div class="card-img" style="background-image:url('../../assets/images/the-last-flight-to-washington-dc-a-brief-reflection-on-luck.png')" role="img" aria-label="The Last Flight to Washington DC: A Brief Reflection on Luck!"></div>
+  <div class="card-body">
+    <p class="card-date">December 5, 2021</p>
+    <h2 class="card-title">The Last Flight to Washington DC: A Brief Reflection on Luck!</h2>
+    <p class="card-desc">A near-miss story that became a meditation on fortune and timing.</p>
+  </div>
+</a>
+<a href="reflections-on-summer-2021/" class="blog-card">
+  <div class="card-img" style="background-image:url('../../assets/images/reflections-on-summer-2021.jpg')" role="img" aria-label="Reflections on Summer 2021"></div>
+  <div class="card-body">
+    <p class="card-date">October 29, 2021</p>
+    <h2 class="card-title">Reflections on Summer 2021</h2>
+    <p class="card-desc">The summer after the degree — freedom, transition, and new horizons.</p>
+  </div>
+</a>
+<a href="who-was-i-who-am-i-who-will-i-be/" class="blog-card">
+  <div class="card-img" style="background-image:url('../../assets/images/who-was-i-who-am-i-who-will-i-be.png')" role="img" aria-label="Who Was I? Who Am I? Who Will I Be?"></div>
+  <div class="card-body">
+    <p class="card-date">October 23, 2021</p>
+    <h2 class="card-title">Who Was I? Who Am I? Who Will I Be?</h2>
+    <p class="card-desc">Three questions that form the core of every self-examination.</p>
+  </div>
+</a>
+<a href="my-cup-runneth-over/" class="blog-card">
+  <div class="card-img" style="background-image:url('../../assets/images/my-cup-runneth-over.png')" role="img" aria-label="My Cup Runneth Over"></div>
+  <div class="card-body">
+    <p class="card-date">September 4, 2021</p>
+    <h2 class="card-title">My Cup Runneth Over</h2>
+    <p class="card-desc">A gratitude post — on abundance and the generosity of life.</p>
+  </div>
+</a>
+<a href="reflections-on-q2-of-2021/" class="blog-card">
+  <div class="card-img" style="background-image:url('../../assets/images/reflections-on-q2-of-2021.png')" role="img" aria-label="Reflections on Q2 of 2021"></div>
+  <div class="card-body">
+    <p class="card-date">June 22, 2021</p>
+    <h2 class="card-title">Reflections on Q2 of 2021</h2>
+    <p class="card-desc">Mid-year stock-taking: what happened, what's happening, and what's next.</p>
+  </div>
+</a>
+<a href="a-great-thank-you/" class="blog-card">
+  <div class="card-img" style="background-image:url('../../assets/images/a-great-thank-you.jpg')" role="img" aria-label="A Great Thank You!"></div>
+  <div class="card-body">
+    <p class="card-date">June 8, 2021</p>
+    <h2 class="card-title">A Great Thank You!</h2>
+    <p class="card-desc">An expression of gratitude to the community that carried me through.</p>
+  </div>
+</a>
+<a href="reflections-on-q1-of-2021/" class="blog-card">
+  <div class="card-img" style="background-image:url('../../assets/images/reflections-on-q1-of-2021.png')" role="img" aria-label="Reflections on Q1 of 2021"></div>
+  <div class="card-body">
+    <p class="card-date">March 30, 2021</p>
+    <h2 class="card-title">Reflections on Q1 of 2021</h2>
+    <p class="card-desc">Starting a new year with intention and honest self-assessment.</p>
+  </div>
+</a>
+<a href="fibre-internet-pricing-problem/" class="blog-card">
+  <div class="card-img" style="background-image:url('../../assets/images/fibre-internet-pricing-problem.jpg')" role="img" aria-label="Fibre Internet Pricing Problem"></div>
+  <div class="card-body">
+    <p class="card-date">March 20, 2021</p>
+    <h2 class="card-title">Fibre Internet Pricing Problem</h2>
+    <p class="card-desc">An analysis of fibre pricing and its implications for digital access in Africa.</p>
+  </div>
+</a>
+<a href="the-great-meal/" class="blog-card">
+  <div class="card-img" style="background-image:url('../../assets/images/the-great-meal.jpg')" role="img" aria-label="The Great Meal"></div>
+  <div class="card-body">
+    <p class="card-date">March 5, 2021</p>
+    <h2 class="card-title">The Great Meal</h2>
+    <p class="card-desc">Food as love — a story of cooking, sharing, and community.</p>
+  </div>
+</a>
+<a href="phane-pricing-problem/" class="blog-card">
+  <div class="card-img" style="background-image:url('../../assets/images/phane-pricing-problem.jpg')" role="img" aria-label="Phane Pricing Problem"></div>
+  <div class="card-body">
+    <p class="card-date">January 28, 2021</p>
+    <h2 class="card-title">Phane Pricing Problem</h2>
+    <p class="card-desc">On the economics of phane (mopane worms) and local market dynamics.</p>
+  </div>
+</a>
+<a href="beginnings-endings-and-the-journey/" class="blog-card">
+  <div class="card-img" style="background-image:url('../../assets/images/beginnings-endings-and-the-journey.png')" role="img" aria-label="Beginnings, Endings, and the Journey"></div>
+  <div class="card-body">
+    <p class="card-date">January 18, 2021</p>
+    <h2 class="card-title">Beginnings, Endings, and the Journey</h2>
+    <p class="card-desc">On transitions — the grief of endings and the promise of beginnings.</p>
+  </div>
+</a>
+<a href="on-unlearning-toxic-masculinity-living-truthfully/" class="blog-card">
+  <div class="card-img" style="background-image:url('../../assets/images/on-unlearning-toxic-masculinity-living-truthfully.png')" role="img" aria-label="On Unlearning Toxic Masculinity: Living Truthfully"></div>
+  <div class="card-body">
+    <p class="card-date">November 24, 2020</p>
+    <h2 class="card-title">On Unlearning Toxic Masculinity: Living Truthfully</h2>
+    <p class="card-desc">Part 2: What it looks like to actually live outside the script.</p>
+  </div>
+</a>
+<a href="new-place-impressions-mountain-view/" class="blog-card">
+  <div class="card-img" style="background-image:url('../../assets/images/new-place-impressions-mountain-view.jpg')" role="img" aria-label="Initial Impressions of the New Place 2.0"></div>
+  <div class="card-body">
+    <p class="card-date">November 8, 2020</p>
+    <h2 class="card-title">Initial Impressions of the New Place 2.0</h2>
+    <p class="card-desc">First impressions of Mountain View — a new chapter begins.</p>
+  </div>
+</a>
+<a href="reflections-from-october-2020/" class="blog-card">
+  <div class="card-img" style="background-image:url('../../assets/images/reflections-from-october-2020.jpg')" role="img" aria-label="Reflections From October 2020"></div>
+  <div class="card-body">
+    <p class="card-date">November 1, 2020</p>
+    <h2 class="card-title">Reflections From October 2020</h2>
+    <p class="card-desc">Processing the world in a month of uncertainty and change.</p>
+  </div>
+</a>
+<a href="reflections-from-september-2020/" class="blog-card">
+  <div class="card-img" style="background-image:url('../../assets/images/reflections-from-september-2020.png')" role="img" aria-label="Reflections From September 2020"></div>
+  <div class="card-body">
+    <p class="card-date">October 1, 2020</p>
+    <h2 class="card-title">Reflections From September 2020</h2>
+    <p class="card-desc">On a strange September — pandemic, politics, and personal growth.</p>
+  </div>
+</a>
+<a href="new-place-impressions-palo-alto/" class="blog-card">
+  <div class="card-img" style="background-image:url('../../assets/images/new-place-impressions-palo-alto.png')" role="img" aria-label="Initial Impressions of the New Place"></div>
+  <div class="card-body">
+    <p class="card-date">September 9, 2020</p>
+    <h2 class="card-title">Initial Impressions of the New Place</h2>
+    <p class="card-desc">Arriving in Palo Alto — first thoughts on a new home.</p>
+  </div>
+</a>
+<a href="reflections-from-august-2020/" class="blog-card">
+  <div class="card-img" style="background-image:url('../../assets/images/reflections-from-august-2020.png')" role="img" aria-label="Reflections From August 2020"></div>
+  <div class="card-body">
+    <p class="card-date">September 1, 2020</p>
+    <h2 class="card-title">Reflections From August 2020</h2>
+    <p class="card-desc">Navigating a pandemic summer with intention and care.</p>
+  </div>
+</a>
+<a href="on-unlearning-toxic-masculinity-gaining-awareness/" class="blog-card">
+  <div class="card-img" style="background-image:url('../../assets/images/on-unlearning-toxic-masculinity-gaining-awareness.png')" role="img" aria-label="On Unlearning Toxic Masculinity: Gaining Awareness"></div>
+  <div class="card-body">
+    <p class="card-date">August 27, 2020</p>
+    <h2 class="card-title">On Unlearning Toxic Masculinity: Gaining Awareness</h2>
+    <p class="card-desc">Part 1: How I first became aware of the patterns I needed to break.</p>
+  </div>
+</a>
+<a href="personal-key-takeaways-from-my-covid-19-project/" class="blog-card">
+  <div class="card-img" style="background-image:url('../../assets/images/personal-key-takeaways-from-my-covid-19-project.png')" role="img" aria-label="Personal Key Takeaways From My Covid-19 Project"></div>
+  <div class="card-body">
+    <p class="card-date">August 14, 2020</p>
+    <h2 class="card-title">Personal Key Takeaways From My Covid-19 Project</h2>
+    <p class="card-desc">Lessons from modeling COVID-19 spread in Botswana during the pandemic.</p>
+  </div>
+</a>
+<a href="reflections-from-july-2020/" class="blog-card">
+  <div class="card-img" style="background-image:url('../../assets/images/reflections-from-july-2020.png')" role="img" aria-label="Reflections From July 2020"></div>
+  <div class="card-body">
+    <p class="card-date">August 1, 2020</p>
+    <h2 class="card-title">Reflections From July 2020</h2>
+    <p class="card-desc">Mid-pandemic reflections on what matters and what remains.</p>
+  </div>
+</a>
+<a href="reflections-from-june-2020/" class="blog-card">
+  <div class="card-img" style="background-image:url('../../assets/images/reflections-from-june-2020.png')" role="img" aria-label="Reflections From June 2020"></div>
+  <div class="card-body">
+    <p class="card-date">July 1, 2020</p>
+    <h2 class="card-title">Reflections From June 2020</h2>
+    <p class="card-desc">A pivotal month — protests, awakening, and recommitment.</p>
+  </div>
+</a>
+<a href="some-thoughts-on-pricing/" class="blog-card">
+  <div class="card-img" style="background-image:url('../../assets/images/some-thoughts-on-pricing.png')" role="img" aria-label="Some Thoughts on Pricing"></div>
+  <div class="card-body">
+    <p class="card-date">June 29, 2020</p>
+    <h2 class="card-title">Some Thoughts on Pricing</h2>
+    <p class="card-desc">How pricing shapes access — and why it matters for equity.</p>
+  </div>
+</a>
+<a href="food-is-joy/" class="blog-card">
+  <div class="card-img" style="background-image:url('../../assets/images/food-is-joy.jpg')" role="img" aria-label="Food Is Joy"></div>
+  <div class="card-body">
+    <p class="card-date">June 14, 2020</p>
+    <h2 class="card-title">Food Is Joy</h2>
+    <p class="card-desc">An ode to food — the universal language of love and culture.</p>
+  </div>
+</a>
+<a href="my-vision-for-catalyzing-impact/" class="blog-card">
+  <div class="card-img" role="img" aria-label="My Vision for Catalyzing Impact"></div>
+  <div class="card-body">
+    <p class="card-date">April 30, 2020</p>
+    <h2 class="card-title">My Vision for Catalyzing Impact</h2>
+    <p class="card-desc">The philosophy behind a life dedicated to meaningful change.</p>
+  </div>
+</a>
+<a href="on-the-public-vs-the-private-in-sharing/" class="blog-card">
+  <div class="card-img" role="img" aria-label="On the Public vs. the Private in Sharing"></div>
+  <div class="card-body">
+    <p class="card-date">April 29, 2020</p>
+    <h2 class="card-title">On the Public vs. the Private in Sharing</h2>
+    <p class="card-desc">Where the personal ends and the public begins — a meditation.</p>
+  </div>
+</a>
+<a href="quarantine-reflections/" class="blog-card">
+  <div class="card-img" role="img" aria-label="Quarantine Reflections"></div>
+  <div class="card-body">
+    <p class="card-date">March 20, 2020</p>
+    <h2 class="card-title">Quarantine Reflections</h2>
+    <p class="card-desc">Thoughts from inside lockdown — on solitude, community, and time.</p>
+  </div>
+</a>
+<a href="and-there-was-light/" class="blog-card">
+  <div class="card-img" style="background-image:url('../../assets/images/and-there-was-light.png')" role="img" aria-label="And There Was Light!"></div>
+  <div class="card-body">
+    <p class="card-date">February 16, 2020</p>
+    <h2 class="card-title">And There Was Light!</h2>
+    <p class="card-desc">A post about emergence and hope after a period of darkness.</p>
+  </div>
+</a>
+<a href="my-friendship-philosophy/" class="blog-card">
+  <div class="card-img" style="background-image:url('../../assets/images/my-friendship-philosophy.jpg')" role="img" aria-label="My Friendship Philosophy"></div>
+  <div class="card-body">
+    <p class="card-date">February 8, 2020</p>
+    <h2 class="card-title">My Friendship Philosophy</h2>
+    <p class="card-desc">On what I look for, give, and protect in friendship.</p>
+  </div>
+</a>
+<a href="a-dinner-date/" class="blog-card">
+  <div class="card-img" style="background-image:url('../../assets/images/a-dinner-date.jpg')" role="img" aria-label="A Dinner Date"></div>
+  <div class="card-body">
+    <p class="card-date">January 22, 2020</p>
+    <h2 class="card-title">A Dinner Date</h2>
+    <p class="card-desc">A beautiful evening — good food, better company.</p>
+  </div>
+</a>
+<a href="love-and-resistance/" class="blog-card">
+  <div class="card-img" style="background-image:url('../../assets/images/love-and-resistance.jpg')" role="img" aria-label="Love and Resistance"></div>
+  <div class="card-body">
+    <p class="card-date">January 17, 2020</p>
+    <h2 class="card-title">Love and Resistance</h2>
+    <p class="card-desc">How love is itself an act of resistance in an unjust world.</p>
+  </div>
+</a>
+<a href="the-man-and-his-dreams/" class="blog-card">
+  <div class="card-img" style="background-image:url('../../assets/images/the-man-and-his-dreams.png')" role="img" aria-label="The Man and His Dreams"></div>
+  <div class="card-body">
+    <p class="card-date">January 2, 2020</p>
+    <h2 class="card-title">The Man and His Dreams</h2>
+    <p class="card-desc">A piece about ambition, vision, and what drives a life.</p>
+  </div>
+</a>
+<a href="every-finish-line-is-the-beginning-of-a-new-race/" class="blog-card">
+  <div class="card-img" style="background-image:url('../../assets/images/every-finish-line-is-the-beginning-of-a-new-race.jpg')" role="img" aria-label="“Every Finish Line Is The Beginning Of A New Race”"></div>
+  <div class="card-body">
+    <p class="card-date">December 16, 2019</p>
+    <h2 class="card-title">“Every Finish Line Is The Beginning Of A New Race”</h2>
+    <p class="card-desc">On completing one chapter and the momentum that carries into the next.</p>
+  </div>
+</a>
+<a href="thankful/" class="blog-card">
+  <div class="card-img" style="background-image:url('../../assets/images/thankful.png')" role="img" aria-label="Thankful!"></div>
+  <div class="card-body">
+    <p class="card-date">December 16, 2019</p>
+    <h2 class="card-title">Thankful!</h2>
+    <p class="card-desc">A simple, honest expression of gratitude for life as it is.</p>
+  </div>
+</a>
+<a href="modified-coles-law/" class="blog-card">
+  <div class="card-img" style="background-image:url('../../assets/images/modified-coles-law.jpg')" role="img" aria-label="Modified Cole’s Law"></div>
+  <div class="card-body">
+    <p class="card-date">October 29, 2019</p>
+    <h2 class="card-title">Modified Cole’s Law</h2>
+    <p class="card-desc">A playful yet earnest riff on coleslaw and life’s contrasts.</p>
+  </div>
+</a>
+<a href="the-dawn-of-a-new-day/" class="blog-card">
+  <div class="card-img" style="background-image:url('../../assets/images/the-dawn-of-a-new-day.jpg')" role="img" aria-label="The Dawn Of A New Day"></div>
+  <div class="card-body">
+    <p class="card-date">October 27, 2019</p>
+    <h2 class="card-title">The Dawn Of A New Day</h2>
+    <p class="card-desc">On new beginnings — the quiet optimism of sunrise.</p>
+  </div>
+</a>
+<a href="single-and-not-available-what-i-seek-in-romantic-interactions/" class="blog-card">
+  <div class="card-img" style="background-image:url('../../assets/images/single-and-not-available-what-i-seek-in-romantic-interactions.jpg')" role="img" aria-label="Single And Not Available: What I Seek in Romantic Interactions"></div>
+  <div class="card-body">
+    <p class="card-date">September 21, 2019</p>
+    <h2 class="card-title">Single And Not Available: What I Seek in Romantic Interactions</h2>
+    <p class="card-desc">Honest, vulnerable thoughts on romance, readiness, and intention.</p>
+  </div>
+</a>
+<a href="the-evolution-of-my-ambition/" class="blog-card">
+  <div class="card-img" style="background-image:url('../../assets/images/the-evolution-of-my-ambition.jpg')" role="img" aria-label="The Evolution of My Ambition"></div>
+  <div class="card-body">
+    <p class="card-date">September 10, 2019</p>
+    <h2 class="card-title">The Evolution of My Ambition</h2>
+    <p class="card-desc">How what I want from life has changed — and what has stayed the same.</p>
+  </div>
+</a>
+<a href="spoilt-milk-nerdy-housekeeping/" class="blog-card">
+  <div class="card-img" style="background-image:url('../../assets/images/spoilt-milk-nerdy-housekeeping.jpg')" role="img" aria-label="Spoilt Milk: Nerdy Housekeeping"></div>
+  <div class="card-body">
+    <p class="card-date">August 9, 2019</p>
+    <h2 class="card-title">Spoilt Milk: Nerdy Housekeeping</h2>
+    <p class="card-desc">Domestic observations with an analytical twist.</p>
+  </div>
+</a>
+<a href="the-zebra-has-earned-its-stripes/" class="blog-card">
+  <div class="card-img" style="background-image:url('../../assets/images/the-zebra-has-earned-its-stripes.jpg')" role="img" aria-label="The Zebra Has Earned Its Stripes"></div>
+  <div class="card-body">
+    <p class="card-date">July 19, 2019</p>
+    <h2 class="card-title">The Zebra Has Earned Its Stripes</h2>
+    <p class="card-desc">On identity, pride, and owning the fullness of who you are.</p>
+  </div>
+</a>
+<a href="the-inspiration/" class="blog-card">
+  <div class="card-img" style="background-image:url('../../assets/images/the-inspiration.jpg')" role="img" aria-label="The Inspiration"></div>
+  <div class="card-body">
+    <p class="card-date">June 9, 2019</p>
+    <h2 class="card-title">The Inspiration</h2>
+    <p class="card-desc">On the sources of creative and personal motivation.</p>
+  </div>
+</a>
+<a href="when-masisi-came-to-visit/" class="blog-card">
+  <div class="card-img" style="background-image:url('../../assets/images/when-masisi-came-to-visit.jpg')" role="img" aria-label="When Masisi Came To Visit"></div>
+  <div class="card-body">
+    <p class="card-date">June 5, 2019</p>
+    <h2 class="card-title">When Masisi Came To Visit</h2>
+    <p class="card-desc">On the occasion of President Masisi visiting — reflections on leadership.</p>
+  </div>
+</a>
+<a href="montsamaisa-bosigo-friends-appreciation/" class="blog-card">
+  <div class="card-img" style="background-image:url('../../assets/images/montsamaisa-bosigo-friends-appreciation.jpg')" role="img" aria-label="Montsamaisa Bosigo: Friends Appreciation"></div>
+  <div class="card-body">
+    <p class="card-date">May 7, 2019</p>
+    <h2 class="card-title">Montsamaisa Bosigo: Friends Appreciation</h2>
+    <p class="card-desc">A tribute to the friends who guided me through the night.</p>
+  </div>
+</a>
+<a href="on-impermanence/" class="blog-card">
+  <div class="card-img" style="background-image:url('../../assets/images/on-impermanence.jpg')" role="img" aria-label="On Impermanence"></div>
+  <div class="card-body">
+    <p class="card-date">April 28, 2019</p>
+    <h2 class="card-title">On Impermanence</h2>
+    <p class="card-desc">Buddhist and African wisdom on the transience of all things.</p>
+  </div>
+</a>
+<a href="am-i-an-entrepreneur/" class="blog-card">
+  <div class="card-img" style="background-image:url('../../assets/images/am-i-an-entrepreneur.jpg')" role="img" aria-label="Am I an Entrepreneur?"></div>
+  <div class="card-body">
+    <p class="card-date">April 2, 2019</p>
+    <h2 class="card-title">Am I an Entrepreneur?</h2>
+    <p class="card-desc">Grappling honestly with the identity and its responsibilities.</p>
+  </div>
+</a>
+<a href="some-reviews-from-some-friends/" class="blog-card">
+  <div class="card-img" style="background-image:url('../../assets/images/some-reviews-from-some-friends.jpg')" role="img" aria-label="Some Reviews From Some Friends"></div>
+  <div class="card-body">
+    <p class="card-date">March 27, 2019</p>
+    <h2 class="card-title">Some Reviews From Some Friends</h2>
+    <p class="card-desc">What the people who know me best say about me — unfiltered.</p>
+  </div>
+</a>
+<a href="where-to-from-here/" class="blog-card">
+  <div class="card-img" style="background-image:url('../../assets/images/where-to-from-here.jpg')" role="img" aria-label="Where To From Here?"></div>
+  <div class="card-body">
+    <p class="card-date">March 8, 2019</p>
+    <h2 class="card-title">Where To From Here?</h2>
+    <p class="card-desc">A post of transition — taking stock and looking ahead.</p>
+  </div>
+</a>
+<a href="coming-together/" class="blog-card">
+  <div class="card-img" style="background-image:url('../../assets/images/coming-together.jpg')" role="img" aria-label="Coming Together"></div>
+  <div class="card-body">
+    <p class="card-date">February 26, 2019</p>
+    <h2 class="card-title">Coming Together</h2>
+    <p class="card-desc">On community, coalition, and the power of shared purpose.</p>
+  </div>
+</a>
+<a href="my-many-girlfriends-a-gratitude-post/" class="blog-card">
+  <div class="card-img" style="background-image:url('../../assets/images/my-many-girlfriends-a-gratitude-post.jpg')" role="img" aria-label="My Many Girlfriends — A Gratitude Post"></div>
+  <div class="card-body">
+    <p class="card-date">February 9, 2019</p>
+    <h2 class="card-title">My Many Girlfriends — A Gratitude Post</h2>
+    <p class="card-desc">A love letter to the women friends who shaped my life.</p>
+  </div>
+</a>
+<a href="2019-beginnings-and-endings/" class="blog-card">
+  <div class="card-img" style="background-image:url('../../assets/images/2019-beginnings-and-endings.jpg')" role="img" aria-label="2019: Beginnings and Endings"></div>
+  <div class="card-body">
+    <p class="card-date">January 20, 2019</p>
+    <h2 class="card-title">2019: Beginnings and Endings</h2>
+    <p class="card-desc">Year in review — one of the fullest years of my life.</p>
+  </div>
+</a>
+<a href="some-highlights-from-a-stressful-time/" class="blog-card">
+  <div class="card-img" style="background-image:url('../../assets/images/some-highlights-from-a-stressful-time.jpg')" role="img" aria-label="Some Highlights From a Stressful Time"></div>
+  <div class="card-body">
+    <p class="card-date">October 25, 2018</p>
+    <h2 class="card-title">Some Highlights From a Stressful Time</h2>
+    <p class="card-desc">Finding light inside a particularly demanding season.</p>
+  </div>
+</a>
+<a href="looking-forward-to-2018-19/" class="blog-card">
+  <div class="card-img" style="background-image:url('../../assets/images/looking-forward-to-2018-19.jpg')" role="img" aria-label="Looking Forward to 2018-19"></div>
+  <div class="card-body">
+    <p class="card-date">September 21, 2018</p>
+    <h2 class="card-title">Looking Forward to 2018-19</h2>
+    <p class="card-desc">Setting intentions for a new academic year with hope.</p>
+  </div>
+</a>
+<a href="around-the-world-in-14-days/" class="blog-card">
+  <div class="card-img" style="background-image:url('../../assets/images/around-the-world-in-14-days.jpg')" role="img" aria-label="Around the World in 14 Days"></div>
+  <div class="card-body">
+    <p class="card-date">August 17, 2018</p>
+    <h2 class="card-title">Around the World in 14 Days</h2>
+    <p class="card-desc">An adventure across countries — a whirlwind of connections and cultures.</p>
+  </div>
+</a>
+<a href="my-mother-my-angel/" class="blog-card">
+  <div class="card-img" style="background-image:url('../../assets/images/my-mother-my-angel.jpg')" role="img" aria-label="My Mother, My Angel"></div>
+  <div class="card-body">
+    <p class="card-date">July 26, 2018</p>
+    <h2 class="card-title">My Mother, My Angel</h2>
+    <p class="card-desc">A tribute to the woman who made everything possible.</p>
+  </div>
+</a>
+<a href="summer-living-the-path-to-independence/" class="blog-card">
+  <div class="card-img" style="background-image:url('../../assets/images/summer-living-the-path-to-independence.jpg')" role="img" aria-label="Summer Living — The Path to Independence"></div>
+  <div class="card-body">
+    <p class="card-date">July 5, 2018</p>
+    <h2 class="card-title">Summer Living — The Path to Independence</h2>
+    <p class="card-desc">On learning to live on one’s own — the freedom and the terror of it.</p>
+  </div>
+</a>
+<a href="love-and-i/" class="blog-card">
+  <div class="card-img" style="background-image:url('../../assets/images/love-and-i.jpg')" role="img" aria-label="Love and I"></div>
+  <div class="card-body">
+    <p class="card-date">June 27, 2018</p>
+    <h2 class="card-title">Love and I</h2>
+    <p class="card-desc">My complicated, beautiful, ongoing relationship with the idea of love.</p>
+  </div>
+</a>
+<a href="who-said-i-cannot-dance/" class="blog-card">
+  <div class="card-img" style="background-image:url('../../assets/images/who-said-i-cannot-dance.jpg')" role="img" aria-label="Who Said I Cannot Dance?"></div>
+  <div class="card-body">
+    <p class="card-date">May 27, 2018</p>
+    <h2 class="card-title">Who Said I Cannot Dance?</h2>
+    <p class="card-desc">On joy, movement, and refusing to be defined by anyone else’s limits.</p>
+  </div>
+</a>
+<a href="24-back-to-my-roots/" class="blog-card">
+  <div class="card-img" style="background-image:url('../../assets/images/24-back-to-my-roots.jpg')" role="img" aria-label="24: Back To My Roots"></div>
+  <div class="card-body">
+    <p class="card-date">May 13, 2018</p>
+    <h2 class="card-title">24: Back To My Roots</h2>
+    <p class="card-desc">A birthday meditation on home, identity, and what grounds me.</p>
+  </div>
+</a>
+  </div>
 </div>
+
 <footer>
   <span class="footer-brand">RAMAREA</span>
   <ul class="footer-nav">

@@ -11,21 +11,21 @@
 :root{--purple-deep:#1a0a2e;--purple-mid:#2d1254;--purple-light:#4a1f8c;--gold:#c9a84c;--gold-light:#e8c96a;--white:#f5f0ea;--text-muted:#b8a9c9}
 html{scroll-behavior:smooth}
 body{font-family:'Inter',sans-serif;background:var(--purple-deep);color:var(--white);min-height:100vh}
-nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1.25rem 3rem;background:rgba(26,10,46,0.92);backdrop-filter:blur(12px);border-bottom:1px solid rgba(201,168,76,0.15)}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1.25rem clamp(2rem,8%,5rem);background:rgba(26,10,46,0.92);backdrop-filter:blur(12px);border-bottom:1px solid rgba(201,168,76,0.15)}
 .nav-logo{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:700;color:var(--gold);letter-spacing:.12em;text-decoration:none}
 .nav-links{display:flex;align-items:center;gap:2.5rem;list-style:none}
 .nav-links a{font-size:.78rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--white);text-decoration:none;opacity:.8;transition:opacity .2s,color .2s}
 .nav-links a:hover{opacity:1;color:var(--gold-light)}
 .nav-cta{color:var(--purple-deep)!important;background:var(--gold);padding:.55rem 1.4rem;border-radius:2px;opacity:1!important;transition:background .2s!important}
 .nav-cta:hover{background:var(--gold-light)!important}
-.page-hero{padding:9rem 3rem 5rem;background:linear-gradient(135deg,var(--purple-mid) 0%,var(--purple-deep) 100%);border-bottom:1px solid rgba(201,168,76,0.12)}
+.page-hero{padding:9rem clamp(2rem,8%,5rem) 5rem;background:linear-gradient(135deg,var(--purple-mid) 0%,var(--purple-deep) 100%);border-bottom:1px solid rgba(201,168,76,0.12)}
 .page-eyebrow{font-size:.65rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem}
 .page-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2.5rem,6vw,5rem);font-weight:700;line-height:1;color:var(--white);margin-bottom:1.25rem}
 .page-subtitle{font-size:1.05rem;font-weight:300;line-height:1.7;color:var(--text-muted);max-width:580px}
 .page-subtitle em{color:var(--gold-light);font-style:italic}
 .page-date{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:2rem}
-.content{max-width:1100px;margin:0 auto;padding:5rem 3rem}
-.content-narrow{max-width:720px;margin:0 auto;padding:5rem 3rem}
+.content{max-width:960px;margin:0 auto;padding:5rem clamp(1.5rem,4%,3rem)}
+.content-narrow{max-width:720px;margin:0 auto;padding:5rem clamp(1.5rem,4%,3rem)}
 .section-label{font-size:.65rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem}
 .gold-rule{width:48px;height:1px;background:var(--gold);opacity:.5;margin-bottom:2rem}
 h2.section-heading{font-family:'Cormorant Garamond',serif;font-size:clamp(1.8rem,3vw,2.5rem);font-weight:600;color:var(--white);margin-bottom:1.5rem}
@@ -55,7 +55,7 @@ img.site-img{width:100%;display:block;min-height:220px;object-fit:cover;border-r
 .quote-block cite{font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
 .btn-primary{display:inline-block;font-size:.72rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--purple-deep);background:var(--gold);padding:.85rem 2rem;border-radius:2px;text-decoration:none;transition:background .2s}
 .btn-primary:hover{background:var(--gold-light)}
-footer{background:#0f0620;border-top:1px solid rgba(201,168,76,.1);padding:3rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1.5rem}
+footer{background:#0f0620;border-top:1px solid rgba(201,168,76,.1);padding:3rem clamp(2rem,8%,5rem);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1.5rem}
 .footer-brand{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:700;color:var(--gold);letter-spacing:.1em}
 .footer-nav{display:flex;gap:2rem;list-style:none}
 .footer-nav a{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--text-muted);text-decoration:none;transition:color .2s}
@@ -134,6 +134,7 @@ footer{background:#0f0620;border-top:1px solid rgba(201,168,76,.1);padding:3rem;
   <p class="page-date">January 22, 2020</p>
 </div>
 <div class="content-narrow">
+<img src="../../../assets/images/a-dinner-date.jpg" alt="A Dinner Date" style="width:100%;height:auto;display:block;border-radius:4px;margin:0 0 2rem">
   <p class="body-text">Did I tell you about the intervention my sisters held for me about a year ago? I was home for Christmas. They expressed concern that I had not introduced any suitable woman to them. They asked if I was afraid of women, or perhaps, if I was gay. It was good to know that if I were gay, they would have accepted me. Thinking about it, I now wonder why they could not extend the same generosity to my unusual -at least for my family - approach to dating and procreation. They feel I should find someone soon so I can produce an heir to my nonexistent estate. I disagree with the baby making agenda since I am a baby myself, but of late I have realized a deep desire for a romantic companionship. It is hard when you are romantically awkward like myself, and my prerequisites for dating me do not make it any easier. That is why I am unable to find romantic companions online via the modern platforms. But it does not mean I do not try them every now and then. Perhaps inspired by my sisters&#x27; intervention or good old loneliness or even boredom, I connected with a lovely woman on one of the platforms recently. I was able to convince her to go see a play at a theater, where most of the patrons are senior citizens. We saw a well-done rendition of Pride and Prejudice. But my favorite of our hangouts, was making her a lovely Botswana dinner.</p>
 <p class="body-text">A great dinner starts with the selection of the meat. My guest had indicated an interest in trying African cuisine. In this area, that often means West African food or Ethiopian food. I was going to make her a typical meal I would eat at home: pap, morogo, le nama. But first I had to pick the meat. I chose goat. I get all my meat from a Halal store two cities from where I live. I washed the meat, to remove any blood residues and for my own peace of mind. We wash our meat where I come from, even though we are going to cook it thoroughly at sufficiently high enough temperatures. Then I boiled it with salt and Knorrox Chilli Beef stock. My kitchen is full of spices from home, because a meal is incomplete without quality spices. Entire countries were colonized for spices, so I hope you can understand why I risk the future wellbeing of my grandkids by taking 6 flights on a roundtrip journey to restock in Botswana twice a year. Yet, I had to hold back from using them. Goat meat is very flavorful by itself, and rarely requires any spices. I started cooking about 2 hours before the dinner time since that is how long I like to cook my goat meat at B+ heat.</p>
 <p class="body-text">To make the morogo, what the people here might call greens, I started by slicing the spinach into coleslaw-thin slices. I have never understood greens in the US, they are usually chunky and unpleasant to look at. It is as though they chop their veggies with an axe. Thankfully, my dear friend KG bought me a nice knife set. After slicing the spinach, I chopped purple onion, my colorful assortment of bell peppers, carrots, some thai peppers, and serrano peppers. Before using each vegetable, it was thoroughly washed. After chopping them, I soaked them in water for a few minutes. Then I added a bit of olive oil to the pot I was using - also a lovely gift from KG. Then I took the chopped veggies out of the water and put them into the pot before the oil heated up. The idea is to cook the veggies with the bit of oil and the tiny drops of water that remain after being soaked for a short while. I added iodized salt - because I read somewhere that Iodine matters - and mother-in-law spice to begin with. As the moisture heated up, I cut up a tomato because morogo needs some tomato sweetness. Then I added the tomato when it began to boil. I also added Robertsons&#x27; Rajah Mild Curry Power. There is nothing as sweet as the smell of food from home cooking on the stove.</p>

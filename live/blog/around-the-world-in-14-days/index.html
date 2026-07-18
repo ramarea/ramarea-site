@@ -11,21 +11,21 @@
 :root{--purple-deep:#1a0a2e;--purple-mid:#2d1254;--purple-light:#4a1f8c;--gold:#c9a84c;--gold-light:#e8c96a;--white:#f5f0ea;--text-muted:#b8a9c9}
 html{scroll-behavior:smooth}
 body{font-family:'Inter',sans-serif;background:var(--purple-deep);color:var(--white);min-height:100vh}
-nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1.25rem 3rem;background:rgba(26,10,46,0.92);backdrop-filter:blur(12px);border-bottom:1px solid rgba(201,168,76,0.15)}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1.25rem clamp(2rem,8%,5rem);background:rgba(26,10,46,0.92);backdrop-filter:blur(12px);border-bottom:1px solid rgba(201,168,76,0.15)}
 .nav-logo{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:700;color:var(--gold);letter-spacing:.12em;text-decoration:none}
 .nav-links{display:flex;align-items:center;gap:2.5rem;list-style:none}
 .nav-links a{font-size:.78rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--white);text-decoration:none;opacity:.8;transition:opacity .2s,color .2s}
 .nav-links a:hover{opacity:1;color:var(--gold-light)}
 .nav-cta{color:var(--purple-deep)!important;background:var(--gold);padding:.55rem 1.4rem;border-radius:2px;opacity:1!important;transition:background .2s!important}
 .nav-cta:hover{background:var(--gold-light)!important}
-.page-hero{padding:9rem 3rem 5rem;background:linear-gradient(135deg,var(--purple-mid) 0%,var(--purple-deep) 100%);border-bottom:1px solid rgba(201,168,76,0.12)}
+.page-hero{padding:9rem clamp(2rem,8%,5rem) 5rem;background:linear-gradient(135deg,var(--purple-mid) 0%,var(--purple-deep) 100%);border-bottom:1px solid rgba(201,168,76,0.12)}
 .page-eyebrow{font-size:.65rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem}
 .page-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2.5rem,6vw,5rem);font-weight:700;line-height:1;color:var(--white);margin-bottom:1.25rem}
 .page-subtitle{font-size:1.05rem;font-weight:300;line-height:1.7;color:var(--text-muted);max-width:580px}
 .page-subtitle em{color:var(--gold-light);font-style:italic}
 .page-date{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:2rem}
-.content{max-width:1100px;margin:0 auto;padding:5rem 3rem}
-.content-narrow{max-width:720px;margin:0 auto;padding:5rem 3rem}
+.content{max-width:960px;margin:0 auto;padding:5rem clamp(1.5rem,4%,3rem)}
+.content-narrow{max-width:720px;margin:0 auto;padding:5rem clamp(1.5rem,4%,3rem)}
 .section-label{font-size:.65rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem}
 .gold-rule{width:48px;height:1px;background:var(--gold);opacity:.5;margin-bottom:2rem}
 h2.section-heading{font-family:'Cormorant Garamond',serif;font-size:clamp(1.8rem,3vw,2.5rem);font-weight:600;color:var(--white);margin-bottom:1.5rem}
@@ -55,7 +55,7 @@ img.site-img{width:100%;display:block;min-height:220px;object-fit:cover;border-r
 .quote-block cite{font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
 .btn-primary{display:inline-block;font-size:.72rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--purple-deep);background:var(--gold);padding:.85rem 2rem;border-radius:2px;text-decoration:none;transition:background .2s}
 .btn-primary:hover{background:var(--gold-light)}
-footer{background:#0f0620;border-top:1px solid rgba(201,168,76,.1);padding:3rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1.5rem}
+footer{background:#0f0620;border-top:1px solid rgba(201,168,76,.1);padding:3rem clamp(2rem,8%,5rem);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1.5rem}
 .footer-brand{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:700;color:var(--gold);letter-spacing:.1em}
 .footer-nav{display:flex;gap:2rem;list-style:none}
 .footer-nav a{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--text-muted);text-decoration:none;transition:color .2s}
@@ -134,6 +134,7 @@ footer{background:#0f0620;border-top:1px solid rgba(201,168,76,.1);padding:3rem;
   <p class="page-date">August 17, 2018</p>
 </div>
 <div class="content-narrow">
+<img src="../../../assets/images/around-the-world-in-14-days.jpg" alt="Around the World in 14 Days" style="width:100%;height:auto;display:block;border-radius:4px;margin:0 0 2rem">
   <p class="body-text">When the first sun of August rose I was driving to San Francisco International Airport on a fancy black Ford. Apparently there was no SuperShuttle van to pick me up that morning, and so they sent the luxury SUV to pick me up. I was not complaining. It would prove to be the first of many luxuries over the 14 days. You have to understand that I come from a family where I was not always sure that we would have something to eat the next day, so bear with my excitement. I was to fly to Miami and Washington DC for some personal business with Real Madrid FC and Emirates (I had won a mini-vacation through my frequent flier program with Emirates), then on to Rwanda for the MasterCard Foundation Scholars Summit with stops in Uganda and Kenya for other business, more closely related to my summer work and current personal reflections.</p>
 <p class="body-text">The Emirates vacation was out of this world. I was booked into a suite at the East Hotel in Miami and had a high-end room at the Mandarin Oriental in Washington, DC. If I did not have to actually work on my research in between the team activities, I would have thrown parties I tell you. What would you do with 2 private balconies and two bathrooms? It is insane what luxury exist in the world. Who pays $80 for dinner? That is BWP 800, someone&#x27;s monthly income in Botswana. Imagine! I mean the Uruguayan steak was juicy and I enjoyed every bit of it, especially since I was not paying for it, but I still felt a tiny bit guilty. I could not even share with my family how great a dinner I was having, because they can imagine all the other meaningful uses of the BWP 800 they have. There was also some guilt in knowing my brothers were more of soccer fans than myself, yet through the privilege I have accumulated over the years, I was there training with Real Madrid, living their dream. I was happy to meet the goal keeper Keylor Navas because he is a great goalkeeper of my second home, Costa Rica. Sometimes I feel like my life is a telenovela, and this was one of those moments.</p>
 <p class="body-text">On this trip I also had my first private/chartered flight. I would never have imagined I would be on a Boeing 767 configured entirely with Business Class seats. In a way, it was a practice run for when I become president of the world. Although I doubt I would want to fly privately when I can fly with Emirates and keep earning miles. It is insane how accustomed to privilege we get. How in the world did I fly enough over the past year to reach Gold status on Emirates? I mean I have good reasons to travel, but it is impressive how Emirates has convinced me they are the best enough for me to fly even to West Africa with them when there are shorter (and apparently cheaper) itineraries. Anyway, another first was being escorted by police through insane traffic. It was like that Biblical story of when Moses parted the Red Sea for the privileged children of God. Washington DC was the highlight, mostly because I spent it with a close friend of mine. I could not have asked for a better time.</p>

@@ -36,7 +36,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 1.25rem 3rem;
+      padding: 1.25rem clamp(2rem,8%,5rem);
       background: rgba(26, 10, 46, 0.9);
       backdrop-filter: blur(12px);
       border-bottom: 1px solid rgba(201, 168, 76, 0.15);
@@ -92,10 +92,10 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
-      padding: 0 3rem;
+      padding: 0 clamp(2rem,8%,5rem);
       position: relative;
       overflow: hidden;
-      background: url('assets/images/homepage_hero.jpg') center center / cover no-repeat,
+      background: url('assets/images/homepage_hero.webp') center center / cover no-repeat,
                   radial-gradient(ellipse at 70% 50%, var(--purple-light) 0%, var(--purple-mid) 40%, var(--purple-deep) 100%);
     }
 
@@ -103,7 +103,13 @@
       content: '';
       position: absolute;
       inset: 0;
-      background: rgba(26, 10, 46, 0.55);
+      background: linear-gradient(
+        to right,
+        rgba(26,10,46,0.92) 0%,
+        rgba(26,10,46,0.75) 35%,
+        rgba(26,10,46,0.25) 65%,
+        transparent 100%
+      );
     }
 
     .hero-inner {
@@ -184,7 +190,7 @@
     .hero-scroll {
       position: absolute;
       bottom: 2.5rem;
-      left: 3rem;
+      left: clamp(2rem,8%,5rem);
       display: flex;
       align-items: center;
       gap: 0.75rem;
@@ -203,7 +209,7 @@
 
     /* ── BIO ── */
     .bio {
-      padding: 7rem 3rem;
+      padding: 7rem clamp(2rem,8%,5rem);
       background: var(--purple-deep);
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -243,7 +249,7 @@
 
     /* ── PILLARS ── */
     .pillars {
-      padding: 7rem 3rem;
+      padding: 7rem clamp(2rem,8%,5rem);
       background: linear-gradient(180deg, var(--purple-deep) 0%, var(--purple-mid) 100%);
     }
 
@@ -340,7 +346,7 @@
 
     /* ── QUOTE ── */
     .quote-section {
-      padding: 7rem 3rem;
+      padding: 7rem clamp(2rem,8%,5rem);
       background: var(--purple-mid);
       text-align: center;
       position: relative;
@@ -381,7 +387,7 @@
 
     /* ── CONNECT ── */
     .connect {
-      padding: 7rem 3rem;
+      padding: 7rem clamp(2rem,8%,5rem);
       background: var(--purple-deep);
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -435,7 +441,7 @@
     footer {
       background: #0f0620;
       border-top: 1px solid rgba(201, 168, 76, 0.1);
-      padding: 3rem;
+      padding: 3rem clamp(2rem,8%,5rem);
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -629,7 +635,7 @@
     </div>
     <div class="pillars-grid">
 
-      <a href="live/" class="pillar-card" style="background-image:url('assets/images/homepage_live.png');background-size:cover;background-position:center;">
+      <a href="live/" class="pillar-card" style="background-image:linear-gradient(to top,rgba(196,122,58,0.82) 0%,rgba(196,122,58,0.3) 55%,rgba(196,122,58,0.08) 100%),url('assets/images/reflections-on-summer-2021.jpg');background-size:cover;background-position:center;">
         <div class="pillar-bg"></div>
         <div class="pillar-content">
           <p class="pillar-number">01</p>
@@ -638,7 +644,7 @@
         </div>
       </a>
 
-      <a href="play/" class="pillar-card" style="background-image:url('assets/images/homepage_play.png');background-size:cover;background-position:center;">
+      <a href="play/" class="pillar-card" style="background-image:linear-gradient(to top,rgba(45,158,130,0.82) 0%,rgba(45,158,130,0.3) 55%,rgba(45,158,130,0.08) 100%),url('assets/images/flowers1.jpg');background-size:cover;background-position:center;">
         <div class="pillar-bg"></div>
         <div class="pillar-content">
           <p class="pillar-number">02</p>
@@ -647,7 +653,7 @@
         </div>
       </a>
 
-      <a href="work/" class="pillar-card" style="background-image:url('assets/images/homepage_work.png');background-size:cover;background-position:center;">
+      <a href="work/" class="pillar-card" style="background-image:linear-gradient(to top,rgba(45,90,158,0.82) 0%,rgba(45,90,158,0.3) 55%,rgba(45,90,158,0.08) 100%),url('assets/images/when-masisi-came-to-visit.jpg');background-size:cover;background-position:center;">
         <div class="pillar-bg"></div>
         <div class="pillar-content">
           <p class="pillar-number">03</p>

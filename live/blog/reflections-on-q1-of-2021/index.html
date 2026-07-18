@@ -11,21 +11,21 @@
 :root{--purple-deep:#1a0a2e;--purple-mid:#2d1254;--purple-light:#4a1f8c;--gold:#c9a84c;--gold-light:#e8c96a;--white:#f5f0ea;--text-muted:#b8a9c9}
 html{scroll-behavior:smooth}
 body{font-family:'Inter',sans-serif;background:var(--purple-deep);color:var(--white);min-height:100vh}
-nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1.25rem 3rem;background:rgba(26,10,46,0.92);backdrop-filter:blur(12px);border-bottom:1px solid rgba(201,168,76,0.15)}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1.25rem clamp(2rem,8%,5rem);background:rgba(26,10,46,0.92);backdrop-filter:blur(12px);border-bottom:1px solid rgba(201,168,76,0.15)}
 .nav-logo{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:700;color:var(--gold);letter-spacing:.12em;text-decoration:none}
 .nav-links{display:flex;align-items:center;gap:2.5rem;list-style:none}
 .nav-links a{font-size:.78rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--white);text-decoration:none;opacity:.8;transition:opacity .2s,color .2s}
 .nav-links a:hover{opacity:1;color:var(--gold-light)}
 .nav-cta{color:var(--purple-deep)!important;background:var(--gold);padding:.55rem 1.4rem;border-radius:2px;opacity:1!important;transition:background .2s!important}
 .nav-cta:hover{background:var(--gold-light)!important}
-.page-hero{padding:9rem 3rem 5rem;background:linear-gradient(135deg,var(--purple-mid) 0%,var(--purple-deep) 100%);border-bottom:1px solid rgba(201,168,76,0.12)}
+.page-hero{padding:9rem clamp(2rem,8%,5rem) 5rem;background:linear-gradient(135deg,var(--purple-mid) 0%,var(--purple-deep) 100%);border-bottom:1px solid rgba(201,168,76,0.12)}
 .page-eyebrow{font-size:.65rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem}
 .page-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2.5rem,6vw,5rem);font-weight:700;line-height:1;color:var(--white);margin-bottom:1.25rem}
 .page-subtitle{font-size:1.05rem;font-weight:300;line-height:1.7;color:var(--text-muted);max-width:580px}
 .page-subtitle em{color:var(--gold-light);font-style:italic}
 .page-date{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:2rem}
-.content{max-width:1100px;margin:0 auto;padding:5rem 3rem}
-.content-narrow{max-width:720px;margin:0 auto;padding:5rem 3rem}
+.content{max-width:960px;margin:0 auto;padding:5rem clamp(1.5rem,4%,3rem)}
+.content-narrow{max-width:720px;margin:0 auto;padding:5rem clamp(1.5rem,4%,3rem)}
 .section-label{font-size:.65rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem}
 .gold-rule{width:48px;height:1px;background:var(--gold);opacity:.5;margin-bottom:2rem}
 h2.section-heading{font-family:'Cormorant Garamond',serif;font-size:clamp(1.8rem,3vw,2.5rem);font-weight:600;color:var(--white);margin-bottom:1.5rem}
@@ -55,7 +55,7 @@ img.site-img{width:100%;display:block;min-height:220px;object-fit:cover;border-r
 .quote-block cite{font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
 .btn-primary{display:inline-block;font-size:.72rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--purple-deep);background:var(--gold);padding:.85rem 2rem;border-radius:2px;text-decoration:none;transition:background .2s}
 .btn-primary:hover{background:var(--gold-light)}
-footer{background:#0f0620;border-top:1px solid rgba(201,168,76,.1);padding:3rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1.5rem}
+footer{background:#0f0620;border-top:1px solid rgba(201,168,76,.1);padding:3rem clamp(2rem,8%,5rem);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1.5rem}
 .footer-brand{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:700;color:var(--gold);letter-spacing:.1em}
 .footer-nav{display:flex;gap:2rem;list-style:none}
 .footer-nav a{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--text-muted);text-decoration:none;transition:color .2s}
@@ -134,6 +134,7 @@ footer{background:#0f0620;border-top:1px solid rgba(201,168,76,.1);padding:3rem;
   <p class="page-date">March 30, 2021</p>
 </div>
 <div class="content-narrow">
+<img src="../../../assets/images/reflections-on-q1-of-2021.png" alt="Reflections on Q1 of 2021" style="width:100%;height:auto;display:block;border-radius:4px;margin:0 0 2rem">
   <p class="body-text">As I sit down to reflect on Q1 of 2021, spring is already here in California. The cold temperatures are slowly disappearing, the days are getting longer, and - my favorite - flowers are in bloom. It is the second day of the final quarter I will enroll at Stanford, but a day before the end of the first actual quarter of the year. As usual, it is the ever present play on beginnings and endings. I am excited to share some reflections on where I am this first quarter with respect to the four pillars I have organized my life around. These pillars are: 1. To develop myself; 2. To build meaningful relationships; 3. To pursue professional excellence; and 4. To cultivate financial sustainability.</p>
 <p class="body-text">I am pleased to report that I continue to successfully lead a healthful life that is sustained by a nutritious diet, an active lifestyle, and sufficient rest. I have made eating well a priority in my life. As I reflect in a recent blog post, eating well to me means eating food that is on average nutritionally balanced, tasty, and shared with good company. Food and meal times continue to be great sources of joy in my life. One of the things I have enjoyed since being in graduate school is an improvement in the quantity of sleep I am able to get. I have been able to get at least seven hours of sleep a night over the past quarter.</p>
 <p class="body-text">For a huge portion of the pandemic, I was struggling to lead an active lifestyle. I no longer biked to and around campus daily nor went on weekly hikes around the Stanford Dish with my dear friend SG. But over the past quarter, even with the bitter California winter, I resumed regular physical activity. To incentivize myself to bike the fourteen kilometer roundtrip to the university, I opted into the twice weekly COVID-19 tests that Stanford offers for their community members. On the 3 other weekdays, I walk around my neighborhood for about half an hour in the morning and then engage in some strength exercises. Starting my days this way has significantly improved my quality of life. With both SG and I about to be fully vaccinated soon, the weekly Stanford Dish hikes are about to return.</p>
