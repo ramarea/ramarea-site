@@ -56,16 +56,18 @@ p.body-text{font-size:.95rem;line-height:1.85;color:var(--text-muted);font-weigh
 .body-text a{color:var(--gold);text-decoration:none}
 .body-text a:hover{text-decoration:underline}
 
-/* CARDS GRID */
-.cards-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.5rem;margin:2.5rem 0}
-.card{display:block;border:1px solid rgba(201,168,76,.18);border-radius:4px;
-  padding:2rem;text-decoration:none;background:rgba(201,168,76,.03);
-  transition:border-color .25s,transform .25s}
-.card:hover{border-color:var(--gold);transform:translateY(-3px)}
-.card-label{font-size:.6rem;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);margin-bottom:.6rem}
-.card-title{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:600;
-  color:var(--white);margin-bottom:.6rem}
-.card-desc{font-size:.82rem;line-height:1.6;color:var(--text-muted);font-weight:300}
+/* WRITE TILE GRID */
+.write-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.75rem;margin:2.5rem 0}
+.write-card{display:flex;flex-direction:column;text-decoration:none;border:1px solid rgba(201,168,76,.15);border-radius:4px;overflow:hidden;background:rgba(45,18,84,.25);transition:border-color .25s,transform .25s,box-shadow .25s}
+.write-card:hover{border-color:rgba(201,168,76,.55);transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,0,.35)}
+.write-card .card-img{aspect-ratio:3/2;background:linear-gradient(135deg,var(--purple-mid) 0%,var(--purple-light) 60%,var(--purple-deep) 100%);background-size:cover;background-position:center;position:relative;flex-shrink:0}
+.write-card .card-img::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,transparent 50%,rgba(26,10,46,.6) 100%)}
+.write-card .card-body{padding:1.25rem 1.5rem 1.5rem;display:flex;flex-direction:column;gap:.5rem}
+.card-genre{font-size:.6rem;letter-spacing:.25em;text-transform:uppercase;color:var(--gold)}
+.card-title{font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:600;color:var(--white);line-height:1.3}
+.card-desc{font-size:.8rem;line-height:1.6;color:var(--text-muted);font-weight:300}
+@media(max-width:1024px){.write-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:640px){.write-grid{grid-template-columns:1fr;gap:1.25rem}}
 
 /* PILLAR CARDS */
 .pillars-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1.25rem;margin:2.5rem 0}
@@ -250,66 +252,54 @@ footer{background:#0f0620;border-top:1px solid rgba(201,168,76,.1);padding:3rem;
 </div>
 <div class="content">
   <p class="body-text">This section is dedicated to my literary pursuits. I consider myself a storyteller and poet — here you will find a collection of my creative writing.</p>
-  <div class="cards-grid">
-    <a href="../../play/write/and-finally-it-rained-in-california/" class="card">
-      <p class="card-label">Essay</p>
-      <h3 class="card-title">&hellip;and Finally it Rained in California!</h3>
-      <p class="card-desc">A reflection on California, drought, and what it means to wait for relief.</p>
+  <div class="write-grid">
+    <a href="../../play/write/and-finally-it-rained-in-california/" class="write-card">
+      <div class="card-img" style="background-image:url('../../assets/images/and-finally-it-rained-in-california.png')" role="img" aria-label="…and Finally it Rained in California!"></div>
+      <div class="card-body"><p class="card-genre">Story</p><h3 class="card-title">&hellip;and Finally it Rained in California!</h3><p class="card-desc">A reflection on California, drought, and what it means to wait for relief.</p></div>
     </a>
-    <a href="../../play/write/homeless/" class="card">
-      <p class="card-label">Story</p>
-      <h3 class="card-title">Homeless</h3>
-      <p class="card-desc">A piece exploring belonging, displacement, and what home truly means.</p>
+    <a href="../../play/write/homeless/" class="write-card">
+      <div class="card-img" style="background-image:url('../../assets/images/homeless.png')" role="img" aria-label="Homeless"></div>
+      <div class="card-body"><p class="card-genre">Story</p><h3 class="card-title">Homeless</h3><p class="card-desc">A piece exploring belonging, displacement, and what home truly means.</p></div>
     </a>
-    <a href="../../play/write/a-thousand-lifetimes/" class="card">
-      <p class="card-label">Poetry</p>
-      <h3 class="card-title">A Thousand Lifetimes</h3>
-      <p class="card-desc">Meditations on the many lives one person can live within a single lifetime.</p>
+    <a href="../../play/write/a-thousand-lifetimes/" class="write-card">
+      <div class="card-img" style="background-image:url('../../assets/images/a-thousand-lifetimes.png')" role="img" aria-label="A Thousand Lifetimes"></div>
+      <div class="card-body"><p class="card-genre">Story</p><h3 class="card-title">A Thousand Lifetimes</h3><p class="card-desc">Meditations on the many lives one person can live within a single lifetime.</p></div>
     </a>
-    <a href="../../play/write/tragic-endings/" class="card">
-      <p class="card-label">Story</p>
-      <h3 class="card-title">Tragic Endings</h3>
-      <p class="card-desc">On the endings that shape us — and what we carry forward from them.</p>
+    <a href="../../play/write/tragic-endings/" class="write-card">
+      <div class="card-img" style="background-image:url('../../assets/images/tragic-endings.jpg')" role="img" aria-label="Tragic Endings"></div>
+      <div class="card-body"><p class="card-genre">Story</p><h3 class="card-title">Tragic Endings</h3><p class="card-desc">On the endings that shape us — and what we carry forward from them.</p></div>
     </a>
-    <a href="../../play/write/just-talking/" class="card">
-      <p class="card-label">Essay</p>
-      <h3 class="card-title">Just Talking</h3>
-      <p class="card-desc">Conversations with myself — and perhaps with you.</p>
+    <a href="../../play/write/just-talking/" class="write-card">
+      <div class="card-img" style="background-image:url('../../assets/images/just-talking.jpg')" role="img" aria-label="Just Talking"></div>
+      <div class="card-body"><p class="card-genre">Story</p><h3 class="card-title">Just Talking</h3><p class="card-desc">Conversations with myself — and perhaps with you.</p></div>
     </a>
-    <a href="../../play/write/take-off/" class="card">
-      <p class="card-label">Poetry</p>
-      <h3 class="card-title">Take Off</h3>
-      <p class="card-desc">The feeling of departure — airports, dreams, and the courage to leave.</p>
+    <a href="../../play/write/take-off/" class="write-card">
+      <div class="card-img" style="background-image:url('../../assets/images/take-off.jpg')" role="img" aria-label="Take Off"></div>
+      <div class="card-body"><p class="card-genre">Story</p><h3 class="card-title">Take Off</h3><p class="card-desc">The feeling of departure — airports, dreams, and the courage to leave.</p></div>
     </a>
-    <a href="../../play/write/se-ileng-se-a-bo-se-ile/" class="card">
-      <p class="card-label">Poetry</p>
-      <h3 class="card-title">Se Ileng Se a bo Se Ile</h3>
-      <p class="card-desc">A poem in Setswana about what was and what remains.</p>
+    <a href="../../play/write/se-ileng-se-a-bo-se-ile/" class="write-card">
+      <div class="card-img" style="background-image:url('../../assets/images/se-ileng-se-a-bo-se-ile.jpg')" role="img" aria-label="Se Ileng Se a bo Se Ile"></div>
+      <div class="card-body"><p class="card-genre">Story</p><h3 class="card-title">Se Ileng Se a bo Se Ile</h3><p class="card-desc">A poem in Setswana about what was and what remains.</p></div>
     </a>
-    <a href="../../play/write/lehuma-leswe/" class="card">
-      <p class="card-label">Essay</p>
-      <h3 class="card-title">Lehuma Leswe</h3>
-      <p class="card-desc">On poverty, survival, and the complicated relationship with money.</p>
+    <a href="../../play/write/lehuma-leswe/" class="write-card">
+      <div class="card-img" style="background-image:url('../../assets/images/lehuma-leswe.jpg')" role="img" aria-label="Lehuma Leswe"></div>
+      <div class="card-body"><p class="card-genre">Story</p><h3 class="card-title">Lehuma Leswe</h3><p class="card-desc">On poverty, survival, and the complicated relationship with money.</p></div>
     </a>
-    <a href="../../play/write/fa-le-phirima/" class="card">
-      <p class="card-label">Poetry</p>
-      <h3 class="card-title">Fa Le Phirima</h3>
-      <p class="card-desc">When the sun sets — an ode to endings and the beauty of dusk.</p>
+    <a href="../../play/write/fa-le-phirima/" class="write-card">
+      <div class="card-img" style="background-image:url('../../assets/images/fa-le-phirima.jpg')" role="img" aria-label="Fa Le Phirima"></div>
+      <div class="card-body"><p class="card-genre">Story</p><h3 class="card-title">Fa Le Phirima</h3><p class="card-desc">When the sun sets — an ode to endings and the beauty of dusk.</p></div>
     </a>
-    <a href="../../play/write/mma-pelo/" class="card">
-      <p class="card-label">Story</p>
-      <h3 class="card-title">Mma Pelo</h3>
-      <p class="card-desc">A story of a woman who embodies the heart of a community.</p>
+    <a href="../../play/write/mma-pelo/" class="write-card">
+      <div class="card-img" style="background-image:url('../../assets/images/mma-pelo.jpg')" role="img" aria-label="Mma Pelo"></div>
+      <div class="card-body"><p class="card-genre">Story</p><h3 class="card-title">Mma Pelo</h3><p class="card-desc">A story of a woman who embodies the heart of a community.</p></div>
     </a>
-    <a href="../../play/write/collection-of-old-stories/" class="card">
-      <p class="card-label">Collection</p>
-      <h3 class="card-title">Collection of Old Stories</h3>
-      <p class="card-desc">An archive of earlier work — stories that trace the arc of my writing life.</p>
+    <a href="../../play/write/collection-of-old-stories/" class="write-card">
+      <div class="card-img" style="background-image:url('../../assets/images/collection-of-old-stories.jpg')" role="img" aria-label="Collection of Old Stories"></div>
+      <div class="card-body"><p class="card-genre">Story</p><h3 class="card-title">Collection of Old Stories</h3><p class="card-desc">An archive of earlier work — stories that trace the arc of my writing life.</p></div>
     </a>
-    <a href="http://poemhunter.com/tumisang-ramarea/" target="_blank" rel="noopener" class="card">
-      <p class="card-label">External</p>
-      <h3 class="card-title">Poetry on PoemHunter</h3>
-      <p class="card-desc">My published poems available on PoemHunter.com.</p>
+    <a href="http://poemhunter.com/tumisang-ramarea/" target="_blank" rel="noopener" class="write-card">
+      <div class="card-img" role="img" aria-label="Poetry on PoemHunter"></div>
+      <div class="card-body"><p class="card-genre">Poetry</p><h3 class="card-title">Poetry on PoemHunter</h3><p class="card-desc">My published poems available on PoemHunter.com.</p></div>
     </a>
   </div>
   <a href="../../play/" class="back-link">&larr; Return to Play</a>

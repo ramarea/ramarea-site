@@ -45,11 +45,16 @@ p.body-text{font-size:.95rem;line-height:1.85;color:var(--text-muted);font-weigh
 .pillar{border:1px solid rgba(201,168,76,.2);border-radius:4px;padding:2rem;background:rgba(201,168,76,.03)}
 .pillar-title{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:700;color:var(--gold);margin-bottom:.75rem}
 .pillar ul{padding-left:1.2rem;color:var(--text-muted);font-size:.85rem;line-height:1.75;font-weight:300}
-/* IMAGE: broken img shows icon + alt text natively */
-img.site-img{width:100%;display:block;min-height:220px;object-fit:cover;border-radius:4px;margin:1.5rem 0;border:1px dashed rgba(201,168,76,0.3);background:rgba(201,168,76,0.04);color:var(--gold-light);font-size:.8rem;font-family:'Inter',sans-serif}
-.photo-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:1rem;margin:2rem 0}
-.photo-item img.site-img{margin:0;aspect-ratio:4/3;min-height:unset}
-.photo-caption{font-size:.75rem;color:var(--text-muted);margin-top:.5rem;text-align:center}
+/* DOODLE GALLERY */
+.doodle-gallery{margin:2.5rem 0;display:flex;flex-direction:column;gap:2.5rem}
+.doodle-hero img{width:100%;height:auto;display:block;border-radius:4px}
+.doodle-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1.75rem;align-items:start}
+.doodle-item img{width:100%;height:auto;display:block;border-radius:4px}
+.doodle-label{margin-top:.85rem;padding-top:.75rem;border-top:1px solid rgba(201,168,76,.3)}
+.doodle-num{font-size:.6rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-bottom:.35rem}
+.doodle-title{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-style:italic;font-weight:400;color:var(--white);line-height:1.3}
+.doodle-hero .doodle-title{font-size:1.6rem}
+@media(max-width:640px){.doodle-row{grid-template-columns:1fr}}
 .back-link{display:inline-flex;align-items:center;gap:.6rem;font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);text-decoration:none;border:1px solid rgba(201,168,76,.3);padding:.65rem 1.25rem;border-radius:2px;margin-top:3rem;transition:border-color .2s,background .2s}
 .back-link:hover{border-color:var(--gold);background:rgba(201,168,76,.08)}
 .quote-block{border-left:2px solid var(--gold);padding:1.5rem 2rem;margin:2.5rem 0;background:rgba(201,168,76,.04)}
@@ -82,11 +87,26 @@ footer{background:#0f0620;border-top:1px solid rgba(201,168,76,.1);padding:3rem 
   <h1 class="page-title">Doodles</h1>
 </div>
 <div class="content">
-  <div class="photo-grid">
-    <div class="photo-item"><img src="../../images/doodles-1.jpg" alt="📷 Add photo 1 for Doodles" class="site-img"><p class="photo-caption">Add caption here</p></div>
-    <div class="photo-item"><img src="../../images/doodles-2.jpg" alt="📷 Add photo 2 for Doodles" class="site-img"><p class="photo-caption">Add caption here</p></div>
-    <div class="photo-item"><img src="../../images/doodles-3.jpg" alt="📷 Add photo 3 for Doodles" class="site-img"><p class="photo-caption">Add caption here</p></div>
-    <div class="photo-item"><img src="../../images/doodles-4.jpg" alt="📷 Add photo 4 for Doodles" class="site-img"><p class="photo-caption">Add caption here</p></div>
+  <div class="doodle-gallery">
+    <div class="doodle-hero">
+      <img src="../../../assets/images/doodles_california_love.jpg" alt="California Love">
+      <div class="doodle-label"><p class="doodle-num">01</p><p class="doodle-title">California Love</p></div>
+    </div>
+    <div class="doodle-row">
+      <div class="doodle-item"><img src="../../../assets/images/doodle_black_magic.png" alt="Black Magic In A Cathedral"><div class="doodle-label"><p class="doodle-num">02</p><p class="doodle-title">Black Magic In A Cathedral</p></div></div>
+      <div class="doodle-item"><img src="../../../assets/images/doodles_world_end.jpg" alt="Before The World Ends"><div class="doodle-label"><p class="doodle-num">03</p><p class="doodle-title">Before The World Ends</p></div></div>
+      <div class="doodle-item"><img src="../../../assets/images/doodles_peanut_butter.jpg" alt="Peanut Butter Stew In The Cold"><div class="doodle-label"><p class="doodle-num">04</p><p class="doodle-title">Peanut Butter Stew In The Cold</p></div></div>
+    </div>
+    <div class="doodle-row">
+      <div class="doodle-item"><img src="../../../assets/images/doodles_mzansi.jpg" alt="Reminiscing About Mzansi"><div class="doodle-label"><p class="doodle-num">05</p><p class="doodle-title">Reminiscing About Mzansi</p></div></div>
+      <div class="doodle-item"><img src="../../../assets/images/doodles_under_moon.jpg" alt="Accounting Under The Moon"><div class="doodle-label"><p class="doodle-num">06</p><p class="doodle-title">Accounting Under The Moon</p></div></div>
+      <div class="doodle-item"><img src="../../../assets/images/doodles_summer_hood.jpg" alt="Summer In The Hood"><div class="doodle-label"><p class="doodle-num">07</p><p class="doodle-title">Summer In The Hood</p></div></div>
+    </div>
+    <div class="doodle-row">
+      <div class="doodle-item"><img src="../../../assets/images/doodles_despair.jpg" alt="Escaping Despair"><div class="doodle-label"><p class="doodle-num">08</p><p class="doodle-title">Escaping Despair</p></div></div>
+      <div class="doodle-item"><img src="../../../assets/images/doodles_infinite_heart.jpg" alt="Corners Of An Infinite Heart"><div class="doodle-label"><p class="doodle-num">09</p><p class="doodle-title">Corners Of An Infinite Heart</p></div></div>
+      <div class="doodle-item"><img src="../../../assets/images/doodles_turbulent_seas.jpg" alt="Love And War In Turbulent Seas"><div class="doodle-label"><p class="doodle-num">10</p><p class="doodle-title">Love And War In Turbulent Seas</p></div></div>
+    </div>
   </div>
   <a href="../" class="back-link">&larr; Return to Show</a>
 </div>

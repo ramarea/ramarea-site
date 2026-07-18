@@ -50,6 +50,12 @@ img.site-img{width:100%;display:block;min-height:220px;object-fit:cover;border-r
 .photo-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:1rem;margin:2rem 0}
 .photo-item img.site-img{margin:0;aspect-ratio:4/3;min-height:unset}
 .photo-caption{font-size:.75rem;color:var(--text-muted);margin-top:.5rem;text-align:center}
+/* FLOWERS GALLERY */
+.flowers-gallery{display:flex;flex-direction:column;gap:1rem;margin:2.5rem 0}
+.flowers-full img{width:100%;height:auto;display:block;border-radius:4px}
+.flowers-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;align-items:start}
+.flowers-row img{width:100%;height:auto;display:block;border-radius:4px}
+@media(max-width:480px){.flowers-row{grid-template-columns:1fr}}
 .back-link{display:inline-flex;align-items:center;gap:.6rem;font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);text-decoration:none;border:1px solid rgba(201,168,76,.3);padding:.65rem 1.25rem;border-radius:2px;margin-top:3rem;transition:border-color .2s,background .2s}
 .back-link:hover{border-color:var(--gold);background:rgba(201,168,76,.08)}
 .quote-block{border-left:2px solid var(--gold);padding:1.5rem 2rem;margin:2.5rem 0;background:rgba(201,168,76,.04)}
@@ -82,11 +88,38 @@ footer{background:#0f0620;border-top:1px solid rgba(201,168,76,.1);padding:3rem 
   <h1 class="page-title">Flowers</h1>
 </div>
 <div class="content">
-  <div class="photo-grid">
-    <div class="photo-item"><img src="../../images/flowers-1.jpg" alt="📷 Add photo 1 for Flowers" class="site-img"><p class="photo-caption">Add caption here</p></div>
-    <div class="photo-item"><img src="../../images/flowers-2.jpg" alt="📷 Add photo 2 for Flowers" class="site-img"><p class="photo-caption">Add caption here</p></div>
-    <div class="photo-item"><img src="../../images/flowers-3.jpg" alt="📷 Add photo 3 for Flowers" class="site-img"><p class="photo-caption">Add caption here</p></div>
-    <div class="photo-item"><img src="../../images/flowers-4.jpg" alt="📷 Add photo 4 for Flowers" class="site-img"><p class="photo-caption">Add caption here</p></div>
+  <div class="flowers-gallery">
+    <div class="flowers-full"><img src="../../../assets/images/flowers1.jpg" alt="Flowers 1"></div>
+    <div class="flowers-row">
+      <img src="../../../assets/images/flowers2.jpg" alt="Flowers 2">
+      <img src="../../../assets/images/flowers3.jpg" alt="Flowers 3">
+    </div>
+    <div class="flowers-row">
+      <img src="../../../assets/images/flowers4.jpg" alt="Flowers 4">
+      <img src="../../../assets/images/flowers5.jpg" alt="Flowers 5">
+    </div>
+    <div class="flowers-full"><img src="../../../assets/images/flowers6.jpg" alt="Flowers 6"></div>
+    <div class="flowers-row">
+      <img src="../../../assets/images/flowers7.jpg" alt="Flowers 7">
+      <img src="../../../assets/images/flowers8.jpg" alt="Flowers 8">
+    </div>
+    <div class="flowers-row">
+      <img src="../../../assets/images/flowers9.jpg" alt="Flowers 9">
+      <img src="../../../assets/images/flowers10.jpg" alt="Flowers 10">
+    </div>
+    <div class="flowers-full"><img src="../../../assets/images/flowers11.jpg" alt="Flowers 11"></div>
+    <div class="flowers-row">
+      <img src="../../../assets/images/flowers12.jpg" alt="Flowers 12">
+      <img src="../../../assets/images/flowers13.jpg" alt="Flowers 13">
+    </div>
+    <div class="flowers-row">
+      <img src="../../../assets/images/flowers14.jpg" alt="Flowers 14">
+      <img src="../../../assets/images/flowers15.jpg" alt="Flowers 15">
+    </div>
+    <div class="flowers-row">
+      <img src="../../../assets/images/flowers16.jpg" alt="Flowers 16">
+      <img src="../../../assets/images/flowers17.jpg" alt="Flowers 17">
+    </div>
   </div>
   <a href="../" class="back-link">&larr; Return to Show</a>
 </div>
