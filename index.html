@@ -95,14 +95,15 @@
       padding: 0 3rem;
       position: relative;
       overflow: hidden;
-      background: radial-gradient(ellipse at 70% 50%, var(--purple-light) 0%, var(--purple-mid) 40%, var(--purple-deep) 100%);
+      background: url('/assets/images/homepage_hero.jpg') center center / cover no-repeat,
+                  radial-gradient(ellipse at 70% 50%, var(--purple-light) 0%, var(--purple-mid) 40%, var(--purple-deep) 100%);
     }
 
     .hero::before {
       content: '';
       position: absolute;
       inset: 0;
-      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23c9a84c' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      background: rgba(26, 10, 46, 0.55);
     }
 
     .hero-inner {
@@ -628,8 +629,8 @@
     </div>
     <div class="pillars-grid">
 
-      <a href="live/" class="pillar-card">
-        <div class="pillar-bg">LIVE</div>
+      <a href="live/" class="pillar-card" style="background-image:url('/assets/images/homepage_live.png');background-size:cover;background-position:center;">
+        <div class="pillar-bg"></div>
         <div class="pillar-content">
           <p class="pillar-number">01</p>
           <h3 class="pillar-title">LIVE</h3>
@@ -637,8 +638,8 @@
         </div>
       </a>
 
-      <a href="play/" class="pillar-card">
-        <div class="pillar-bg">PLAY</div>
+      <a href="play/" class="pillar-card" style="background-image:url('/assets/images/homepage_play.png');background-size:cover;background-position:center;">
+        <div class="pillar-bg"></div>
         <div class="pillar-content">
           <p class="pillar-number">02</p>
           <h3 class="pillar-title">PLAY</h3>
@@ -646,8 +647,8 @@
         </div>
       </a>
 
-      <a href="work/" class="pillar-card">
-        <div class="pillar-bg">WORK</div>
+      <a href="work/" class="pillar-card" style="background-image:url('/assets/images/homepage_work.png');background-size:cover;background-position:center;">
+        <div class="pillar-bg"></div>
         <div class="pillar-content">
           <p class="pillar-number">03</p>
           <h3 class="pillar-title">WORK</h3>
