@@ -45,11 +45,12 @@ p.body-text{font-size:.95rem;line-height:1.85;color:var(--text-muted);font-weigh
 .pillar{border:1px solid rgba(201,168,76,.2);border-radius:4px;padding:2rem;background:rgba(201,168,76,.03)}
 .pillar-title{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:700;color:var(--gold);margin-bottom:.75rem}
 .pillar ul{padding-left:1.2rem;color:var(--text-muted);font-size:.85rem;line-height:1.75;font-weight:300}
-/* IMAGE: broken img shows icon + alt text natively */
-img.site-img{width:100%;display:block;min-height:220px;object-fit:cover;border-radius:4px;margin:1.5rem 0;border:1px dashed rgba(201,168,76,0.3);background:rgba(201,168,76,0.04);color:var(--gold-light);font-size:.8rem;font-family:'Inter',sans-serif}
-.photo-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:1rem;margin:2rem 0}
-.photo-item img.site-img{margin:0;aspect-ratio:4/3;min-height:unset}
-.photo-caption{font-size:.75rem;color:var(--text-muted);margin-top:.5rem;text-align:center}
+img.site-img{width:100%;height:auto;display:block;border-radius:4px;margin:1.5rem 0}
+.perf-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin:1.5rem 0;align-items:start}
+.perf-grid img{width:100%;height:auto;display:block;border-radius:4px}
+.perf-grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;margin:1.5rem 0;align-items:start}
+.perf-grid-2 img{width:100%;height:auto;display:block;border-radius:4px}
+@media(max-width:600px){.perf-grid{grid-template-columns:repeat(2,1fr)}.perf-grid-2{grid-template-columns:1fr}}
 .back-link{display:inline-flex;align-items:center;gap:.6rem;font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);text-decoration:none;border:1px solid rgba(201,168,76,.3);padding:.65rem 1.25rem;border-radius:2px;margin-top:3rem;transition:border-color .2s,background .2s}
 .back-link:hover{border-color:var(--gold);background:rgba(201,168,76,.08)}
 .quote-block{border-left:2px solid var(--gold);padding:1.5rem 2rem;margin:2.5rem 0;background:rgba(201,168,76,.04)}
@@ -83,8 +84,73 @@ footer{background:#0f0620;border-top:1px solid rgba(201,168,76,.1);padding:3rem 
   <p class="page-subtitle">On stage at Stanford and UWC Costa Rica — West Side Story and beyond.</p>
 </div>
 <div class="content">
-  <img src="../../images/performing-arts-1.jpg" alt="📷 Add photo for Performing Arts" class="site-img">
-  <p class="body-text" style="font-style:italic;opacity:.6">Content coming from original site — add your text and photos here.</p>
+
+  <h3 class="sub-heading">Spoken Word Performance</h3>
+  <p class="section-label">Open Mic &middot; 25 November 2019 &middot; Punchline Comedy Club, Detroit MI</p>
+  <div class="gold-rule"></div>
+  <p class="body-text">Performed the spoken word piece <a href="https://www.poemhunter.com/poem/i-am-i-am-from/" target="_blank" rel="noopener"><em>"I Am...I Am From"</em></a> — a meditation on Botswana roots, growing up one of nine children, and the places that made me.</p>
+  <img src="../../../assets/images/perf1.jpg" alt="Spoken word performance at Punchline Comedy Club, Detroit 2019" class="site-img">
+
+  <h3 class="sub-heading">Elder Gaseitsewe in <em>Meet The Bensons</em></h3>
+  <p class="section-label">Stanford African Cultural Show &middot; 1 June 2019 &middot; Dinkelspiel Auditorium, Stanford CA</p>
+  <div class="gold-rule"></div>
+  <p class="body-text">Played Elder Gaseitsewe, village elder from Botswana, in the Stanford African Students Association's original production <em>Meet The Bensons</em>. Fifteen minutes of fame, well spent.</p>
+  <p class="body-text" style="font-size:.78rem;letter-spacing:.05em;color:var(--text-muted);opacity:.7">Photos courtesy Ryan Jae and @nicholasphotography48</p>
+  <div class="perf-grid-2">
+    <img src="../../../assets/images/perf2.jpg" alt="Meet The Bensons — Stanford African Cultural Show 2019">
+    <img src="../../../assets/images/perf3.jpg" alt="Meet The Bensons — Stanford African Cultural Show 2019">
+    <img src="../../../assets/images/perf4.jpg" alt="Meet The Bensons — Stanford African Cultural Show 2019">
+    <img src="../../../assets/images/perf5.jpg" alt="Meet The Bensons — Stanford African Cultural Show 2019">
+    <img src="../../../assets/images/perf6.jpg" alt="Meet The Bensons — Stanford African Cultural Show 2019">
+    <img src="../../../assets/images/perf7.jpg" alt="Meet The Bensons — Stanford African Cultural Show 2019">
+    <img src="../../../assets/images/perf8.jpg" alt="Meet The Bensons — Stanford African Cultural Show 2019">
+    <img src="../../../assets/images/perf9.jpg" alt="Meet The Bensons — Stanford African Cultural Show 2019">
+    <img src="../../../assets/images/perf10.jpg" alt="Meet The Bensons — Stanford African Cultural Show 2019">
+    <img src="../../../assets/images/perf11.jpg" alt="Meet The Bensons — Stanford African Cultural Show 2019">
+    <img src="../../../assets/images/perf12.jpg" alt="Meet The Bensons — Stanford African Cultural Show 2019">
+    <img src="../../../assets/images/perf13.jpg" alt="Meet The Bensons — Stanford African Cultural Show 2019">
+    <img src="../../../assets/images/perf14.jpg" alt="Meet The Bensons — Stanford African Cultural Show 2019">
+    <img src="../../../assets/images/perf15.jpg" alt="Meet The Bensons — Stanford African Cultural Show 2019">
+    <img src="../../../assets/images/perf16.jpg" alt="Meet The Bensons — Stanford African Cultural Show 2019">
+    <img src="../../../assets/images/perf17.jpg" alt="Meet The Bensons — Stanford African Cultural Show 2019">
+    <img src="../../../assets/images/perf18.jpg" alt="Meet The Bensons — Stanford African Cultural Show 2019">
+    <img src="../../../assets/images/perf19.jpg" alt="Meet The Bensons — Stanford African Cultural Show 2019">
+    <img src="../../../assets/images/perf20.jpg" alt="Meet The Bensons — Stanford African Cultural Show 2019">
+    <img src="../../../assets/images/perf21.jpg" alt="Meet The Bensons — Stanford African Cultural Show 2019">
+  </div>
+
+  <h3 class="sub-heading">Inaugural Stand-Up Comedy Performance</h3>
+  <p class="section-label">Open Mic &middot; 23 May 2019 &middot; CoHo, Stanford CA</p>
+  <div class="gold-rule"></div>
+  <p class="body-text">I consider myself a storyteller - even my purpose in life revolves around enabling others to create and tell their own stories. Most of my story telling happens via the written form. With this performance, I was looking to continue what I started earlier in the year by sharing my stories on stage. But more importantly, I wanted to experiment with a new medium: comedy. I chose comedy because in general people from back home think I am funny enough and yet here in the US people miss over 90% of my humor. I was curious to see if they will get it if I intentionally package my presentation as something to make people laugh. They laughed enough for a first time standup performance: most likely at me than at my jokes. My performance commented on the importance of informed consent in interpersonal exchanges, the recent college admissions scandal, and served as a reflection on being an international student at Stanford over the past 4 years. I will try again!</p>
+
+  <h3 class="sub-heading">Spoken Word Performance</h3>
+  <p class="section-label">Open Mic &middot; 16 March 2019 &middot; CoHo, Stanford CA</p>
+  <div class="gold-rule"></div>
+  <p class="body-text">Performed three pieces: <a href="https://www.poemhunter.com/poem/on-a-bench-under-the-moon/" target="_blank" rel="noopener">On A Bench Under The Moon</a>, <a href="https://www.poemhunter.com/poem/giving-shame-a-voice/" target="_blank" rel="noopener">Giving Shame A Voice</a>, and <a href="https://www.poemhunter.com/poem/beside-you-30/" target="_blank" rel="noopener">Beside You</a>.</p>
+
+  <h3 class="sub-heading">Read Book Excerpt</h3>
+  <p class="section-label">Open Mic &middot; 3 March 2019 &middot; CoHo, Stanford CA</p>
+  <div class="gold-rule"></div>
+  <p class="body-text">Read a section from my memoir — the chapter on my mother's illness. The first time I read it aloud to strangers.</p>
+
+  <h3 class="sub-heading">Rap Performance</h3>
+  <p class="section-label">UWC Costa Rica &middot; Class of 2014 Farewell Pool Day</p>
+  <div class="gold-rule"></div>
+  <p class="body-text">Accompanied by BCS who sang the chorus and with Eminem's When I'm Gone beat in the background, I spit a few bars to bid my second years farewell in Costa Rica. When I was a teenager, I was known as G-RaM. I considered myself a rap icon in Kanye.</p>
+  <img src="../../../assets/images/perf22.jpg" alt="Rap performance at UWC Costa Rica farewell pool day 2014" class="site-img">
+
+  <h3 class="sub-heading">Doc in <em>West Side Story</em></h3>
+  <p class="section-label">2014 &middot; United World College of Costa Rica, Santa Ana, Costa Rica</p>
+  <div class="gold-rule"></div>
+  <p class="body-text">Played Doc in the UWC Costa Rica production of <em>West Side Story</em>.</p>
+  <div class="perf-grid-2">
+    <img src="../../../assets/images/westside_1.jpg" alt="West Side Story — UWC Costa Rica 2014">
+    <img src="../../../assets/images/westside_2.jpg" alt="West Side Story — UWC Costa Rica 2014">
+    <img src="../../../assets/images/westside_3.jpg" alt="West Side Story — UWC Costa Rica 2014">
+    <img src="../../../assets/images/westside_4.jpg" alt="West Side Story — UWC Costa Rica 2014">
+  </div>
+
   <a href="../" class="back-link">&larr; Return to Do</a>
 </div>
 <footer>
