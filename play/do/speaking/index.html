@@ -24,46 +24,27 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .page-eyebrow{font-size:.65rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem}
 .page-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2.5rem,6vw,5rem);font-weight:700;line-height:1;color:var(--white);margin-bottom:1.25rem}
 .page-subtitle{font-size:1.05rem;font-weight:300;line-height:1.7;color:var(--text-muted);max-width:580px}
-.page-subtitle em{color:var(--gold-light);font-style:italic}
-.page-date{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:2rem}
-.content{max-width:960px;margin:0 auto;padding:5rem clamp(1.5rem,4%,3rem)}
-.content-narrow{max-width:720px;margin:0 auto;padding:5rem clamp(1.5rem,4%,3rem)}
+.content{max-width:720px;margin:0 auto;padding:5rem clamp(1.5rem,4%,3rem)}
 .section-label{font-size:.65rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem}
 .gold-rule{width:48px;height:1px;background:var(--gold);opacity:.5;margin-bottom:2rem}
-h2.section-heading{font-family:'Cormorant Garamond',serif;font-size:clamp(1.8rem,3vw,2.5rem);font-weight:600;color:var(--white);margin-bottom:1.5rem}
 h3.sub-heading{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:600;color:var(--gold);margin:2.5rem 0 .75rem}
 p.body-text{font-size:.95rem;line-height:1.85;color:var(--text-muted);font-weight:300;margin-bottom:1.25rem}
 .body-text a{color:var(--gold);text-decoration:none}
 .body-text a:hover{text-decoration:underline}
-.cards-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.5rem;margin:2.5rem 0}
-.card{display:block;border:1px solid rgba(201,168,76,.18);border-radius:4px;padding:2rem;text-decoration:none;background:rgba(201,168,76,.03);transition:border-color .25s,transform .25s}
-.card:hover{border-color:var(--gold);transform:translateY(-3px)}
-.card-label{font-size:.6rem;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);margin-bottom:.6rem}
-.card-title{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:600;color:var(--white);margin-bottom:.6rem}
-.card-desc{font-size:.82rem;line-height:1.6;color:var(--text-muted);font-weight:300}
-.pillars-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1.25rem;margin:2.5rem 0}
-.pillar{border:1px solid rgba(201,168,76,.2);border-radius:4px;padding:2rem;background:rgba(201,168,76,.03)}
-.pillar-title{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:700;color:var(--gold);margin-bottom:.75rem}
-.pillar ul{padding-left:1.2rem;color:var(--text-muted);font-size:.85rem;line-height:1.75;font-weight:300}
-/* IMAGE: broken img shows icon + alt text natively */
-img.site-img{width:100%;display:block;min-height:220px;object-fit:cover;border-radius:4px;margin:1.5rem 0;border:1px dashed rgba(201,168,76,0.3);background:rgba(201,168,76,0.04);color:var(--gold-light);font-size:.8rem;font-family:'Inter',sans-serif}
-.photo-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:1rem;margin:2rem 0}
-.photo-item img.site-img{margin:0;aspect-ratio:4/3;min-height:unset}
-.photo-caption{font-size:.75rem;color:var(--text-muted);margin-top:.5rem;text-align:center}
+img.site-img{width:100%;height:auto;display:block;border-radius:4px;margin:1.5rem 0}
+.video-embed{position:relative;width:100%;aspect-ratio:16/9;margin:1.5rem 0}
+.video-embed iframe{position:absolute;inset:0;width:100%;height:100%;border:0;border-radius:4px}
+.sound-embed{margin:1.5rem 0;border-radius:4px;overflow:hidden}
+.sound-embed iframe{width:100%;height:300px;border:0;display:block}
 .back-link{display:inline-flex;align-items:center;gap:.6rem;font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);text-decoration:none;border:1px solid rgba(201,168,76,.3);padding:.65rem 1.25rem;border-radius:2px;margin-top:3rem;transition:border-color .2s,background .2s}
 .back-link:hover{border-color:var(--gold);background:rgba(201,168,76,.08)}
-.quote-block{border-left:2px solid var(--gold);padding:1.5rem 2rem;margin:2.5rem 0;background:rgba(201,168,76,.04)}
-.quote-block p{font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-style:italic;color:var(--white);line-height:1.6;margin-bottom:.5rem}
-.quote-block cite{font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
-.btn-primary{display:inline-block;font-size:.72rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--purple-deep);background:var(--gold);padding:.85rem 2rem;border-radius:2px;text-decoration:none;transition:background .2s}
-.btn-primary:hover{background:var(--gold-light)}
 footer{background:#0f0620;border-top:1px solid rgba(201,168,76,.1);padding:3rem clamp(2rem,8%,5rem);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1.5rem}
 .footer-brand{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:700;color:var(--gold);letter-spacing:.1em}
 .footer-nav{display:flex;gap:2rem;list-style:none}
 .footer-nav a{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--text-muted);text-decoration:none;transition:color .2s}
 .footer-nav a:hover{color:var(--gold)}
 .footer-copy{font-size:.7rem;color:var(--text-muted);opacity:.6}
-@media(max-width:768px){nav{padding:1rem 1.5rem}.nav-links{gap:1.25rem}.nav-cta{display:none}.page-hero,.content,.content-narrow{padding-left:1.5rem;padding-right:1.5rem}footer{flex-direction:column;align-items:flex-start;padding:2rem 1.5rem}.cards-grid{grid-template-columns:1fr}}
+@media(max-width:768px){nav{padding:1rem 1.5rem}.nav-links{gap:1.25rem}.nav-cta{display:none}.page-hero,.content{padding-left:1.5rem;padding-right:1.5rem}footer{flex-direction:column;align-items:flex-start;padding:2rem 1.5rem}}
 </style>
 </head>
 <body>
@@ -80,13 +61,80 @@ footer{background:#0f0620;border-top:1px solid rgba(201,168,76,.1);padding:3rem 
 <div class="page-hero">
   <p class="page-eyebrow">Play &rarr; Do</p>
   <h1 class="page-title">Speaking</h1>
-  <p class="page-subtitle">From Kigali to TEDx — using my voice to move ideas and people.</p>
 </div>
+
 <div class="content">
-  <img src="../../images/speaking-1.jpg" alt="📷 Add photo for Speaking" class="site-img">
-  <p class="body-text" style="font-style:italic;opacity:.6">Content coming from original site — add your text and photos here.</p>
+  <p class="body-text">One of the ways I give back to communities that have made me who I am, is through sharing wisdom from my experiences. The idea behind this is not to imply I have found the answers to success, oh no I am far from there, but to inspire others to find their own secret to success. I share my stories to live, &ldquo;...and as we let our own light shine, we unconsciously give other people permission to do the same.&rdquo; Below are some talks I have given sharing bits of my story. I hope they are of use to at least one person out there. I also want to say that I love myself a lot and my confidence can come across as a lot, so please do not take me all too seriously. I know I need to take a chill pill, to be humble and sit down. But I also think part of humility is owning up to who you are, without forcing it down anyone&rsquo;s throat. It would be fear to keep my light hidden under the bed. Fear and humility should never be confused.</p>
+
+  <h3 class="sub-heading">Keynote &mdash; African Library Project Harambee Dinner</h3>
+  <p class="section-label">22 October 2022</p>
+  <div class="gold-rule"></div>
+  <p class="body-text">On October 22nd, 2022 I delivered the keynote speech at the African Library Project at their annual fundraising Harambee dinner! (A summary of the event may be found <a href="https://www.africanlibraryproject.org/harambee-2022-recap/" target="_blank" rel="noopener">here</a>.)</p>
+  <img src="../../../assets/images/speak_alp.png" alt="African Library Project Harambee Dinner keynote 2022" class="site-img">
+
+  <h3 class="sub-heading">Botswana Student Network of the Americas</h3>
+  <p class="section-label">July 2022</p>
+  <div class="gold-rule"></div>
+  <p class="body-text">In July 2022, I was honored to share the my professional journey with the students of the Botswana Student Network of the Americas. I focused the presentation on what I learned applying for jobs as an international student in the US.</p>
+  <div class="video-embed"><iframe src="https://www.youtube.com/embed/3M2uWLpyJBQ" title="Botswana Student Network of the Americas" allowfullscreen loading="lazy"></iframe></div>
+
+  <h3 class="sub-heading">The Scholar and The Student Podcast</h3>
+  <p class="section-label">October 2020 &middot; Released 14 March 2021</p>
+  <div class="gold-rule"></div>
+  <p class="body-text">In October 2020, I was interviewed by my friend and brother, <a href="https://www.facebook.com/Rahat.Mos" target="_blank" rel="noopener">Mostakim Habib</a>, for his podcast <a href="https://www.facebook.com/snspodBW" target="_blank" rel="noopener">The Scholar and The Student</a>. Our conversation was released as episode 3 of season 2 on March 14, 2021. We discussed everything from my days as a debate star in Botswana to my experiences studying abroad. We also discussed cancel culture, our responsibility as men in transcending the toxic masculinity from our socialization, and my hopes and dreams for Botswana.</p>
+  <div class="video-embed"><iframe src="https://www.youtube.com/embed/T-kDscU8W2U" title="The Scholar and The Student Podcast" allowfullscreen loading="lazy"></iframe></div>
+
+  <h3 class="sub-heading">Creo Consultancy with Emang Rabogadi</h3>
+  <div class="gold-rule"></div>
+  <p class="body-text">I had the pleasure of being interviewed by my dear friend and self-acclaimed college matchmaker, <a href="https://www.linkedin.com/in/emangrabogadi/" target="_blank" rel="noopener">Emang Rabogadi</a>. The conversation was an opportunity for me to share my story with her audience on her page <a href="https://www.facebook.com/TheCreoAgency" target="_blank" rel="noopener">Creo Consultancy</a>, with a particular emphasis on navigating failure and complexity on my way to earning a world-class education from both the <a href="https://www.uwccostarica.org/" target="_blank" rel="noopener">United World College of Costa Rica</a> and <a href="https://www.stanford.edu/" target="_blank" rel="noopener">Stanford University</a> on the <a href="https://mastercardfdn.org/all/scholars/" target="_blank" rel="noopener">MasterCard Foundation Scholarship</a>. The conversation may be found on Facebook <a href="https://www.facebook.com/2288604077828295/videos/1393010927715208" target="_blank" rel="noopener">here</a>.</p>
+  <img src="../../../assets/images/speak_creo.jpg" alt="Creo Consultancy interview with Emang Rabogadi" class="site-img">
+
+  <h3 class="sub-heading">African Library Project Harambe Fundraiser</h3>
+  <p class="section-label">October 2020</p>
+  <div class="gold-rule"></div>
+  <p class="body-text">In October 2020, I was featured in a video at the annual Harambe Fundraiser for the <a href="https://www.africanlibraryproject.org/" target="_blank" rel="noopener">African Library Project</a>, an organization whose work I endorse.</p>
+  <div class="video-embed"><iframe src="https://www.youtube.com/embed/EHUDVwdhEkc" title="African Library Project Harambe Fundraiser 2020" allowfullscreen loading="lazy"></iframe></div>
+
+  <h3 class="sub-heading">Guest Lecture &mdash; Business Finance</h3>
+  <p class="section-label">3 July 2020 &middot; Col&eacute;gio Angolano do Talatona, Luanda, Angola</p>
+  <div class="gold-rule"></div>
+  <p class="body-text">On July 3rd, 2020, I was honored to give a guest lecture on business finance to A-Level Business Studies students at <a href="https://www.facebook.com/cat.co.ao/" target="_blank" rel="noopener">Col&eacute;gio Angolano do Talatona</a> in Luanda, Angola via Zoom.</p>
+  <iframe src="https://drive.google.com/file/d/1nUUxtjcXHyZQlnM1GrqSmGcfoHClb2BP/preview" width="100%" height="500" style="border:0;border-radius:4px;margin:1.5rem 0;display:block" allow="autoplay"></iframe>
+
+  <h3 class="sub-heading">LearnWithAvthar</h3>
+  <p class="section-label">June 2020</p>
+  <div class="gold-rule"></div>
+  <p class="body-text">In June 2020, I was hosted by my friend and colleague from UWC Costa Rica, <a href="https://www.linkedin.com/in/avthars/" target="_blank" rel="noopener">Avthar</a>, for his <a href="https://avthar.com/" target="_blank" rel="noopener">LearnWithAvthar productions</a>. We discussed our experiences at UWC, the transition to university in the US, and our professional aspirations, with considerations for our relationship with our native Africa. The video interview may be watched on Facebook <a href="https://www.facebook.com/ramareabw/videos/299327147867335/" target="_blank" rel="noopener">here</a>. This is also available as a podcast <a href="https://avthar.com/blog/ramarea" target="_blank" rel="noopener">here</a>.</p>
+  <img src="../../../assets/images/speak_avthar.jpg" alt="LearnWithAvthar interview" class="site-img">
+
+  <h3 class="sub-heading">AwesomeGlowsome &mdash; Black Lives Matter Series</h3>
+  <p class="section-label">Summer 2020</p>
+  <div class="gold-rule"></div>
+  <p class="body-text">Following the tragic murder of George Floyd in Minnesota in the summer of 2020, a lot of people were moved to speak out against systemic racism and to educate those in their circles who appeared to not understand why racial justice is important. In a bid to confront the racism and anti-black sentiment she encountered from her connections in her native India, my friend <a href="https://www.linkedin.com/in/niharika-talwar-21317b127/" target="_blank" rel="noopener">Niharika</a> of <a href="https://www.facebook.com/awesomeglowsome" target="_blank" rel="noopener">AwesomeGlowsome</a> fame put together a Black Lives Matter series. While I am still a student of race politics in the United States, I felt sharing my own experience might help my friend in her noble endeavor. In addition to my experience with race politics in the US and colonialism, we also discussed my journey from Botswana to the world: my education in Costa Rica, the US, summer fellowships in Sri Lanka, and my involvement with entrepreneurship in Africa. For more videos on her Black Lives Matter series, check out her <a href="https://www.youtube.com/channel/UCr0JmlegYsu7fnhMJM-G8IA" target="_blank" rel="noopener">YouTube Channel</a>.</p>
+  <p class="body-text" style="font-style:italic;opacity:.6">Note: The videos from this series have been removed from YouTube and are no longer available.</p>
+
+  <h3 class="sub-heading">These Colorful Pens I Carry</h3>
+  <p class="section-label">Stanford University &middot; ENGR 103: Public Speaking</p>
+  <div class="gold-rule"></div>
+  <p class="body-text">Pardon the low quality of the video, but I thought it is worth sharing regardless. This is a speech I gave for my ENGR 103: Public Speaking class at Stanford this past winter. In the speech I explain why I always carry colorful pens and journals almost everywhere I go. It is a speech about Art and Healing.</p>
+  <div class="video-embed"><iframe src="https://www.youtube.com/embed/tBWJFD3WjEs" title="These Colorful Pens I Carry" allowfullscreen loading="lazy"></iframe></div>
+
+  <div class="sound-embed"><iframe scrolling="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/users/64649030&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe></div>
+
+  <h3 class="sub-heading">UWCCR VP Campaign Speech</h3>
+  <p class="section-label">United World College of Costa Rica</p>
+  <div class="gold-rule"></div>
+  <div class="video-embed"><iframe src="https://www.youtube.com/embed/RYiPCfY7RLM" title="UWCCR VP Campaign Speech" allowfullscreen loading="lazy"></iframe></div>
+
+  <h3 class="sub-heading">Navigating Around Challenges of Growing Up in Botswana &mdash; TEDxUWCCR</h3>
+  <p class="section-label">TEDx Talk &middot; United World College of Costa Rica &middot; 2014</p>
+  <div class="gold-rule"></div>
+  <p class="body-text">You've probably heard of Kanye West. Tumisang Ramarea was born in Kanye East in southeastern Botswana. With humor and incredible poise, Tumisang recounts stories from his childhood, showing us his love for his country and proving to us the power of education.</p>
+  <div class="video-embed"><iframe src="https://www.youtube.com/embed/7drOcQs1vCw" title="Navigating Around Challenges of Growing Up in Botswana — TEDxUWCCR" allowfullscreen loading="lazy"></iframe></div>
+
   <a href="../" class="back-link">&larr; Return to Do</a>
 </div>
+
 <footer>
   <span class="footer-brand">RAMAREA</span>
   <ul class="footer-nav">
