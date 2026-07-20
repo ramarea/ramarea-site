@@ -31,10 +31,40 @@
       min-height: 100vh;
     }
 
+    /* ── ANNOUNCEMENT BAR ── */
+    .announcement-bar {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 101;
+      height: 40px;
+      background: rgba(26,10,46,0.96);
+      border-bottom: 1px solid rgba(201,168,76,.3);
+      backdrop-filter: blur(8px);
+      padding: 0 clamp(2rem,8%,5rem);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1.25rem;
+      font-size: .68rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+    .announcement-dot {
+      width: 5px; height: 5px; border-radius: 50%;
+      background: var(--gold); opacity: .8; flex-shrink: 0;
+    }
+    .announcement-bar a {
+      color: var(--gold); text-decoration: none;
+      border-bottom: 1px solid rgba(201,168,76,.35); padding-bottom: 1px;
+      white-space: nowrap; transition: color .2s;
+    }
+    .announcement-bar a:hover { color: var(--gold-light); }
+
     /* ── NAV ── */
     nav {
       position: fixed;
-      top: 0; left: 0; right: 0;
+      top: 40px; left: 0; right: 0;
       z-index: 100;
       display: flex;
       align-items: center;
@@ -494,6 +524,9 @@
 
     /* ── RESPONSIVE ── */
     @media (max-width: 768px) {
+      .announcement-bar { gap: .75rem; letter-spacing: .06em; }
+      .announcement-bar span:not(.announcement-dot) { display: none; }
+      .announcement-bar::after { content: 'Edge Model: 26/32 (81%) at World Cup 2026™'; font-size: .6rem; letter-spacing: .08em; color: var(--text-muted); }
       nav { padding: 1rem 1.5rem; }
       .nav-links { gap: 1.5rem; }
       .nav-cta { display: none; }
@@ -571,6 +604,13 @@
 </head>
 <body>
 
+  <!-- ANNOUNCEMENT BAR -->
+  <div class="announcement-bar">
+    <span class="announcement-dot"></span>
+    <span>The Edge Model went 26/32 (81%) at FIFA World Cup 2026&trade; &mdash; correctly calling 15 of 16 matches in the Round of 32</span>
+    <a href="https://www.edgemodel.tech" target="_blank" rel="noopener">View model &rarr;</a>
+  </div>
+
   <!-- NAV -->
   <nav>
     <a href="/" class="nav-logo">RAMAREA</a>
@@ -593,7 +633,7 @@
       </p>
       <div class="hero-actions">
         <a href="work/" class="btn-primary">Explore My Work</a>
-        <a href="live/mythical-man/" class="btn-ghost">Read My Story</a>
+        <a href="live/my-story/" class="btn-ghost">Read My Story</a>
       </div>
     </div>
     <div class="hero-scroll">
