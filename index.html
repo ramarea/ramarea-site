@@ -4,11 +4,15 @@
   <meta charset="UTF-8" />
 <link rel="icon" type="image/x-icon" href="favicon.ico"/>
 <link rel="icon" type="image/svg+xml" href="favicon.svg"/>
-<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png"/>
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.webp"/>
   <meta name="description" content="RAMAREA — the personal site of Tumisang Ramarea. Writing, photography, music, and reflections on a life lived across borders."/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>RAMAREA</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" media="print" onload="this.onload=null;this.media='all'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet"></noscript>
+  <link rel="preload" as="image" href="assets/images/my-cup-runneth-over.webp">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -128,7 +132,7 @@
       padding: 0 clamp(2rem,8%,5rem);
       position: relative;
       overflow: hidden;
-      background: url('assets/images/my-cup-runneth-over.png') center center / cover no-repeat,
+      background: url('assets/images/my-cup-runneth-over.webp') center center / cover no-repeat,
                   radial-gradient(ellipse at 70% 50%, var(--purple-light) 0%, var(--purple-mid) 40%, var(--purple-deep) 100%);
     }
 
@@ -509,8 +513,7 @@
 
     .footer-copy {
       font-size: 0.7rem;
-      color: var(--text-muted);
-      opacity: 0.6;
+      color: #7a6d8e;
     }
 
     /* ── DIVIDER ── */
@@ -642,6 +645,7 @@
     </div>
   </section>
 
+  <main>
   <!-- BIO -->
   <section class="bio">
     <div>
@@ -678,7 +682,7 @@
     </div>
     <div class="pillars-grid">
 
-      <a href="live/" class="pillar-card" style="background-image:linear-gradient(to top,rgba(196,122,58,0.82) 0%,rgba(196,122,58,0.3) 55%,rgba(196,122,58,0.08) 100%),url('assets/images/reflections-on-summer-2021.jpg');background-size:cover;background-position:center;">
+      <a href="live/" class="pillar-card" style="background-image:linear-gradient(to top,rgba(196,122,58,0.82) 0%,rgba(196,122,58,0.3) 55%,rgba(196,122,58,0.08) 100%),url('assets/images/reflections-on-summer-2021.webp');background-size:cover;background-position:center;">
         <div class="pillar-bg"></div>
         <div class="pillar-content">
           <p class="pillar-number">01</p>
@@ -687,7 +691,7 @@
         </div>
       </a>
 
-      <a href="play/" class="pillar-card" style="background-image:linear-gradient(to top,rgba(45,158,130,0.82) 0%,rgba(45,158,130,0.3) 55%,rgba(45,158,130,0.08) 100%),url('assets/images/flowers1.jpg');background-size:cover;background-position:center;">
+      <a href="play/" class="pillar-card" style="background-image:linear-gradient(to top,rgba(45,158,130,0.82) 0%,rgba(45,158,130,0.3) 55%,rgba(45,158,130,0.08) 100%),url('assets/images/flowers1.webp');background-size:cover;background-position:center;">
         <div class="pillar-bg"></div>
         <div class="pillar-content">
           <p class="pillar-number">02</p>
@@ -696,7 +700,7 @@
         </div>
       </a>
 
-      <a href="work/" class="pillar-card" style="background-image:linear-gradient(to top,rgba(45,90,158,0.82) 0%,rgba(45,90,158,0.3) 55%,rgba(45,90,158,0.08) 100%),url('assets/images/when-masisi-came-to-visit.jpg');background-size:cover;background-position:center;">
+      <a href="work/" class="pillar-card" style="background-image:linear-gradient(to top,rgba(45,90,158,0.82) 0%,rgba(45,90,158,0.3) 55%,rgba(45,90,158,0.08) 100%),url('assets/images/when-masisi-came-to-visit.webp');background-size:cover;background-position:center;">
         <div class="pillar-bg"></div>
         <div class="pillar-content">
           <p class="pillar-number">03</p>
@@ -751,6 +755,8 @@
       </a>
     </div>
   </section>
+
+  </main>
 
   <!-- FOOTER -->
   <footer>
