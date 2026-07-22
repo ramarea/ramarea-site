@@ -1,2 +1,11 @@
 # Original images archived locally — not committed to the repo
 assets/images/_originals/
+
+# Local working docs — not part of the site
+ramarea_com_seo_audit.pdf
+.DS_Store
+
+# BACKLOG
+# Alt text pass: once img placeholders are replaced with real <img> tags,
+# add descriptive alt text across all image-heavy pages (My Story ~40 images,
+# play/show galleries). Portfolio already has alt text — use as the standard.
