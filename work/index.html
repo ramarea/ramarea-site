@@ -84,7 +84,7 @@ p.body-text{font-size:.95rem;line-height:1.85;color:var(--text-muted);font-weigh
 .img-placeholder span{font-size:1.5rem;opacity:.4}
 
 /* PHOTO GRID */
-.photo-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:1rem;margin:2rem 0}
+.photo-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,240px));justify-content:center;gap:1rem;margin:2rem 0}
 .photo-item .img-placeholder{margin:0;aspect-ratio:4/3}
 .photo-caption{font-size:.75rem;color:var(--text-muted);margin-top:.5rem;text-align:center}
 
@@ -107,6 +107,11 @@ p.body-text{font-size:.95rem;line-height:1.85;color:var(--text-muted);font-weigh
   text-transform:uppercase;color:var(--purple-deep);background:var(--gold);
   padding:.85rem 2rem;border-radius:2px;text-decoration:none;transition:background .2s}
 .btn-primary:hover{background:var(--gold-light)}
+
+/* VIDEO EMBED */
+.video-wrap{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;
+  border-radius:4px;margin-bottom:2.5rem;border:1px solid rgba(201,168,76,.15)}
+.video-wrap iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0}
 
 /* FOOTER */
 footer{background:#0f0620;border-top:1px solid rgba(201,168,76,.1);padding:3rem;
@@ -178,6 +183,15 @@ footer{background:#0f0620;border-top:1px solid rgba(201,168,76,.1);padding:3rem;
   <p class="page-subtitle">My professional and entrepreneurial journey — where passion, expertise, and purpose intersect.</p>
 </div>
 <div class="content">
+  <div class="video-wrap">
+    <iframe
+      src="https://www.youtube-nocookie.com/embed/G8yJkMYQH2I"
+      title="Work — Tumisang Ikefuna-Ramarea"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen
+      loading="lazy">
+    </iframe>
+  </div>
   <div class="cards-grid">
     <a href="../work/education/" class="card">
       <img src="../assets/images/work_education.webp" alt="Education" class="card-img">
