@@ -4,6 +4,19 @@ All significant changes made during the migration from Google Sites to the custo
 
 ---
 
+## [Phase 5 — Inner Page Performance & Accessibility] — July 2026
+
+### Performance
+- Extended non-blocking font loading (async `media="print"` pattern) to all 138 inner pages — previously applied to homepage only; eliminates render-blocking Google Fonts resource across the whole site
+- YouTube embed on `/work/` replaced with a click-to-load facade: thumbnail poster shows on page load, iframe only loads on click — eliminates ~979 KiB of third-party JavaScript from initial load and reduces thread-blocking time by ~300ms
+- Added responsive `srcset` + `sizes` to the four card images on `/work/`: 600px WebP variants generated alongside originals, saving ~200–235 KiB per page load at typical display sizes
+
+### Accessibility
+- Applied `<main>` semantic landmark to all 138 inner pages
+- Removed `opacity:.6` from `.footer-copy` across all inner pages — footer copyright text now meets WCAG AA contrast on every page
+
+---
+
 ## [Phase 4 — SEO Foundation] — July 2026
 
 ### SEO audit

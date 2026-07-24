@@ -9,7 +9,11 @@
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 <title>Work — RAMAREA</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500&display=swap" media="print" onload="this.media='all'"/>
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500&display=swap"/></noscript>
+<link rel="preconnect" href="https://i.ytimg.com"/>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -122,7 +126,7 @@ footer{background:#0f0620;border-top:1px solid rgba(201,168,76,.1);padding:3rem;
 .footer-nav a{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;
   color:var(--text-muted);text-decoration:none;transition:color .2s}
 .footer-nav a:hover{color:var(--gold)}
-.footer-copy{font-size:.7rem;color:var(--text-muted);opacity:.6}
+.footer-copy{font-size:.7rem;color:var(--text-muted)}
 
 /* RESPONSIVE */
 @media(max-width:768px){
@@ -182,37 +186,36 @@ footer{background:#0f0620;border-top:1px solid rgba(201,168,76,.1);padding:3rem;
   <h1 class="page-title">Welding Opportunities<br>from Resources &amp; Knowledge</h1>
   <p class="page-subtitle">My professional and entrepreneurial journey — where passion, expertise, and purpose intersect.</p>
 </div>
-<div class="content">
+<main class="content">
   <div class="video-wrap">
-    <iframe
-      src="https://www.youtube-nocookie.com/embed/G8yJkMYQH2I"
-      title="Work — Tumisang Ikefuna-Ramarea"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-      allowfullscreen
-      loading="lazy">
-    </iframe>
+    <div id="yt-poster" style="position:absolute;inset:0;cursor:pointer;background:#000" onclick="loadYT()">
+      <img src="https://i.ytimg.com/vi/G8yJkMYQH2I/maxresdefault.jpg" alt="Play video: Work — Tumisang Ikefuna-Ramarea" style="width:100%;height:100%;object-fit:cover;display:block">
+      <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;pointer-events:none">
+        <svg width="68" height="48" viewBox="0 0 68 48" xmlns="http://www.w3.org/2000/svg"><path d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55c-2.93.78-4.63 3.26-5.42 6.19C.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z" fill="red" fill-opacity=".9"/><path d="M45 24 27 14v20" fill="#fff"/></svg>
+      </div>
+    </div>
   </div>
   <div class="cards-grid">
     <a href="../work/education/" class="card">
-      <img src="../assets/images/work_education.webp" alt="Education" class="card-img">
+      <img src="../assets/images/work_education.webp" srcset="../assets/images/work_education-600.webp 600w, ../assets/images/work_education.webp 1080w" sizes="(max-width:768px) 100vw, 500px" alt="Education" class="card-img">
       <p class="card-label">01</p>
       <h2 class="card-title">Education</h2>
       <p class="card-desc">PSLE, JCE, BGCSE, IB, BS, MS — the academic journey from Botswana to Stanford, fuelled by insatiable curiosity.</p>
     </a>
     <a href="../work/portfolio/" class="card">
-      <img src="../assets/images/portfolio_ai.webp" alt="Work Portfolio" class="card-img">
+      <img src="../assets/images/portfolio_ai.webp" srcset="../assets/images/portfolio_ai-600.webp 600w, ../assets/images/portfolio_ai.webp 1280w" sizes="(max-width:768px) 100vw, 500px" alt="Work Portfolio" class="card-img">
       <p class="card-label">02</p>
       <h2 class="card-title">Work Portfolio</h2>
       <p class="card-desc">Product Management at Krikey AI, Teaching Assistant at Stanford, EdTech Operator — transforming research into meaningful technology.</p>
     </a>
     <a href="../work/entrepreneurship/" class="card">
-      <img src="../assets/images/dryve-africa.webp" alt="Entrepreneurship" class="card-img">
+      <img src="../assets/images/dryve-africa.webp" srcset="../assets/images/dryve-africa-600.webp 600w, ../assets/images/dryve-africa.webp 1280w" sizes="(max-width:768px) 100vw, 500px" alt="Entrepreneurship" class="card-img">
       <p class="card-label">03</p>
       <h2 class="card-title">Entrepreneurship</h2>
       <p class="card-desc">Dryve Africa, RaMCash Corp, The Halidon Committee — building ventures from a place of deep conviction.</p>
     </a>
     <a href="../work/social-responsibility/" class="card">
-      <img src="../assets/images/work_sr.webp" alt="Social Responsibility" class="card-img">
+      <img src="../assets/images/work_sr.webp" srcset="../assets/images/work_sr-600.webp 600w, ../assets/images/work_sr.webp 1216w" sizes="(max-width:768px) 100vw, 500px" alt="Social Responsibility" class="card-img">
       <p class="card-label">04</p>
       <h2 class="card-title">Social Responsibility</h2>
       <p class="card-desc">United World Colleges, MasterCard Foundation Scholars, Tsoga Africa — giving back is not optional, it is essential.</p>
@@ -221,7 +224,7 @@ footer{background:#0f0620;border-top:1px solid rgba(201,168,76,.1);padding:3rem;
   <a href="../work/catalyzing-impact/" class="btn-primary" style="margin-top:1rem;display:inline-block">Read My Work Narrative</a>
   <br>
   <a href="/" class="back-link">&larr; Return to Homepage</a>
-</div>
+</main>
 
 <footer>
   <span class="footer-brand">RAMAREA</span>
@@ -232,5 +235,6 @@ footer{background:#0f0620;border-top:1px solid rgba(201,168,76,.1);padding:3rem;
   </ul>
   <span class="footer-copy">&copy; 2026 Tumisang Ikefuna-Ramarea</span>
 </footer>
+<script>function loadYT(){document.querySelector('.video-wrap').innerHTML='<iframe src="https://www.youtube-nocookie.com/embed/G8yJkMYQH2I?autoplay=1" title="Work — Tumisang Ikefuna-Ramarea" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;border:0"></iframe>';}</script>
 </body>
 </html>

@@ -8,7 +8,10 @@
 <meta name="description" content="Milk going bad becomes a case study in household inventory optimisation — a househusband-in-training applies his Management Science degree to the very unglamorous problem of groceries."/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 <title>Spoilt Milk: Nerdy Housekeeping — RAMAREA</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500&display=swap" media="print" onload="this.media='all'"/>
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500&display=swap"/></noscript>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{--purple-deep:#1a0a2e;--purple-mid:#2d1254;--purple-light:#4a1f8c;--gold:#c9a84c;--gold-light:#e8c96a;--white:#f5f0ea;--text-muted:#b8a9c9}
@@ -63,7 +66,7 @@ footer{background:#0f0620;border-top:1px solid rgba(201,168,76,.1);padding:3rem 
 .footer-nav{display:flex;gap:2rem;list-style:none}
 .footer-nav a{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--text-muted);text-decoration:none;transition:color .2s}
 .footer-nav a:hover{color:var(--gold)}
-.footer-copy{font-size:.7rem;color:var(--text-muted);opacity:.6}
+.footer-copy{font-size:.7rem;color:var(--text-muted)}
 @media(max-width:768px){nav{padding:1rem 1.5rem}.nav-links{gap:1.25rem}.nav-cta{display:none}.page-hero,.content,.content-narrow{padding-left:1.5rem;padding-right:1.5rem}footer{flex-direction:column;align-items:flex-start;padding:2rem 1.5rem}.cards-grid{grid-template-columns:1fr}}
 </style>
 <link rel="canonical" href="https://ramarea.com/live/blog/spoilt-milk-nerdy-housekeeping/"/>
@@ -146,7 +149,7 @@ footer{background:#0f0620;border-top:1px solid rgba(201,168,76,.1);padding:3rem 
   <h1 class="page-title">Spoilt Milk: Nerdy Housekeeping</h1>
   <p class="page-date">August 9, 2019</p>
 </div>
-<div class="content-narrow">
+<main class="content-narrow">
 <img src="../../../assets/images/spoilt-milk-nerdy-housekeeping.webp" alt="Spoilt Milk: Nerdy Housekeeping" style="width:100%;height:auto;display:block;border-radius:4px;margin:0 0 2rem">
   <p class="body-text">About two months ago, I embarked on this journey. Now I can say being a house husband is not as glamorous as it seems. Nobody tells you that milk will go bad, or that not all trash bags will fit in your trash can, and that if you leave dishes at the sink they will still be waiting for you when you return exhausted from work in the evening. But is it really not glamorous? On second thought, I think being a house husband is heaven for someone with a degree in Management Science and Engineering. The problem of food going bad is an opportunity to optimize my inventory management. Trash bags not fitting into the trash can demonstrates that I need better requirements mapping, and the unwashed dishes at the end of the day means I need to design a new Process Flow for my work in the kitchen. Who knew all the mathematical models I learned at the Stanford School of Engineering would someday come in handy in the kitchen?</p>
 <p class="body-text">Every week I jot down a list of groceries that I need to buy in my planner. To restock, I either stop by Trader Joe&#x27;s on my way from school on a weekday or take the bus down to the San Antonio shopping center so I can buy from Safeway. In my opinion, Trader Joe&#x27;s is good for fruits and vegetables, and Safeway is good for meats and juices. For items such as these, I do not have a problem managing the inventory. I usually buy enough meat, fruits, and vegetables to last a week. The problem comes with grocery items that last beyond a week. With these, there are two kinds of problems. The first is with items like milk and bread, that are sold in larger quantities than I would like and I therefore am unable to finish before their pot life expire. I am left wondering whether to eliminate those from my diet entirely, or continue to waste them every cycle. I cannot eliminate them from my diet because I need bread and milk, but I also cannot keep throwing them away because I am trying to minimize my negative impact on the environment. So this is a problem I must find a solution to and soon. Why do Americans not produce things in smaller sizes? The second kind of problem is with non-perishable household items that take a long time to replace, such as air freshener and disinfectant cleaner. They always run out at inconvenient times. This one is an easy problem, I can make sure I always have backup inventory of the essential non-perishable household items. The cost to hold that extra inventory is negligible, I assume.</p>
@@ -154,7 +157,7 @@ footer{background:#0f0620;border-top:1px solid rgba(201,168,76,.1);padding:3rem 
 <p class="body-text">Lastly, I am still disappointed that I have not found an optimal process flow for my adventures in the kitchen. The biggest failure is I always fail to do the dishes before I leave for school. Which means I almost always do them in the evenings right before I cook. For now this system works because I am still by myself, but even then it is suboptimal because I spend a good chunk of my day feeling bad about the dirty dishes I left in the sink. One approach would be to do the dishes for the day before I head to bed. But I always wait for the dishes from the morning so I can apply the demand-pulling technique to minimize the amount of water I use to wash dishes. The problem is the morning has problems of its own and there is usually not enough time to do the dishes. The debate now is which of my values matter more: is it minimizing my negative impact on the environment by using demand-pulling and washing the dishes once a day OR is it maintaining a clean house by washing dishes after every meal? These are some of life&#x27;s big questions. For the next iteration of attempting to solve this, I am going to continue demand-pulling the dishes but washing them in the evening after dinner instead of in the morning. The dirty dishes from breakfast would not harm my cleanliness objective significantly.</p>
 <p class="body-text">I am excited to see how the rest of this journey unfolds. I am especially excited to apply some of my Engineering training to the very important problems of house keeping. With all the breakthroughs in Cloud Computing and the increasing feasibility of Internet-of-things technologies, now is an especially great time to be a house husband and a house wife. Maybe these frustrations will result in me creating a technology powered household inventory management system to help fellow house husbands and house wives run their homes more effectively and efficiently. That way we can spend more time being soccer moms and soccer dads, or getting haircuts and massages.</p>
   <a href="../" class="back-link">&larr; Return to Blog</a>
-</div>
+</main>
 <footer>
   <span class="footer-brand">RAMAREA</span>
   <ul class="footer-nav">

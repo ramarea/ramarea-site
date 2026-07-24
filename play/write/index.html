@@ -9,7 +9,10 @@
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 <title>My Creative Writing — RAMAREA</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500&display=swap" media="print" onload="this.media='all'"/>
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500&display=swap"/></noscript>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -118,7 +121,7 @@ footer{background:#0f0620;border-top:1px solid rgba(201,168,76,.1);padding:3rem;
 .footer-nav a{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;
   color:var(--text-muted);text-decoration:none;transition:color .2s}
 .footer-nav a:hover{color:var(--gold)}
-.footer-copy{font-size:.7rem;color:var(--text-muted);opacity:.6}
+.footer-copy{font-size:.7rem;color:var(--text-muted)}
 
 /* RESPONSIVE */
 @media(max-width:768px){
@@ -260,7 +263,7 @@ footer{background:#0f0620;border-top:1px solid rgba(201,168,76,.1);padding:3rem;
   <h1 class="page-title">Write</h1>
   <p class="page-subtitle">&ldquo;You can always edit a bad page. You can&rsquo;t edit a blank page.&rdquo; &mdash; Jodi Picoult</p>
 </div>
-<div class="content">
+<main class="content">
   <p class="body-text">This section is dedicated to my literary pursuits. I consider myself a storyteller and poet — here you will find a collection of my creative writing.</p>
   <div class="write-grid">
     <a href="../../play/write/and-finally-it-rained-in-california/" class="write-card">
@@ -313,7 +316,7 @@ footer{background:#0f0620;border-top:1px solid rgba(201,168,76,.1);padding:3rem;
     </a>
   </div>
   <a href="../../play/" class="back-link">&larr; Return to Play</a>
-</div>
+</main>
 
 <footer>
   <span class="footer-brand">RAMAREA</span>

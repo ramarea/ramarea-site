@@ -88,6 +88,13 @@ ramarea.com/
 - Footer contrast fix for accessibility
 - Announcement bar: Edge Model FIFA World Cup 2026 results (26/32, 81%)
 
+### ✅ Phase 5 — Inner Page Performance & Accessibility (July 2026)
+- Async font loading extended to all 138 inner pages
+- `<main>` landmark applied to all 138 inner pages
+- Footer contrast fix applied to all inner pages
+- YouTube facade on `/work/`: thumbnail poster replaces eager iframe (~979 KiB / ~300ms TBT savings)
+- Card image `srcset` on `/work/`: 600px WebP variants added for four card images (~200–235 KiB savings)
+
 ### ✅ Phase 4 — SEO Foundation (July 2026)
 - Canonical tags: double-slash bug fixed on hub pages, 52 new canonical tags added (full coverage across 140 pages)
 - Open Graph + Twitter Card meta tags on all 140 pages
@@ -100,7 +107,6 @@ ramarea.com/
 
 ## In Progress
 
-- **Inner page performance:** non-blocking font loading, `<main>` landmark, and footer contrast fix applied to homepage only — needs to propagate to inner page templates
 - **around-the-grapevine:** `/live/my-story/around-the-grapevine/` exists as a placeholder; content not yet built
 
 ---
@@ -157,9 +163,6 @@ These pages exist in the site structure and are linked from nav/section hubs, bu
 | `/live/my-story/` images | Replace ~57 photo placeholder divs with real images once assets are available |
 | `/live/values-and-pillars/` | Page exists; content not yet migrated |
 | Alt text pass | Add descriptive alt text to all `<img>` tags once photo placeholders are replaced with real images. My Story (~40 images) and play/show galleries are priority. Portfolio already has alt text — use as standard. |
-| Inner page templates: non-blocking fonts | Apply `media="print"` async font pattern to all inner pages |
-| Inner page templates: `<main>` landmark | Apply to all inner pages for accessibility |
-| Inner page templates: footer contrast | Apply `color:#7a6d8e` fix to all inner pages |
 | Meta descriptions for remaining pages | ~52 pages currently use fallback site description for OG tags; write per-page descriptions for high-traffic pages |
 | Blog: resume publishing | Last post August 2024; even occasional posts improve crawl frequency |
 
@@ -185,6 +188,8 @@ These pages exist in the site structure and are linked from nav/section hubs, bu
 | `display=swap` + preconnect | Prevents invisible text during font load |
 | `og:image` defaults to homepage hero | Consistent brand image for social previews until per-page images are set |
 | Name standard: "Tumisang Ikefuna-Ramarea" for new content | Legacy content ("Tumisang Ramarea") preserved as-is; new copy uses full name |
+| YouTube facade on `/work/` | Replaces eager iframe with a thumbnail poster; iframe loads only on click — eliminates ~979 KiB of 3rd-party JS and ~300ms TBT from initial page load |
+| Responsive card images (`srcset`) | 600px WebP variants served to mobile/smaller viewports, originals retained for high-DPI; ~200–235 KiB savings per page load on `/work/` |
 | Owner handles all git operations | No automated commits or pushes from tooling |
 
 ## Standards & Conventions

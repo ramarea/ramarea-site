@@ -9,7 +9,10 @@
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 <title>Play — RAMAREA</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500&display=swap" media="print" onload="this.media='all'"/>
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500&display=swap"/></noscript>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -117,7 +120,7 @@ footer{background:#0f0620;border-top:1px solid rgba(201,168,76,.1);padding:3rem;
 .footer-nav a{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;
   color:var(--text-muted);text-decoration:none;transition:color .2s}
 .footer-nav a:hover{color:var(--gold)}
-.footer-copy{font-size:.7rem;color:var(--text-muted);opacity:.6}
+.footer-copy{font-size:.7rem;color:var(--text-muted)}
 
 /* RESPONSIVE */
 @media(max-width:768px){
@@ -177,7 +180,7 @@ footer{background:#0f0620;border-top:1px solid rgba(201,168,76,.1);padding:3rem;
   <h1 class="page-title">Pursuing Leisure<br>for Youthfulness</h1>
   <p class="page-subtitle">&ldquo;The unbearable weight of massive talent&rdquo; is a perfect description of my life. I refuse to contain it — writing, displaying creativity, and doing a lot of fun stuff.</p>
 </div>
-<div class="content">
+<main class="content">
   <p class="body-text">I perform in public, embarrass myself with my two left feet, and play with my voice. This section is dedicated to celebrating that.</p>
   <div class="cards-grid">
     <a href="../play/write/" class="card">
@@ -200,7 +203,7 @@ footer{background:#0f0620;border-top:1px solid rgba(201,168,76,.1);padding:3rem;
     </a>
   </div>
   <a href="/" class="back-link">&larr; Return to Homepage</a>
-</div>
+</main>
 
 <footer>
   <span class="footer-brand">RAMAREA</span>
